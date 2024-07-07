@@ -29,8 +29,9 @@ import { RedirectPathToSwapV3Network } from 'pages/SwapV3/redirects'
 import { useHolidayMode } from 'state/user/hooks'
 import { isSupportLimitOrder } from 'utils'
 
+import Background from 'components/Background'
+
 import VerifyAuth from './Verify/VerifyAuth'
-import Background from '../components/Background'
 
 const Login = lazy(() => import('./Oauth/Login'))
 const Logout = lazy(() => import('./Oauth/Logout'))

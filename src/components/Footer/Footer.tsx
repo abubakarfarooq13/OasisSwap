@@ -1,17 +1,17 @@
-import { Trans, t } from '@lingui/macro'
-import { useMedia } from 'react-use'
-import { Flex, Text } from 'rebass'
+import { Trans } from '@lingui/macro'
+// import { useMedia } from 'react-use'
+import { Text } from 'rebass'
 import styled from 'styled-components'
 
 // import ChainSecurity from 'assets/svg/chainsecurity.svg'
-import { Telegram } from 'components/Icons'
-import Discord from 'components/Icons/Discord'
+// import { Telegram } from 'components/Icons'
+// import Discord from 'components/Icons/Discord'
 import PoweredByIconDark from 'components/Icons/PoweredByIconDark'
-import TwitterIcon from 'components/Icons/TwitterIcon'
-import InfoHelper from 'components/InfoHelper'
-import { KYBER_NETWORK_DISCORD_URL, KYBER_NETWORK_TWITTER_URL } from 'constants/index'
-import useTheme from 'hooks/useTheme'
-import { ExternalLink, ExternalLinkNoLineHeight } from 'theme'
+// import TwitterIcon from 'components/Icons/TwitterIcon'
+// import InfoHelper from 'components/InfoHelper'
+// import { KYBER_NETWORK_DISCORD_URL, KYBER_NETWORK_TWITTER_URL } from 'constants/index'
+// import useTheme from 'hooks/useTheme'
+import { ExternalLink } from 'theme'
 
 const FooterWrapper = styled.div`
   /* background: ${({ theme }) => theme.buttonGray + '33'}; */

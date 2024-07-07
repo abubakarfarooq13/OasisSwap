@@ -442,7 +442,7 @@ export default function Menu() {
                   handlePreferenceClickMixpanel('Swap guide')
                 }}
               >
-                <Trans>KyberSwap Guide</Trans>
+                <Trans>OasisSwap Guide</Trans>
                 <Row justify="flex-end">
                   <Text color={theme.text}>View</Text>&nbsp;
                   <LightIcon color={theme.text} />
@@ -505,7 +505,7 @@ export default function Menu() {
             </AutoRow>
 
             <Text fontSize="10px" fontWeight={300} color={theme.subText} mt="16px" textAlign={'center'}>
-              kyberswap@{TAG}
+              oasisswap@{TAG}
             </Text>
             <ScrollEnd show={showScroll}>
               <ChevronDown color={theme.text4} />

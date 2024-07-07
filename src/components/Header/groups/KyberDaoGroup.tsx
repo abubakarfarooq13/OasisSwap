@@ -39,7 +39,7 @@ const KyberDAONavGroup = () => {
           <Column>
             <StyledNavLink id="kyberdao-stake-knc" to={APP_PATHS.KYBERDAO_STAKE} style={{ gap: '12px' }}>
               <StakeIcon />
-              <Trans>Stake KNC</Trans>
+              <Trans>Stake ONC</Trans>
             </StyledNavLink>
             <StyledNavLink id="kyberdao-vote" to={APP_PATHS.KYBERDAO_VOTE} style={{ gap: '12px' }}>
               <VoteIcon />
@@ -54,7 +54,7 @@ const KyberDAONavGroup = () => {
               }}
             >
               <KyberLogo width={16} height={16} />
-              <Trans>KNC Utility</Trans>
+              <Trans>ONC Utility</Trans>
             </StyledNavLink>
             <StyledNavExternalLink
               id="kyberdao-feature-request"

@@ -40,11 +40,11 @@ const AboutNavGroup = () => {
             }}
           >
             <StyledNavLink id="about-kyberswap" to={`${APP_PATHS.ABOUT}/kyberswap`}>
-              <Trans>KyberSwap</Trans>
+              <Trans>OasisSwap</Trans>
             </StyledNavLink>
 
             <StyledNavLink id="about-knc" to={`${APP_PATHS.ABOUT}/knc`}>
-              <Trans> KNC</Trans>
+              <Trans> ONC</Trans>
             </StyledNavLink>
             <StyledNavExternalLink
               onClick={() => {
