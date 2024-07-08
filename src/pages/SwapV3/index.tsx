@@ -71,6 +71,7 @@ export const AppBodyWrapped = styled(BodyWrapper)`
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   padding: 16px;
   margin-top: 0;
+  background: transparent;
 
   &[data-highlight='true'] {
     animation: ${({ theme }) => highlight(theme)} 2s 2 alternate ease-in-out;
