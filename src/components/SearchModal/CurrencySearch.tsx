@@ -45,6 +45,7 @@ export const ContentWrapper = styled(Column)`
   flex: 1 1;
   position: relative;
   padding-bottom: 10px;
+  background: ${({ theme }) => theme.bg8};
   ${({ theme }) => theme.mediaWidth.upToSmall`
     padding-bottom: 0px;
   `};
@@ -402,7 +403,7 @@ export function CurrencySearch({
                     <Trans>
                       Find a token by searching for its name or symbol or by pasting its address below.
                       <br />
-                      You can select and trade any token on KyberSwap.
+                      You can select and trade any token on OasisSwap.
                     </Trans>
                   </Text>
                 )
@@ -413,7 +414,7 @@ export function CurrencySearch({
         </RowBetween>
         <Text style={{ color: theme.subText, fontSize: 12 }}>
           <Trans>
-            You can search and select <span style={{ color: theme.text }}>any token</span> on KyberSwap.
+            You can search and select <span style={{ color: theme.text }}>any token</span> on OasisSwap.
           </Trans>
         </Text>
 

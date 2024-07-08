@@ -145,7 +145,6 @@ export const StyledRoutes = styled.div`
   width: 100%;
   position: relative;
   padding: 20px 10px 0;
-
   &:before {
     position: absolute;
     display: block;
@@ -164,11 +163,11 @@ export const StyledRoute = styled.div`
   &:after {
     content: '';
     display: block;
-    border-left: 1px solid ${({ theme }) => theme.border};
+    border-left: 1px solid ${({ theme }) => theme.primary};
     width: 100%;
     height: calc(50% + 20px);
     position: absolute;
-    border-right: 1px solid ${({ theme }) => theme.border};
+    border-right: 1px solid ${({ theme }) => theme.primary};
     box-sizing: border-box;
     pointer-events: none;
   }
@@ -187,7 +186,7 @@ export const StyledRoute = styled.div`
 `
 export const StyledRouteLine = styled.div`
   position: absolute;
-  border-bottom: 1px solid ${({ theme }) => theme.border};
+  border-bottom: 1px solid ${({ theme }) => theme.primary};
   width: calc(100% - 68px);
   left: 43px;
 `
@@ -200,8 +199,8 @@ export const StyledHops = styled.div<{ length: string | number }>`
 export const StyledHop = styled.div`
   padding: 8px;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.background};
-  border: 1px solid ${({ theme }) => theme.border};
+  background-color: ${({ theme }) => theme.bg8};
+  border: 1px solid ${({ theme }) => theme.primary};
   height: fit-content;
   position: relative;
   flex: 0 0 146px;
@@ -312,5 +311,4 @@ export const StyledHopChevronWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
 `

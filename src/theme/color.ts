@@ -18,6 +18,7 @@ export function colors() {
     background: 'rgba(60, 155, 55, 0.1)',
     tabActive: '#313131',
     tabBackground: '#0F0F0F',
+    footerbackground: 'rgba(18, 13, 18, 0.22)',
 
     tableHeader: '#313131',
     buttonBlack: '#0C0C0E',
@@ -47,6 +48,7 @@ export function colors() {
     radialGradient: 'radial-gradient(#095143, #06291d)',
     // buttons
     bt1: '#202020',
+    bt2: '#ffffff',
     //primary colors
     primary: '#3C9B37',
 

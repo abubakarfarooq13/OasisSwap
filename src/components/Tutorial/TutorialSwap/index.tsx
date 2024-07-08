@@ -120,7 +120,7 @@ function Welcome() {
       <img src={WelcomeImage} alt="welcome to kyberswap" style={{ maxWidth: '100%', marginTop: 10 }} />
       <Desc>
         <Trans>
-          KyberSwap is a decentralized exchange (DEX) aggregator and an automated market maker (AMM). We provide our
+          OasisSwap is a decentralized exchange (DEX) aggregator and an automated market maker (AMM). We provide our
           traders with the <HighlightText>superior token prices</HighlightText> by analyzing rates across hundreds of
           exchanges instantly! On the other hand, our liquidity providers can add liquidity to our pools to{' '}
           <HighlightText>earn fees and rewards!</HighlightText>
@@ -129,14 +129,14 @@ function Welcome() {
 
       <Desc>
         <Trans>
-          KyberSwap also allows users to <HighlightText>trade smarter</HighlightText>. We provide various trading
+          OasisSwap also allows users to <HighlightText>trade smarter</HighlightText>. We provide various trading
           insights so our users can get access to <HighlightText>alpha</HighlightText> instantly!
         </Trans>
       </Desc>
 
       <Desc>
         <Trans>
-          Here&apos;s a quick tutorial guide about KyberSwap&apos;s main features. Do you wish to have a look?
+          Here&apos;s a quick tutorial guide about OasisSwap&apos;s main features. Do you wish to have a look?
         </Trans>
       </Desc>
     </Layout>
@@ -150,7 +150,7 @@ function ConnectWallet() {
   return (
     <Layout title={LIST_TITLE.CONNECT_WALLET}>
       <Desc>
-        <Trans>Choose your preferred wallet, connect it, and get started with KyberSwap!</Trans>
+        <Trans>Choose your preferred wallet, connect it, and get started with OasisSwap!</Trans>
       </Desc>
       <ImageMobile imgSrc={ConnectWalletImg} imageName="Step connect wallet" />
       <BrowserView>
@@ -183,7 +183,7 @@ function SwapForm() {
     <Layout title={LIST_TITLE.START_TRADING}>
       <Desc>
         <Trans>
-          Select from over thousands of tokens and start trading. KyberSwap finds you superior prices across multiple
+          Select from over thousands of tokens and start trading. OasisSwap finds you superior prices across multiple
           exchanges & combines them into one trade!
         </Trans>
       </Desc>
@@ -236,7 +236,7 @@ const getListSteps = (isLogin: boolean) => {
         <Layout title={LIST_TITLE.SELECT_NETWORK}>
           <Desc>
             <Trans>
-              Choose your preferred network. KyberSwap is a multi-chain platform that supports over 13 chains!
+              Choose your preferred network. OasisSwap is a multi-chain platform that supports over 13 chains!
             </Trans>
           </Desc>
           <ImageMobile imgSrc={SelectChainBtn} imageName="Step select chain" />
@@ -325,7 +325,7 @@ const getListSteps = (isLogin: boolean) => {
       description: (
         <Layout title={LIST_TITLE.KYBER_DAO}>
           <Desc>
-            <Trans>Stake KNC tokens to vote on proposals that shape Kyber&apos;s future and earn KNC rewards!</Trans>
+            <Trans>Stake ONC tokens to vote on proposals that shape Oasis&apos;s future and earn ONC rewards!</Trans>
           </Desc>
         </Layout>
       ),

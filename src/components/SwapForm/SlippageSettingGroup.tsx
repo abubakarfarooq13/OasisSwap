@@ -20,7 +20,7 @@ import { MEDIA_WIDTHS } from 'theme'
 import AddMEVProtectionModal from './AddMEVProtectionModal'
 
 const PriceAlertButton = styled.div`
-  background: ${({ theme }) => rgba(theme.subText, 0.2)};
+  background: ${({ theme }) => theme.bg7};
   border-radius: 24px;
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@ const PriceAlertButton = styled.div`
   padding: 4px 6px;
   cursor: pointer;
   user-select: none;
-  font-weight: 500;
+  /* font-weight: 400; */
 `
 
 export default function SlippageSettingGroup({
@@ -64,8 +64,8 @@ export default function SlippageSettingGroup({
   let rightButton =
     chainId === ChainId.MAINNET && active && !isPartnerSwap ? (
       <PriceAlertButton onClick={addMevProtectionHandler}>
-        <Shield size={14} color={theme.subText} />
-        <Text color={theme.subText} style={{ whiteSpace: 'nowrap' }}>
+        <Shield size={14} color={theme.text} />
+        <Text color={theme.text} style={{ whiteSpace: 'nowrap' }}>
           {upToXXSmall ? <Trans>MEV Protection</Trans> : <Trans>Add MEV Protection</Trans>}
         </Text>
       </PriceAlertButton>

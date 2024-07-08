@@ -93,10 +93,11 @@ const HeaderElementWrap = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 0px 6px;
+  padding: 4px 8px;
+  box-sizing: border-box;
   border-radius: 36px;
-  background-color: ${({ theme }) => theme.background};
-  border: 1px solid ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.bg1};
+  border: 1px solid ${({ theme }) => theme.bg1};
   color: ${({ theme }) => theme.subText};
   :hover,
   :focus {
@@ -179,7 +180,7 @@ export default function Header() {
   const menu = (
     <HeaderElementWrap>
       <Announcement />
-      <div style={{ height: '18px', borderLeft: `2px solid ${theme.subText}` }} />
+      <div style={{ height: '30px', borderLeft: `2px solid ${theme.bg7}` }} />
       <Menu />
     </HeaderElementWrap>
   )

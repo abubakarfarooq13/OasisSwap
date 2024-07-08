@@ -85,8 +85,8 @@ export const SwitchLocaleLinkWrapper = styled.div`
 `
 
 export const RoutingIconWrapper = styled(RoutingIcon)`
-  height: 27px;
-  width: 27px;
+  height: 24px;
+  width: 24px;
   margin-right: 10px;
   path {
     fill: ${({ theme }) => theme.subText} !important;

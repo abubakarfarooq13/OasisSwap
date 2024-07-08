@@ -33,9 +33,16 @@ import PendingView from './PendingView'
 import { useConnections } from './useConnections'
 
 const CloseIcon = styled.div`
-  height: 24px;
-  align-self: flex-end;
+  height: 22px;
+  width: 22px;
+  /* align-self: flex-end; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
   cursor: pointer;
+  border: 2px solid ${({ theme }) => theme.bt2};
+  border-radius: 6px;
   color: ${({ theme }) => theme.text};
   &:hover {
     opacity: 0.6;
@@ -187,7 +194,7 @@ export default function WalletModal() {
             <Text color={theme.subText}>
               <Trans>Accept </Trans>{' '}
               <ExternalLink href={TERM_FILES_PATH.KYBERSWAP_TERMS} onClick={e => e.stopPropagation()}>
-                <Trans>KyberSwap&lsquo;s Terms of Use</Trans>
+                <Trans>OasisSwap&lsquo;s Terms of Use</Trans>
               </ExternalLink>{' '}
               <Trans>and</Trans>{' '}
               <ExternalLink href={TERM_FILES_PATH.PRIVACY_POLICY} onClick={e => e.stopPropagation()}>

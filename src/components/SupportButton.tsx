@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { HelpCircle } from 'react-feather'
+// import { HelpCircle } from 'react-feather'
 import { useMedia } from 'react-use'
 import { Flex, Text } from 'rebass'
 import styled from 'styled-components'
@@ -9,6 +9,8 @@ import styled from 'styled-components'
 import { ReactComponent as DiscordIcon } from 'assets/svg/discord_color.svg'
 import { ReactComponent as EmailIcon } from 'assets/svg/email_color.svg'
 import { ReactComponent as TeleIcon } from 'assets/svg/tele_color.svg'
+import { ReactComponent as PalmTree } from 'assets/svg/palmtree.svg'
+import { ReactComponent as Message } from 'assets/svg/support-message.svg'
 import useTheme from 'hooks/useTheme'
 import { ExternalLink, MEDIA_WIDTHS } from 'theme'
 
@@ -103,26 +105,40 @@ export default function SupportButton() {
   return (
     <Wrapper onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
       <Flex
-        backgroundColor={theme.primary}
-        alignItems="center"
-        justifyContent="center"
+        backgroundColor={theme.footerbackground}
+        alignItems="end"
+        // justifyContent="center"
         sx={{
-          height: '36px',
-          width: upToSmall ? '36px' : 'max-content',
-          padding: upToSmall ? 0 : '0 12px',
-          borderRadius: '999px',
+          height: '60px',
+          width: upToSmall ? '100px' : '150px',
+          // padding: upToSmall ? 0 : '0 12px',
+          // borderRadius: '999px',
           color: theme.textReverse,
-          fontSize: '14px',
+          fontSize: '12px',
+          gap: '10px',
           fontWeight: '500',
           cursor: 'pointer',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        <HelpCircle size={18} />
-        {!upToSmall && (
-          <Text marginLeft="0.5rem">
-            <Trans>Support</Trans>
+        <Flex>
+          <PalmTree />
+          {!upToSmall && (
+            <Text marginLeft="0.5rem">
+              <Message style={{ background: `${theme.primary}`,borderRadius: '999px',
+              height: '2.1rem',
+              width: '2.1rem',
+              padding: '4px',
+              }}/>
+            </Text>
+          )}
+        </Flex>
+        <Flex>
+          <Text color={theme.subText}>
+            <Trans>3 gwei 20159131</Trans>
           </Text>
-        )}
+        </Flex>
       </Flex>
 
       <SubMenu initial="exit" animate={isHover ? 'enter' : 'exit'} variants={subMenuAnimate}>

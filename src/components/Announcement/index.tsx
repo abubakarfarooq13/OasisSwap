@@ -27,18 +27,18 @@ import { MEDIA_WIDTHS } from 'theme'
 const StyledMenuButton = styled.button<{ active?: boolean }>`
   border: none;
   margin: 0;
-  padding: 0;
-  height: 40px;
-  width: 40px;
+  padding: 0px;
+  height: 30px;
+  width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({ theme }) => theme.subText};
+  color: ${({ theme }) => theme.text};
   border-radius: 999px;
   position: relative;
   outline: none;
-  background-color: transparent;
-  border: 1px solid transparent;
+  background-color: ${({ theme }) => theme.tabBackground};
+  border: 2px solid ${({ theme }) => theme.bg7};
   :hover {
     cursor: pointer;
   }

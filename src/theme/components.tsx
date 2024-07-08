@@ -65,6 +65,9 @@ export const Button = styled.button.attrs<{ warning: boolean }, { backgroundColo
 
 export const CloseIcon = styled(X)<{ onClick?: () => void }>`
   cursor: pointer;
+  border: 2px solid ${({ theme }) => theme.bt2};
+  border-radius: 7px;
+  padding: 3px;
 `
 
 // for wrapper react feather icons

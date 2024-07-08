@@ -405,12 +405,12 @@ export const ButtonApprove = ({
 const StyledButtonAction = styled(RebassButton)<{ $color?: string }>`
   cursor: pointer;
   appearance: none;
-  padding: 2px;
+  padding: 0px;
   display: flex;
   align-items: center;
   outline: none;
-  border-radius: 50%;
-  border: none;
+  border-radius: 7px;
+  border: 2px solid ${({ theme }) => theme.bt2};
   transition: all 0.1s;
   background-color: ${({ $color }) => ($color ? $color + '32' : 'transparent')};
   color: ${({ $color }) => ($color ? $color : 'unset')};

@@ -14,7 +14,7 @@ import useTheme from 'hooks/useTheme'
 import { ExternalLink, ExternalLinkNoLineHeight } from 'theme'
 
 const FooterWrapper = styled.div`
-  /* background: ${({ theme }) => theme.buttonGray + '33'}; */
+  background: ${({ theme }) => theme.footerbackground};
   width: 100%;
 
   ${({ theme }) => theme.mediaWidth.upToLarge`
@@ -41,11 +41,11 @@ const FooterContent = styled.div`
   }
 
   @media only screen and (min-width: 1366px) {
-    padding: 16px 215px;
+    padding: 16px 32px;
   }
 
   @media only screen and (min-width: 1500px) {
-    padding: 16px 252px;
+    padding: 16px 32px;
   }
 `
 
