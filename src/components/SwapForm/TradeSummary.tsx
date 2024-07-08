@@ -258,7 +258,7 @@ const TradeSummary: React.FC<Props> = ({ routeSummary, slippage, disableRefresh,
                 <MouseoverTooltip
                   text={
                     <Trans>
-                      Stake KNC in KyberDAO to get gas refund. Read more{' '}
+                      Stake ONC in OasisDAO to get gas refund. Read more{' '}
                       <ExternalLink href="https://docs.kyberswap.com/governance/knc-token/gas-refund-program">
                         here ↗
                       </ExternalLink>
