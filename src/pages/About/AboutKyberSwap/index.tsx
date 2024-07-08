@@ -295,10 +295,10 @@ function AboutKyberSwap() {
             <img height="400px" src={KNCGraphic} alt="KNCGraphic" style={{ display: above768 ? 'block' : 'none' }} />
             <Flex width="100%" alignSelf="center" flexDirection="column" height="max-content">
               <Text fontSize={['16px', '20px']} fontWeight={500} color={theme.primary}>
-                <Trans>ABOUT KNC</Trans>
+                <Trans>ABOUT ONC</Trans>
               </Text>
               <Text as="h2" marginTop="12px" fontSize={['28px', '36px']} fontWeight="500">
-                <Trans>Kyber Network Crystal (KNC)</Trans>
+                <Trans>Oasis Network Crystal (ONC)</Trans>
               </Text>
               <Text
                 fontSize="16px"
@@ -308,14 +308,14 @@ function AboutKyberSwap() {
                 textAlign="justify"
               >
                 <Trans>
-                  KNC is a utility and governance token, and an integral part of Kyber Network and its flagship product
-                  KyberSwap. It is the glue that connects different stakeholders in Kyber&apos;s ecosystem.
+                  ONC is a utility and governance token, and an integral part of Oasis Network and its flagship product
+                  OasisSwap. It is the glue that connects different stakeholders in Oasis&apos;s ecosystem.
                 </Trans>
               </Text>
               <img
                 width="75%"
                 src={KNCGraphic}
-                alt="KNCGraphic"
+                alt="ONCGraphic"
                 style={{ display: above768 ? 'none' : 'block', margin: 'auto', marginTop: '40px' }}
               />
               <BtnPrimary as={Link} to="/about/knc" margin="48px 0">
@@ -386,15 +386,15 @@ function AboutKyberSwap() {
               <Trans>Github</Trans>
             </ExternalLink>
             <VerticalDivider />
-            <ExternalLink href={`https://kyber.org`}>KyberDAO</ExternalLink>
+            <ExternalLink href={`https://kyber.org`}>OasisDAO</ExternalLink>
             <VerticalDivider />
             <ExternalLink href={`https://gov.kyber.org`}>
               <Trans>Forum</Trans>
             </ExternalLink>
             {!above500 ? <div /> : <VerticalDivider />}
-            <ExternalLink href={`https://kyber.network`}>Kyber Network</ExternalLink>
+            <ExternalLink href={`https://kyber.network`}>Oasis Network</ExternalLink>
             <VerticalDivider />
-            <StyledInternalLink to={`/about/knc`}>KNC</StyledInternalLink>
+            <StyledInternalLink to={`/about/knc`}>ONC</StyledInternalLink>
           </Flex>
           <FooterSocialLink />
         </FooterContainer>

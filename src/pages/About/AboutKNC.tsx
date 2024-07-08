@@ -139,7 +139,7 @@ function AboutKNC() {
 
       <Text color={theme.text} marginTop="24px" textAlign={above500 ? 'start' : 'center'} lineHeight={1.5}>
         <Trans>
-          KNC enables KyberDAO to shape token behaviour and upgrades, making KNC much more adaptable and providing
+          ONC enables OasisDAO to shape token behaviour and upgrades, making ONC much more adaptable and providing
           better support for innovation and growth.
         </Trans>
       </Text>
@@ -167,8 +167,8 @@ function AboutKNC() {
 
       <Text color={theme.text} marginTop="24px" textAlign={above500 ? 'start' : 'center'} lineHeight={1.5}>
         <Trans>
-          KNC holders can stake KNC in KyberDAO and vote on important decisions. Voters receive trading fees generated
-          on KyberSwap and other benefits from ecosystem collaborations on Kyber.
+          ONC holders can stake ONC in OasisDAO and vote on important decisions. Voters receive trading fees generated
+          on OasisSwap and other benefits from ecosystem collaborations on Oasis.
         </Trans>
       </Text>
     </ForLiquidityProviderItem>
@@ -187,9 +187,9 @@ function AboutKNC() {
         <Wrapper>
           <Text as="h1" fontSize={['28px', '48px']} textAlign="center" lineHeight={['32px', '60px']} fontWeight="300">
             <Trans>
-              Kyber Network Crystal{' '}
+              Oasis Network Crystal{' '}
               <Text fontWeight="500" color={theme.primary} as="span">
-                (KNC)
+                (ONC)
               </Text>
             </Trans>
           </Text>
@@ -202,7 +202,7 @@ function AboutKNC() {
             lineHeight={1.5}
           >
             <Trans>
-              KNC is a utility and governance token and an integral part of Kyber Network and its product KyberSwap -
+              ONC is a utility and governance token and an integral part of Oasis Network and its product OasisSwap -
               the multi-chain decentralized exchange (DEX) that provides superior rates for traders.{' '}
             </Trans>
           </Text>
@@ -238,16 +238,16 @@ function AboutKNC() {
             <Trans>TOKEN UTILITY</Trans>
           </Text>
           <Text as="h2" marginTop="12px" fontWeight="500" fontSize={['28px', '36px']} textAlign="center">
-            <Trans>What is KNC used for?</Trans>
+            <Trans>What is ONC used for?</Trans>
           </Text>
           <Text color={theme.text} marginTop={['40px', '48px']} fontSize="1rem" textAlign="center" lineHeight={1.5}>
             <Trans>
-              KNC token holders can benefit from our flagship product KyberSwap. Holders can stake their KNC & vote on
-              initiatives to receive trading fees generated on KyberSwap! More trades on KyberSwap can generate more
-              rewards for KNC holders!
+              ONC token holders can benefit from our flagship product OasisSwap. Holders can stake their ONC & vote on
+              initiatives to receive trading fees generated on OasisSwap! More trades on OasisSwap can generate more
+              rewards for ONC holders!
               <br />
               <br />
-              KNC token is dynamic - it can be upgraded, minted or burned by KyberDAO to better support liquidity and
+              KNC token is dynamic - it can be upgraded, minted or burned by OasisDAO to better support liquidity and
               growth.
             </Trans>
           </Text>
@@ -293,16 +293,16 @@ function AboutKNC() {
             <img width="85%" src={KyberDao} alt="KyberDao" style={{ display: above768 ? 'block' : 'none' }} />
             <Flex width="100%" flexDirection="column" height="max-content">
               <Text fontSize={['20px', '24px']} fontWeight={500} color={theme.primary}>
-                <Trans>KYBER DAO</Trans>
+                <Trans>OASIS DAO</Trans>
               </Text>
               <Text as="h2" marginTop="12px" fontWeight="500" fontSize={['28px', '36px']}>
-                <Trans>Stake KNC, Vote, Earn Rewards.</Trans>
+                <Trans>Stake ONC, Vote, Earn Rewards.</Trans>
               </Text>
               <Text fontSize="16px" marginTop={['40px', '48px']} color={theme.text} lineHeight="24px" textAlign="left">
                 <Trans>
-                  KyberDAO is a community platform that allows KNC token holders to participate in governance. KNC
-                  holders can stake KNC to vote on proposals. In return, they receive rewards from fees generated on
-                  KyberSwap through trading activities in Kyber Network.
+                  OasisDAO is a community platform that allows ONC token holders to participate in governance. ONC
+                  holders can stake ONC to vote on proposals. In return, they receive rewards from fees generated on
+                  OasisSwap through trading activities in Oasis Network.
                 </Trans>
               </Text>
               <img
@@ -321,7 +321,7 @@ function AboutKNC() {
               >
                 <Archive />
                 <Text fontSize="16px" marginLeft="8px">
-                  <Trans>Stake KNC</Trans>
+                  <Trans>Stake ONC</Trans>
                 </Text>
               </BtnPrimary>
             </Flex>
@@ -333,7 +333,7 @@ function AboutKNC() {
             fontSize={['28px', '36px']}
             textAlign="center"
           >
-            <Trans>Where you can buy KNC</Trans>
+            <Trans>Where you can buy ONC</Trans>
           </Text>
 
           {above768 ? (
@@ -371,11 +371,11 @@ function AboutKNC() {
             fontSize={['28px', '36px']}
             textAlign="center"
           >
-            <Trans>Where you can store KNC</Trans>
+            <Trans>Where you can store ONC</Trans>
           </Text>
           <Text fontSize="16px" marginTop={['40px', '48px']} color={theme.text} lineHeight="24px" textAlign="center">
             <Trans>
-              KNC is an ERC-20 token, so it can be stored in many Web3 wallets you control. Below are some examples.
+              ONC is an ERC-20 token, so it can be stored in many Web3 wallets you control. Below are some examples.
             </Trans>
           </Text>
 
@@ -413,7 +413,7 @@ function AboutKNC() {
               flexDirection={'column'}
             >
               <Text as="h2" fontWeight="500" fontSize={['28px', '36px']}>
-                <Trans>More information about KNC is available on:</Trans>
+                <Trans>More information about ONC is available on:</Trans>
               </Text>
               <Flex
                 flexDirection={above768 ? 'row' : 'column'}
@@ -446,15 +446,15 @@ function AboutKNC() {
               <Trans>Github</Trans>
             </ExternalLink>
             <VerticalDivider />
-            <ExternalLink href={`https://kyber.org`}>KyberDAO</ExternalLink>
+            <ExternalLink href={`https://kyber.org`}>OasisDAO</ExternalLink>
             <VerticalDivider />
             <ExternalLink href={`https://gov.kyber.org`}>
               <Trans>Forum</Trans>
             </ExternalLink>
             {!above500 ? <div /> : <VerticalDivider />}
-            <ExternalLink href={`https://kyber.network`}>Kyber Network</ExternalLink>
+            <ExternalLink href={`https://kyber.network`}>Oasis Network</ExternalLink>
             <VerticalDivider />
-            <StyledInternalLink to={`/about/knc`}>KNC</StyledInternalLink>
+            <StyledInternalLink to={`/about/knc`}>ONC</StyledInternalLink>
           </Flex>
           <FooterSocialLink />
         </FooterContainer>

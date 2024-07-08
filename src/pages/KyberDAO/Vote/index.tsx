@@ -218,14 +218,14 @@ export default function Vote() {
           </Text>
           <RowFit gap="4px">
             <KNCLogo size={20} />
-            <Text fontSize={16}>KNC: ${kncPrice ? (+kncPrice).toPrecision(4) : '--'}</Text>
+            <Text fontSize={16}>ONC: ${kncPrice ? (+kncPrice).toPrecision(4) : '--'}</Text>
           </RowFit>
         </RowBetween>
         <CardGroup>
           <Card>
             <AutoColumn>
               <Text color={theme.subText} fontSize="14px" marginBottom="20px">
-                <Trans>Total Staked KNC</Trans>
+                <Trans>Total Staked ONC</Trans>
               </Text>
               <Text fontSize={20} marginBottom="8px" fontWeight={500}>
                 {daoInfo ? formattedNumLong(Math.round(daoInfo.total_staked)) + ' KNC' : '--'}
@@ -269,7 +269,7 @@ export default function Vote() {
                   fontSize={12}
                   placement="top"
                   text={t`Your voting power is calculated by
-[Your Staked KNC] / [Total Staked KNC] * 100%.`}
+[Your Staked ONC] / [Total Staked ONC] * 100%.`}
                 />
               </Text>
 
@@ -351,7 +351,7 @@ export default function Vote() {
                     <InfoHelper
                       placement="top"
                       fontSize={12}
-                      text={t`You have to stake KNC to be able to vote and earn voting reward.`}
+                      text={t`You have to stake ONC to be able to vote and earn voting reward.`}
                     />
                   ) : null}
                 </RowFit>
@@ -371,10 +371,10 @@ export default function Vote() {
               </RowBetween>
               <RowBetween>
                 <Text fontSize={12} color={theme.subText}>
-                  {totalStakedAmount ? (+totalStakedAmount.toFixed(2)).toLocaleString() + ' KNC Staked' : '--'}
+                  {totalStakedAmount ? (+totalStakedAmount.toFixed(2)).toLocaleString() + ' ONC Staked' : '--'}
                 </Text>
                 <StyledInternalLink to="/kyberdao/stake-knc" style={{ fontSize: '12px', whiteSpace: 'nowrap' }}>
-                  <Trans>Stake KNC ↗</Trans>
+                  <Trans>Stake ONC ↗</Trans>
                 </StyledInternalLink>
               </RowBetween>
             </AutoColumn>
@@ -401,7 +401,7 @@ export default function Vote() {
                   <RowBetween>
                     <AutoColumn>
                       <Text fontSize={20} marginBottom="8px" fontWeight={500}>
-                        {formatUnitsToFixed(remainingCumulativeAmount, undefined, 2)} KNC
+                        {formatUnitsToFixed(remainingCumulativeAmount, undefined, 2)} ONC
                       </Text>
                       <Text fontSize={12} color={theme.subText}>
                         {(+(+formatUnitsToFixed(remainingCumulativeAmount) * +(kncPrice || '0')).toFixed(
@@ -423,7 +423,7 @@ export default function Vote() {
                   <RowBetween>
                     <AutoColumn>
                       <Text fontSize={20} marginBottom="8px" fontWeight={500}>
-                        {(+formatUnitsToFixed(claimedRewardAmount, undefined, 2)).toLocaleString()} KNC
+                        {(+formatUnitsToFixed(claimedRewardAmount, undefined, 2)).toLocaleString()} ONC
                       </Text>
                       <Text fontSize={12} color={theme.subText}>
                         {(+(+formatUnitsToFixed(claimedRewardAmount) * +(kncPrice || 0)).toFixed(2)).toLocaleString()}{' '}
@@ -461,7 +461,7 @@ export default function Vote() {
           </Text>
         </AutoRow>
         <Text color={theme.subText} fontStyle="italic" fontSize={12} hidden={isMobile}>
-          <Trans>Note: Voting on KyberDAO is only available on Ethereum chain.</Trans>
+          <Trans>Note: Voting on OasisDAO is only available on Ethereum chain.</Trans>
         </Text>
         <ProposalListComponent voteCallback={handleVote} />
         <ClaimConfirmModal amount={formatUnitsToFixed(remainingCumulativeAmount)} onConfirmClaim={handleConfirmClaim} />

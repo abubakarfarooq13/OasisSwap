@@ -47,7 +47,7 @@ const ProposalHeader = styled.div`
     cursor: pointer;
   }
   ${({ theme }) => css`
-    background-color: ${theme.background};
+    /* background-color: ${theme.background}; */
   `}
 `
 

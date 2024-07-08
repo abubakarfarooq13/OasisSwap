@@ -117,12 +117,12 @@ export default function KNCUtility() {
         <Row>
           <Column gap="24px">
             <Text fontSize={24} fontWeight={500} id="knc-utility">
-              <Trans>KNC Utility</Trans>
+              <Trans>ONC Utility</Trans>
             </Text>
             <Column gap="16px">
               <YourStakedKNC>
                 <Text fontSize={14} lineHeight="20px" color={theme.subText}>
-                  <Trans>Your Staked KNC</Trans>
+                  <Trans>Your Staked ONC</Trans>
                 </Text>
                 <Text
                   fontSize={16}
@@ -133,7 +133,7 @@ export default function KNCUtility() {
                   style={{ gap: '8px' }}
                   fontWeight={500}
                 >
-                  <KNCLogo size={20} /> {account ? formatUnits(stakedBalance) : '--'} KNC
+                  <KNCLogo size={20} /> {account ? formatUnits(stakedBalance) : '--'} ONC
                 </Text>
               </YourStakedKNC>
               <Flex alignSelf="flex-end">
@@ -148,9 +148,9 @@ export default function KNCUtility() {
 
               <Text as="span" fontSize={16} fontWeight={500} color={theme.subText} lineHeight="24px">
                 <Trans>
-                  Stake your KNC (<NavLink to={`${APP_PATHS.ABOUT}/knc`}>Kyber Network Crystal</NavLink>) tokens to{' '}
-                  <NavLink to={APP_PATHS.KYBERDAO_VOTE}>vote on KIPs</NavLink> and shape the future of the KyberSwap
-                  ecosystem. KNC stakers also enjoy multiple benefits such as savings on gas fees, protocol fee rewards,
+                  Stake your ONC (<NavLink to={`${APP_PATHS.ABOUT}/knc`}>Oasis Network Crystal</NavLink>) tokens to{' '}
+                  <NavLink to={APP_PATHS.KYBERDAO_VOTE}>vote on KIPs</NavLink> and shape the future of the OasisSwap
+                  ecosystem. ONC stakers also enjoy multiple benefits such as savings on gas fees, protocol fee rewards,
                   and more.
                 </Trans>
               </Text>
@@ -186,15 +186,15 @@ export default function KNCUtility() {
             </Text>
             <Text fontSize={16} fontWeight={400} lineHeight="24px" color={theme.subText}>
               <Trans>
-                To participate in KyberSwap&apos;s Gas Refund Program, you must first stake KNC and then meet the
+                To participate in OasisSwap&apos;s Gas Refund Program, you must first stake ONC and then meet the
                 necessary trading requirements:
               </Trans>
             </Text>
             <Text fontSize={16} fontWeight={400} lineHeight="24px" color={theme.text} fontStyle="italic">
               <Trans>
-                Step 1 - Stake KNC on KyberDAO
+                Step 1 - Stake ONC on OasisDAO
                 <br />
-                Step 2 - Trade on KyberSwap
+                Step 2 - Trade on OasisSwap
               </Trans>
             </Text>
             <ul
@@ -210,7 +210,7 @@ export default function KNCUtility() {
               <Li>
                 <Text fontSize={16} fontWeight={400} lineHeight="24px" color={theme.subText} as="span">
                   <Trans>
-                    Value of each trade (calculated at the point of the trade) on KyberSwap has to be ≥ $200.
+                    Value of each trade (calculated at the point of the trade) on OasisSwap has to be ≥ $200.
                   </Trans>
                 </Text>
               </Li>
@@ -236,7 +236,7 @@ export default function KNCUtility() {
                   <Trans>Tier</Trans>
                 </HeaderCell>
                 <HeaderCell textAlign="center">
-                  <Trans>KNC Staked</Trans>
+                  <Trans>ONC Staked</Trans>
                 </HeaderCell>
                 <HeaderCell textAlign="center">
                   <Trans>Gas Refund</Trans>
@@ -244,17 +244,17 @@ export default function KNCUtility() {
               </TableHeader>
               <TableRow>
                 <HeaderCell>Tier 1</HeaderCell>
-                <HeaderCell textAlign="center">500 KNC</HeaderCell>
+                <HeaderCell textAlign="center">500 ONC</HeaderCell>
                 <HeaderCell textAlign="center">10%</HeaderCell>
               </TableRow>
               <TableRow>
                 <HeaderCell>Tier 2</HeaderCell>
-                <HeaderCell textAlign="center">5,000 KNC</HeaderCell>
+                <HeaderCell textAlign="center">5,000 ONC</HeaderCell>
                 <HeaderCell textAlign="center">15%</HeaderCell>
               </TableRow>
               <TableRow>
                 <HeaderCell>Tier 3</HeaderCell>
-                <HeaderCell textAlign="center">10,000 KNC</HeaderCell>
+                <HeaderCell textAlign="center">10,000 ONC</HeaderCell>
                 <HeaderCell textAlign="center">20%</HeaderCell>
               </TableRow>
             </Table>
@@ -278,9 +278,9 @@ export default function KNCUtility() {
                 <li>
                   <Text fontSize={14} fontWeight={400} lineHeight="20px">
                     <Trans>
-                      These Terms and Conditions should be read in conjunction with the KyberSwap{' '}
+                      These Terms and Conditions should be read in conjunction with the OasisSwap{' '}
                       <ExternalLink href={TERM_FILES_PATH.KYBERSWAP_TERMS}>Terms of Use</ExternalLink>, which lay out
-                      the terms and conditions that apply to all KyberSwap activities.
+                      the terms and conditions that apply to all OasisSwap activities.
                     </Trans>
                   </Text>
                 </li>
@@ -288,8 +288,8 @@ export default function KNCUtility() {
                 <li>
                   <Text fontSize={14} fontWeight={400} lineHeight="20px">
                     <Trans>
-                      By visiting KyberSwap and participating in the program, the User is deemed to have read,
-                      understood, and agreed to these Terms and Conditions and the KyberSwap{' '}
+                      By visiting OasisSwap and participating in the program, the User is deemed to have read,
+                      understood, and agreed to these Terms and Conditions and the OasisSwap{' '}
                       <ExternalLink href={TERM_FILES_PATH.KYBERSWAP_TERMS}>Terms of Use</ExternalLink>.
                     </Trans>
                   </Text>
@@ -298,7 +298,7 @@ export default function KNCUtility() {
                 <li>
                   <Text fontSize={14} fontWeight={400} lineHeight="20px">
                     <Trans>
-                      For this pilot gas refund program, KyberSwap retains the right to cancel or amend the
+                      For this pilot gas refund program, OasisSwap retains the right to cancel or amend the
                       program&apos;s end date upon giving reasonable notice.
                     </Trans>
                   </Text>
@@ -307,8 +307,8 @@ export default function KNCUtility() {
                 <li>
                   <Text fontSize={14} fontWeight={400} lineHeight="20px">
                     <Trans>
-                      KyberSwap maintains the right, at its sole discretion, to take action or remove rewards against
-                      the User who violates the KyberSwap{' '}
+                      OasisSwap maintains the right, at its sole discretion, to take action or remove rewards against
+                      the User who violates the OasisSwap{' '}
                       <ExternalLink href={TERM_FILES_PATH.KYBERSWAP_TERMS}>Terms of Use</ExternalLink> and/or violates,
                       cheats, or exploits the program, including but not limited to, any suspicious activities, or any
                       attempts to circumvent these Terms and Conditions.
@@ -319,7 +319,7 @@ export default function KNCUtility() {
                 <li>
                   <Text fontSize={14} fontWeight={400} lineHeight="20px">
                     <Trans>
-                      Any and all decisions made by KyberSwap in relation to every aspect of the program shall be final
+                      Any and all decisions made by OasisSwap in relation to every aspect of the program shall be final
                       and conclusive.
                     </Trans>
                   </Text>
