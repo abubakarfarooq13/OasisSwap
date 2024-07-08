@@ -40,6 +40,7 @@ export function colors() {
     bg7: 'rgba(60, 155, 55, 0.5)',
     bg8: '#111A12',
     bg9: '#111B13',
+    bg10: 'rgba(60, 155, 55, 0.2)',
     bgSuccess: 'linear-gradient(90deg, rgba(29, 122, 95, 0.5) 0%, rgba(29, 122, 95, 0) 100%)',
     bgError: 'linear-gradient(90deg, rgba(255, 83, 123, 0.4) 0%, rgba(255, 83, 123, 0) 100%)',
     bgWarning: 'linear-gradient(90deg, rgba(255, 153, 1, 0.5) 0%, rgba(255, 153, 1, 0) 100%)',

@@ -18,7 +18,7 @@ import { useHolidayMode } from 'state/user/hooks'
 import { MEDIA_WIDTHS } from 'theme'
 
 import AboutNavGroup from './groups/AboutNavGroup'
-import KyberDAONavGroup from './groups/KyberDaoGroup'
+// import KyberDAONavGroup from './groups/KyberDaoGroup'
 import SwapNavGroup from './groups/SwapNavGroup'
 import { StyledNavExternalLink } from './styleds'
 
@@ -208,7 +208,7 @@ export default function Header() {
         {!isPartnerSwap && (
           <HeaderLinks>
             <SwapNavGroup />
-            <KyberDAONavGroup />
+            {/* <KyberDAONavGroup /> */}
             <StyledNavExternalLink target="_blank" href={AGGREGATOR_ANALYTICS_URL}>
               <Trans>Analytics</Trans>
             </StyledNavExternalLink>

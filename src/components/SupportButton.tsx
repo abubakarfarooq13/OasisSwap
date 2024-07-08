@@ -129,7 +129,7 @@ export default function SupportButton() {
               <Message style={{ background: `${theme.primary}`,borderRadius: '999px',
               height: '2.1rem',
               width: '2.1rem',
-              padding: '4px',
+              padding: '6px',
               }}/>
             </Text>
           )}

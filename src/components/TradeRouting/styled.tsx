@@ -122,6 +122,7 @@ export const StyledToken = styled.a<{ reverse?: boolean }>`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   white-space: nowrap;
   text-decoration: none;
   color: ${({ theme }) => theme.subText};
@@ -132,7 +133,7 @@ export const StyledToken = styled.a<{ reverse?: boolean }>`
       justify-content: flex-start;
     `}
   padding-bottom: 7px;
-  border-bottom: 1px solid ${({ theme }) => theme.border};
+  border-bottom: 1px solid ${({ theme }) => theme.bg7};
 
   & > span {
     margin-left: 4px;
@@ -215,6 +216,7 @@ export const StyledHop = styled.div`
 export const StyledExchange = styled.a`
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 4px 0;
   margin-top: 4px;
@@ -266,7 +268,6 @@ export const StyledExchangeStatic = styled.div`
 export const StyledWrap = styled.div<{ backgroundColor?: string }>`
   width: calc(100% - 68px);
   margin: 10px 0 10px 6px;
-
   &:after,
   &:before {
     transition: all 0.1s ease;

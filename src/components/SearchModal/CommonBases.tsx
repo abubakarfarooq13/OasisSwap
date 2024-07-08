@@ -15,8 +15,9 @@ import { getDisplayTokenInfo } from './CurrencyList'
 const HEIGHT_THRESHOLD = 400
 const BaseWrapper = styled.div`
   padding: 6px;
-  border: 1px solid ${({ theme }) => theme.border};
+  border: 1px solid ${({ theme }) => theme.buttonBlack};
   border-radius: 10px;
+  background: ${({ theme }) => theme.buttonBlack};
   display: flex;
   align-items: center;
   position: relative;
