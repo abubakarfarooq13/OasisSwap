@@ -34,7 +34,7 @@ const MultichainKNCNote: FC<Props> = ({ currencyIn, currencyOut }) => {
     const shortText = (
       <div>
         <Trans>
-          Multichain team ceased operations, and we discourage user interaction with the deployed Wrapped KNC token
+          Multichain team ceased operations, and we discourage user interaction with the deployed Wrapped ONC token
           contracts on various chains. See more{' '}
           <TextUnderlineColor
             style={{ minWidth: 'max-content' }}

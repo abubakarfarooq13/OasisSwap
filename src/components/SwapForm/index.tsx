@@ -168,7 +168,7 @@ const SwapForm: React.FC<SwapFormProps> = props => {
           <Flex flexDirection="column" sx={{ gap: '0.75rem' }}>
             {omniView ? <NetworkSelector chainId={chainId} /> : null}
 
-            <Flex flexDirection="column" sx={{ gap: '0.5rem' }}>
+            <Flex flexDirection="column" sx={{ gap: '0.2rem' }}>
               <InputCurrencyPanel
                 wrapType={wrapType}
                 typedValue={typedValue}
