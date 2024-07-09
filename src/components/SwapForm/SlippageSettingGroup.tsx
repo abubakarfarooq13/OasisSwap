@@ -1,6 +1,6 @@
 import { ChainId } from '@kyberswap/ks-sdk-core'
 import { Trans } from '@lingui/macro'
-import { rgba } from 'polished'
+// import { rgba } from 'polished'
 import { useCallback, useState } from 'react'
 import { useMedia } from 'react-use'
 import { Flex, Text } from 'rebass'
