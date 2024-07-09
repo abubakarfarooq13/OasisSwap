@@ -1,14 +1,14 @@
 {
   "semi": false,
-  "singleQuote": true,
+  "singleQuote": false,
   "printWidth": 120,
-  "trailingComma": "all",
+  "trailingComma": "none",
   "arrowParens": "avoid",
   "importOrder": [
     "<THIRD_PARTY_MODULES>",
     "^(apollo|assets|components|connectors|constants|data|hooks|locales|pages|state|theme|types|utils)(/.+)?$",
     "^[./]"
   ],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": false
 }
