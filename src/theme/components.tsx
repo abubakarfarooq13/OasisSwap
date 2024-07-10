@@ -138,7 +138,7 @@ export const ExternalLinkNoLineHeight = styled(ExternalLink)`
 const StyledLink = styled.a`
   text-decoration: none;
   cursor: pointer;
-  color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.text};
   font-weight: 500;
 
   @media (hover: hover) {

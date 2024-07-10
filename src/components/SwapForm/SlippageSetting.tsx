@@ -9,7 +9,7 @@ import SlippageWarningNote from 'components/SlippageWarningNote'
 import { MouseoverTooltip, TextDashed } from 'components/Tooltip'
 import useTheme from 'hooks/useTheme'
 import { useDegenModeManager, useSlippageSettingByPage } from 'state/user/hooks'
-import { ExternalLink } from 'theme'
+// import { ExternalLink } from 'theme'
 import { checkWarningSlippage, formatSlippage, getDefaultSlippage } from 'utils/slippage'
 
 const DropdownIcon = styled(DropdownSVG)`
@@ -73,13 +73,13 @@ const SlippageSetting = ({ isStablePairSwap, isCorrelatedPair, rightComponent, t
                   <Text>
                     <Trans>
                       During your swap if the price changes by more than this %, your transaction will revert. Read more{' '}
-                      <ExternalLink
+                      {/* <ExternalLink
                         href={
                           'https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/slippage'
                         }
                       >
                         here ↗
-                      </ExternalLink>
+                      </ExternalLink> */}
                     </Trans>
                   </Text>
                 )

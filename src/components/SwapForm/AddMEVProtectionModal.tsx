@@ -139,11 +139,11 @@ export default function AddMEVProtectionModal({ isOpen, onClose }: { isOpen: boo
         <Row gap="12px">
           <Text fontSize={12} lineHeight="16px">
             <Trans>
-              <ExternalLink href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/maximal-extractable-value-mev">
+              <ExternalLink href="#">
                 MEV
               </ExternalLink>{' '}
               Protection safeguards you from front-running attacks on Ethereum. We suggest you employing the{' '}
-              <ExternalLink href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-technologies/rpc">
+              <ExternalLink href="#">
                 RPC endpoint
               </ExternalLink>{' '}
               of reliable third-parties such as{' '}
@@ -153,7 +153,7 @@ export default function AddMEVProtectionModal({ isOpen, onClose }: { isOpen: boo
               <br />
               Note that adding the RPC endpoint automatically is only available via the MetaMask wallet. If you would
               like to add the RPC endpoint to your wallet manually, please refer to this{' '}
-              <ExternalLink href="https://docs.kyberswap.com/getting-started/quickstart/faq#how-to-change-rpc-in-metamask">
+              <ExternalLink href="#">
                 guide
               </ExternalLink>
               .

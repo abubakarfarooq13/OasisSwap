@@ -15,7 +15,9 @@ import { MouseoverTooltip, TextDashed } from 'components/Tooltip'
 import useTheme from 'hooks/useTheme'
 import { Bound } from 'state/mint/proamm/type'
 import { useUserSlippageTolerance } from 'state/user/hooks'
-import { ExternalLink, TYPE } from 'theme'
+import { 
+  // ExternalLink,
+   TYPE } from 'theme'
 import { formatTickPrice } from 'utils/formatTickPrice'
 import { formatDisplayNumber } from 'utils/numbers'
 import { checkWarningSlippage, formatSlippage } from 'utils/slippage'
@@ -101,9 +103,9 @@ export default function ProAmmPriceRangeConfirm({
                 <Text>
                   <Trans>
                     During your swap if the price changes by more than this %, your transaction will revert. Read more{' '}
-                    <ExternalLink href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/slippage">
+                    {/* <ExternalLink href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/slippage">
                       here ↗
-                    </ExternalLink>
+                    </ExternalLink> */}
                     .
                   </Trans>
                 </Text>

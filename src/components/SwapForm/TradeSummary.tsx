@@ -226,13 +226,13 @@ const TradeSummary: React.FC<Props> = ({ routeSummary, slippage, disableRefresh,
                     <Text fontSize={12}>
                       <Trans>
                         Read more{' '}
-                        <a
+                        {/* <a
                           href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/price-impact"
                           target="_blank"
                           rel="noreferrer"
                         >
                           <b>here ↗</b>
-                        </a>
+                        </a> */}
                       </Trans>
                     </Text>
                   </div>
@@ -259,9 +259,9 @@ const TradeSummary: React.FC<Props> = ({ routeSummary, slippage, disableRefresh,
                   text={
                     <Trans>
                       Stake ONC in OasisDAO to get gas refund. Read more{' '}
-                      <ExternalLink href="https://docs.kyberswap.com/governance/knc-token/gas-refund-program">
+                      {/* <ExternalLink href="https://docs.kyberswap.com/governance/knc-token/gas-refund-program">
                         here ↗
-                      </ExternalLink>
+                      </ExternalLink> */}
                     </Trans>
                   }
                   placement="right"

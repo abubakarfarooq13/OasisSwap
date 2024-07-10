@@ -3117,6 +3117,10 @@ msgstr "TOKEN UTILITY"
 msgid "If you wish to unstake your liquidity position from the farm, click on the <0>Unstake </0> button on the card. Any rewards you have earned will be automatically harvested and sent to your wallet.<1>If you can’t find your Liquidity, you can check the <2>Ended</2> or <3>My Farms</3> tab.</1>"
 msgstr "If you wish to unstake your liquidity position from the farm, click on the <0>Unstake </0> button on the card. Any rewards you have earned will be automatically harvested and sent to your wallet.<1>If you can’t find your Liquidity, you can check the <2>Ended</2> or <3>My Farms</3> tab.</1>"
 
+#: src/components/ProAmm/ProAmmPriceRangeConfirm.tsx
+msgid "During your swap if the price changes by more than this %, your transaction will revert. Read more ."
+msgstr "During your swap if the price changes by more than this %, your transaction will revert. Read more ."
+
 #: src/components/SubscribeButton/NotificationPreference/index.tsx
 #~ msgid "Your Verified Account: <0>@{0}</0>"
 #~ msgstr "Your Verified Account: <0>@{0}</0>"
@@ -3540,6 +3544,10 @@ msgstr "profile <0>{currentProfileName}</0>"
 #~ msgid "Top Tokens by KyberAI"
 #~ msgstr "Top Tokens by KyberAI"
 
+#: src/components/SwapForm/SlippageSetting.tsx
+msgid "During your swap if the price changes by more than this %, your transaction will revert. Read more"
+msgstr "During your swap if the price changes by more than this %, your transaction will revert. Read more"
+
 #: src/pages/About/AboutKNC.tsx
 #~ msgid "Where you can store KNC"
 #~ msgstr "Where you can store KNC"
@@ -3763,7 +3771,6 @@ msgstr "Download a wallet"
 msgid "MY DEPOSIT ↑"
 msgstr "MY DEPOSIT ↑"
 
-#: src/components/ProAmm/ProAmmPriceRangeConfirm.tsx
 #: src/components/swapv2/SwapSettingsPanel/SlippageSetting.tsx
 msgid "During your swap if the price changes by more than this %, your transaction will revert. Read more <0>here ↗</0>."
 msgstr "During your swap if the price changes by more than this %, your transaction will revert. Read more <0>here ↗</0>."
@@ -5003,7 +5010,6 @@ msgid "No notification yet"
 msgstr "No notification yet"
 
 #: src/components/SwapForm/SwapModal/SwapDetails/index.tsx
-#: src/components/SwapForm/TradeSummary.tsx
 #: src/components/swapv2/SwapModalFooter.tsx
 msgid "Read more <0><1>here ↗</1></0>"
 msgstr "Read more <0><1>here ↗</1></0>"
@@ -5045,7 +5051,6 @@ msgstr "You will receive {amount} {tokenSymbol} soon!"
 msgid "You do not have enough {nativeSymbol} to cover the estimated gas for this transaction."
 msgstr "You do not have enough {nativeSymbol} to cover the estimated gas for this transaction."
 
-#: src/components/WalletPopup/AccountInfo/index.tsx
 #: src/components/WalletPopup/RewardCenter.tsx
 msgid "Total Available Rewards"
 msgstr "Total Available Rewards"
@@ -5340,6 +5345,7 @@ msgid "Closed Positions"
 msgstr "Closed Positions"
 
 #: src/components/ReadMore/index.tsx
+#: src/components/SwapForm/TradeSummary.tsx
 msgid "Read more"
 msgstr "Read more"
 
@@ -6392,7 +6398,6 @@ msgstr "You can search and select <0>any token</0> on OasisSwap."
 msgid "KyberDAO"
 msgstr "KyberDAO"
 
-#: src/components/SwapForm/SlippageSetting.tsx
 #: src/components/SwapForm/SwapModal/SwapDetails/index.tsx
 #: src/components/swapv2/SwapModalFooter.tsx
 #: src/pages/RemoveLiquidityProAmm/index.tsx
@@ -9002,6 +9007,10 @@ msgstr "Connect to a wallet to view your liquidity."
 msgid "Service is not available because of maintenance activities. Please try again after a few minutes."
 msgstr "Service is not available because of maintenance activities. Please try again after a few minutes."
 
+#: src/components/SwapForm/TradeSummary.tsx
+msgid "Stake ONC in OasisDAO to get gas refund. Read more"
+msgstr "Stake ONC in OasisDAO to get gas refund. Read more"
+
 #: src/pages/NotificationCenter/Profile/ImportAccountModal/index.tsx
 msgid "Imported successfully"
 msgstr "Imported successfully"
@@ -11143,7 +11152,6 @@ msgid "Chain under maintenance. We will be back as soon as possible."
 msgstr "Chain under maintenance. We will be back as soon as possible."
 
 #: src/components/SwapForm/SwapModal/SwapDetails/index.tsx
-#: src/components/SwapForm/TradeSummary.tsx
 msgid "Stake ONC in OasisDAO to get gas refund. Read more <0>here ↗</0>"
 msgstr "Stake ONC in OasisDAO to get gas refund. Read more <0>here ↗</0>"
 
