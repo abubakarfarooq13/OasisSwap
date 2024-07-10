@@ -73,8 +73,8 @@ export const BETTER_PRICE_DIFF_THRESHOLD = 30
 
 export const DOCS_LINKS = {
   GASLESS_CANCEL:
-    'https://docs.kyberswap.com/kyberswap-solutions/limit-order/concepts/gasless-cancellation#gasless-cancel',
-  HARD_CANCEL: 'https://docs.kyberswap.com/kyberswap-solutions/limit-order/concepts/gasless-cancellation#hard-cancel',
-  CANCEL_GUIDE: 'https://docs.kyberswap.com/kyberswap-solutions/limit-order/user-guides/cancel-limit-orders',
-  USER_GUIDE: 'https://docs.kyberswap.com/kyberswap-solutions/limit-order',
+    'https://docs.oasisswap.com/kyberswap-solutions/limit-order/concepts/gasless-cancellation#gasless-cancel',
+  HARD_CANCEL: 'https://docs.oasisswap.com/kyberswap-solutions/limit-order/concepts/gasless-cancellation#hard-cancel',
+  CANCEL_GUIDE: 'https://docs.oasisswap.com/kyberswap-solutions/limit-order/user-guides/cancel-limit-orders',
+  USER_GUIDE: 'https://docs.oasisswap.com/kyberswap-solutions/limit-order',
 }

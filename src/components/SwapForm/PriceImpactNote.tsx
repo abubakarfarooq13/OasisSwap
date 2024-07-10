@@ -27,7 +27,7 @@ const TextUnderlineTransparent = styled(Text)`
 `
 
 export const PRICE_IMPACT_EXPLANATION_URL =
-  'https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/price-impact'
+  'https://docs.oasisswap.com/getting-started/foundational-topics/decentralized-finance/price-impact'
 
 type Props = {
   isDegenMode?: boolean

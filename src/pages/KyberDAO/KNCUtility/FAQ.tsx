@@ -181,8 +181,8 @@ const FAQ: React.FC = () => {
             <NavLink to={APP_PATHS.KYBERDAO_VOTE}>Vote page</NavLink> to earn voting rewards. Users who stake KNC can
             enjoy gas refunds + vote on KIPs to and earn even more rewards. For more information on how to vote, please
             visit{' '}
-            <ExternalLink href="https://docs.kyberswap.com/governance/kyberdao">
-              https://docs.kyberswap.com/governance/kyberdao
+            <ExternalLink href="https://docs.oasisswap.com/governance/kyberdao">
+              https://docs.oasisswap.com/governance/kyberdao
             </ExternalLink>
             .
           </Trans>

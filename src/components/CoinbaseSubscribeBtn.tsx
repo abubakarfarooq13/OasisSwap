@@ -48,8 +48,8 @@ export default function CoinbaseSubscribeBtn({ onlyShowIfNotSubscribe = false }:
         dispatch(setCoinbaseScriptLoaded(true))
         ;(window as any).CBWSubscribe.createSubscriptionUI({
           partnerAddress: '0xa0F3873866D6fDDCaF02C181b55605F962dD327b',
-          partnerName: 'KyberSwap',
-          modalTitle: 'Subscribe to KyberSwap updates',
+          partnerName: 'OasisSwap',
+          modalTitle: 'Subscribe to OasisSwap updates',
           modalBody:
             'Receive the latest updates, promotions, and alerts directly in your wallet! <br /> <br/> Powered by Coinbase',
           buttonText: 'Sign to Subscribe',
@@ -71,8 +71,8 @@ export default function CoinbaseSubscribeBtn({ onlyShowIfNotSubscribe = false }:
           size={13}
           text={
             !isSubscribed
-              ? "Subscribe to receive Kyberswap's updates directly on your Coinbase Wallet."
-              : "Unsubscribe to stop receiving Kyberswap's updates directly on your Coinbase Wallet."
+              ? "Subscribe to receive OasisSwap's updates directly on your Coinbase Wallet."
+              : "Unsubscribe to stop receiving OasisSwap's updates directly on your Coinbase Wallet."
           }
         />
       )}

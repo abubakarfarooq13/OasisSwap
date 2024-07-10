@@ -349,7 +349,7 @@ const getListSteps = (isLogin: boolean) => {
           <Desc>
             <Trans>
               For a more detailed user guide,{' '}
-              <ExternalLink href="https://docs.kyberswap.com/guides/getting-started">click here.</ExternalLink>
+              <ExternalLink href="https://docs.oasisswap.com/guides/getting-started">click here.</ExternalLink>
             </Trans>
           </Desc>
           <ImageMobile imgSrc={BtnSettingHeader} imageName="Step review" marginTop />

@@ -438,7 +438,7 @@ function AboutKNC() {
       <Footer background={theme.background}>
         <FooterContainer>
           <Flex flexWrap="wrap" sx={{ gap: '12px' }} justifyContent="center">
-            <ExternalLink href={`https://docs.kyberswap.com`}>
+            <ExternalLink href={`https://docs.oasisswap.com`}>
               <Trans>Docs</Trans>
             </ExternalLink>
             <VerticalDivider />

@@ -36,7 +36,7 @@ export default function DisclaimerERC20({ href, token0, token1 }: { href?: strin
               <ExternalLink
                 href={
                   href ||
-                  'https://docs.kyberswap.com/liquidity-solutions/kyberswap-elastic/user-guides/elastic-pool-creation#non-standard-tokens'
+                  'https://docs.oasisswap.com/liquidity-solutions/kyberswap-elastic/user-guides/elastic-pool-creation#non-standard-tokens'
                 }
               >
                 here

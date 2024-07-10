@@ -78,7 +78,7 @@ export const TooltipTextOfSwapFee: React.FC<TooltipTextOfSwapFeeProps> = ({ feeB
     fractionDigits: 2,
   })
   const hereLink = (
-    <ExternalLink href="https://docs.kyberswap.com/kyberswap-solutions/kyberswap-interface/user-guides/instantly-swap-at-superior-rates#swap-fees-supporting-transactions-on-low-trading-volume-chains">
+    <ExternalLink href="https://docs.oasisswap.com/kyberswap-solutions/kyberswap-interface/user-guides/instantly-swap-at-superior-rates#swap-fees-supporting-transactions-on-low-trading-volume-chains">
       <b>
         <Trans>here</Trans> ↗
       </b>
@@ -227,7 +227,7 @@ const TradeSummary: React.FC<Props> = ({ routeSummary, slippage, disableRefresh,
                       <Trans>
                         Read more{' '}
                         <a
-                          href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/price-impact"
+                          href="https://docs.oasisswap.com/getting-started/foundational-topics/decentralized-finance/price-impact"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -259,7 +259,7 @@ const TradeSummary: React.FC<Props> = ({ routeSummary, slippage, disableRefresh,
                   text={
                     <Trans>
                       Stake ONC in OasisDAO to get gas refund. Read more{' '}
-                      <ExternalLink href="https://docs.kyberswap.com/governance/knc-token/gas-refund-program">
+                      <ExternalLink href="https://docs.oasisswap.com/governance/knc-token/gas-refund-program">
                         here ↗
                       </ExternalLink>
                     </Trans>

@@ -227,7 +227,7 @@ export default function SelectTreasuryGrant({ userHaveVestingData }: { userHaveV
               February 24th at 14:00 UTC
             </Text>{' '}
             at{' '}
-            <ExternalLink href="https://blog.kyberswap.com/kyberswap-elastic-exploit-treasury-grant-program-registration/#:~:text=For%20Affected%20Users%20who%20missed%20the%20Treasury%20Grant%20Program%20registration%20period%3A">
+            <ExternalLink href="https://blog.oasisswap.com/kyberswap-elastic-exploit-treasury-grant-program-registration/#:~:text=For%20Affected%20Users%20who%20missed%20the%20Treasury%20Grant%20Program%20registration%20period%3A">
               the following link
             </ExternalLink>
           </Text>

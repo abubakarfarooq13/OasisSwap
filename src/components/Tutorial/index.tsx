@@ -113,7 +113,7 @@ function Tutorial({ customIcon, type, showTooltip }: Props) {
         return (
           <Trans>
             To learn more about how to add liquidity to KyberSwap Classic, view{' '}
-            <ExternalLink href="https://docs.kyberswap.com/Classic/guides/adding-liquidity-guide"> here</ExternalLink>
+            <ExternalLink href="https://docs.oasisswap.com/Classic/guides/adding-liquidity-guide"> here</ExternalLink>
           </Trans>
         )
 
@@ -121,7 +121,7 @@ function Tutorial({ customIcon, type, showTooltip }: Props) {
         return (
           <Trans>
             To learn more about how to add liquidity to KyberSwap Elastic, view{' '}
-            <ExternalLink href="https://docs.kyberswap.com/guides/creating-a-pool"> here</ExternalLink>
+            <ExternalLink href="https://docs.oasisswap.com/guides/creating-a-pool"> here</ExternalLink>
           </Trans>
         )
 
@@ -129,7 +129,7 @@ function Tutorial({ customIcon, type, showTooltip }: Props) {
         return (
           <Trans>
             To learn more about how to increase liquidity to KyberSwap Elastic, view{' '}
-            <ExternalLink href="https://docs.kyberswap.com/guides/increase-liquidity"> here</ExternalLink>
+            <ExternalLink href="https://docs.oasisswap.com/guides/increase-liquidity"> here</ExternalLink>
           </Trans>
         )
 
@@ -137,7 +137,7 @@ function Tutorial({ customIcon, type, showTooltip }: Props) {
         return (
           <Trans>
             To learn more about how to remove liquidity on KyberSwap Elastic, view{' '}
-            <ExternalLink href="https://docs.kyberswap.com/guides/remove-liquidity"> here</ExternalLink>
+            <ExternalLink href="https://docs.oasisswap.com/guides/remove-liquidity"> here</ExternalLink>
           </Trans>
         )
 

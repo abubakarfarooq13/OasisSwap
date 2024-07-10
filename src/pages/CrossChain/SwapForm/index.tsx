@@ -419,7 +419,7 @@ export default function SwapForm() {
             </ExternalLink>
           </Flex>
           <Text color={theme.primary} style={{ cursor: 'pointer', fontSize: 12, fontWeight: '500' }}>
-            <ExternalLink href="https://docs.kyberswap.com/kyberswap-solutions/kyberswap-interface/user-guides/swap-between-different-tokens-across-chains">
+            <ExternalLink href="https://docs.oasisswap.com/kyberswap-solutions/kyberswap-interface/user-guides/swap-between-different-tokens-across-chains">
               <Trans>Guide</Trans>
             </ExternalLink>
           </Text>

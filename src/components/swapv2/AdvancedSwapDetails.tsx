@@ -56,7 +56,7 @@ const PriceImpactNote = () => {
               <Trans>
                 Read more{' '}
                 <a
-                  href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/price-impact"
+                  href="https://docs.oasisswap.com/getting-started/foundational-topics/decentralized-finance/price-impact"
                   target="_blank"
                   rel="noreferrer"
                 >

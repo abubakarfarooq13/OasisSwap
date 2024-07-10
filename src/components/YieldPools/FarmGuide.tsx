@@ -147,7 +147,7 @@ function FarmGuide({ farmType }: { farmType: VERSION }) {
                 Deposit your liquidity from the Elastic Pools here, and then stake it to earn even more attractive
                 farming rewards. Learn about our farming mechanisms.
               </Trans>{' '}
-              <ExternalLink href="https://docs.kyberswap.com/guides/farming-mechanisms">
+              <ExternalLink href="https://docs.oasisswap.com/guides/farming-mechanisms">
                 <Trans>here ↗</Trans>.
               </ExternalLink>
             </>
@@ -156,7 +156,7 @@ function FarmGuide({ farmType }: { farmType: VERSION }) {
               <Trans>
                 Deposit your liquidity from the Classic Pools here to earn even more attractive farming rewards.
               </Trans>{' '}
-              <ExternalLink href="https://docs.kyberswap.com/classic/guides/yield-farming-guide">
+              <ExternalLink href="https://docs.oasisswap.com/classic/guides/yield-farming-guide">
                 <Trans>Learn More ↗</Trans>.
               </ExternalLink>
             </>

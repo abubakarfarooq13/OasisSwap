@@ -1201,7 +1201,7 @@ export default function IncreaseLiquidity() {
                 </Trans>
               </Text>
               <Text>
-                <Link to="#" onClick={toggleNetworkModal}>
+                <Link to="http://oasisswap.com" onClick={toggleNetworkModal}>
                   Switch chain
                 </Link>{' '}
                 or <Link to={APP_PATHS.MY_POOLS}>Go back to My Pools</Link>

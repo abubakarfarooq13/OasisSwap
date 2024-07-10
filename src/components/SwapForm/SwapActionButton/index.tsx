@@ -191,7 +191,7 @@ const SwapActionButton: React.FC<Props> = ({
       <Trans>
         You need to first allow OasisSwap&apos;s smart contract to use your {currencyIn?.symbol}.{' '}
         <a
-          href="https://docs.kyberswap.com/kyberswap-solutions/kyberswap-interface/user-guides/instantly-swap-at-superior-rates#step-4-approve-contract-to-swap-tokens"
+          href="https://docs.oasisswap.com/kyberswap-solutions/kyberswap-interface/user-guides/instantly-swap-at-superior-rates#step-4-approve-contract-to-swap-tokens"
           target="_blank"
           rel="noreferrer"
         >
@@ -288,7 +288,7 @@ const SwapActionButton: React.FC<Props> = ({
                         You need to first give a temporary 24H approval to OasisSwap&apos;s smart contract to use your{' '}
                         {currencyIn?.symbol}. This doesn&apos;t require a gas fees.{' '}
                         <a
-                          href="https://docs.kyberswap.com/reference/permitable-tokens"
+                          href="https://docs.oasisswap.com/reference/permitable-tokens"
                           target="_blank"
                           rel="noreferrer"
                         >

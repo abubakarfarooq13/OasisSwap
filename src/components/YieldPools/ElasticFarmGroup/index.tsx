@@ -481,7 +481,7 @@ const ElasticFarmGroup: React.FC<Props> = ({ address, onOpenModal, pools, onShow
                   Adjusting the staked amount will recalculate the target volume.
                   <br />
                   Learn more{' '}
-                  <ExternalLink href="https://docs.kyberswap.com/guides/farming-mechanisms">here.</ExternalLink>
+                  <ExternalLink href="https://docs.oasisswap.com/guides/farming-mechanisms">here.</ExternalLink>
                 </Trans>
               </Text>
             }

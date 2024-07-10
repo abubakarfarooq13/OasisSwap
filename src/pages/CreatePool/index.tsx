@@ -746,7 +746,7 @@ export default function CreatePool() {
                 )}
 
                 <DisclaimerERC20
-                  href="https://docs.kyberswap.com/liquidity-solutions/kyberswap-classic/user-guides/classic-pool-creation#non-standard-tokens"
+                  href="https://docs.oasisswap.com/liquidity-solutions/kyberswap-classic/user-guides/classic-pool-creation#non-standard-tokens"
                   token0={currencyA?.wrapped.address || ''}
                   token1={currencyB?.wrapped.address || ''}
                 />

@@ -57,7 +57,7 @@ const TokenAmount = ({
                 </ExternalLink>
                 . As the configured{' '}
                 <ExternalLink
-                  href={'https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/slippage'}
+                  href={'https://docs.oasisswap.com/getting-started/foundational-topics/decentralized-finance/slippage'}
                 >
                   slippage
                 </ExternalLink>{' '}

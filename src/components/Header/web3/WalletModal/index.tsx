@@ -193,11 +193,11 @@ export default function WalletModal() {
             />
             <Text color={theme.subText}>
               <Trans>Accept </Trans>{' '}
-              <ExternalLink href={TERM_FILES_PATH.KYBERSWAP_TERMS} onClick={e => e.stopPropagation()}>
+              <ExternalLink href={'#'} onClick={e => e.stopPropagation()}>
                 <Trans>OasisSwap&lsquo;s Terms of Use</Trans>
               </ExternalLink>{' '}
               <Trans>and</Trans>{' '}
-              <ExternalLink href={TERM_FILES_PATH.PRIVACY_POLICY} onClick={e => e.stopPropagation()}>
+              <ExternalLink href={'#'} onClick={e => e.stopPropagation()}>
                 <Trans>Privacy Policy</Trans>
               </ExternalLink>
               {'. '}

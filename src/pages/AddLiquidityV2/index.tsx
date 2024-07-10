@@ -877,7 +877,7 @@ export default function AddLiquidity() {
                   {amountUnlocks[Field.CURRENCY_B].currency.symbol})
                 </Text>{' '}
                 will be used to first initialize the pool. Read more{' '}
-                <ExternalLink href="https://docs.kyberswap.com/liquidity-solutions/kyberswap-elastic/user-guides/yield-farming-on-static-farms">
+                <ExternalLink href="https://docs.oasisswap.com/liquidity-solutions/kyberswap-elastic/user-guides/yield-farming-on-static-farms">
                   here↗
                 </ExternalLink>
               </Trans>
@@ -909,7 +909,7 @@ export default function AddLiquidity() {
                     significantDigits: 4,
                   })}{' '}
                   {quoteCurrency.symbol}) by {(priceDiff * 100).toFixed(2)}%. Please consider the{' '}
-                  <ExternalLink href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/impermanent-loss">
+                  <ExternalLink href="https://docs.oasisswap.com/getting-started/foundational-topics/decentralized-finance/impermanent-loss">
                     impermanent loss.
                   </ExternalLink>
                 </Trans>
@@ -1348,7 +1348,7 @@ export default function AddLiquidity() {
                             <Trans>
                               Add your liquidity into one of the farming ranges to participate in Elastic Static Farm.
                               Only positionsthat cover the range of the farm will earn maximum rewards. Learn more{' '}
-                              <ExternalLink href="https://docs.kyberswap.com/liquidity-solutions/kyberswap-elastic/user-guides/yield-farming-on-elastic">
+                              <ExternalLink href="https://docs.oasisswap.com/liquidity-solutions/kyberswap-elastic/user-guides/yield-farming-on-elastic">
                                 here ↗
                               </ExternalLink>
                             </Trans>

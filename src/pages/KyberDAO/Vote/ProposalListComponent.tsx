@@ -111,7 +111,7 @@ function ProposalListComponent({
             </Text>
           </TextButton>
           <TextButton
-            href="https://docs.kyberswap.com/kyber-dao/kyber-dao-introduction"
+            href="https://docs.oasisswap.com/kyber-dao/kyber-dao-introduction"
             target="_blank"
             rel="noreferrer"
           >

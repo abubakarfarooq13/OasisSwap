@@ -4962,8 +4962,8 @@ msgstr "Position {0}: Insufficient {1} balance"
 #~ msgstr "<0>Read more <1><2>here ↗</2></1></0>"
 
 #: src/pages/KyberDAO/KNCUtility/FAQ.tsx
-msgid "Once you have staked KNC, you can vote on active KyberDAO KIPs (Kyber Improvement Proposals) on the <0>Vote page</0> to earn voting rewards. Users who stake KNC can enjoy gas refunds + vote on KIPs to and earn even more rewards. For more information on how to vote, please visit <1>https://docs.kyberswap.com/governance/kyberdao</1>."
-msgstr "Once you have staked KNC, you can vote on active KyberDAO KIPs (Kyber Improvement Proposals) on the <0>Vote page</0> to earn voting rewards. Users who stake KNC can enjoy gas refunds + vote on KIPs to and earn even more rewards. For more information on how to vote, please visit <1>https://docs.kyberswap.com/governance/kyberdao</1>."
+msgid "Once you have staked KNC, you can vote on active KyberDAO KIPs (Kyber Improvement Proposals) on the <0>Vote page</0> to earn voting rewards. Users who stake KNC can enjoy gas refunds + vote on KIPs to and earn even more rewards. For more information on how to vote, please visit <1>https://docs.oasisswap.com/governance/kyberdao</1>."
+msgstr "Once you have staked KNC, you can vote on active KyberDAO KIPs (Kyber Improvement Proposals) on the <0>Vote page</0> to earn voting rewards. Users who stake KNC can enjoy gas refunds + vote on KIPs to and earn even more rewards. For more information on how to vote, please visit <1>https://docs.oasisswap.com/governance/kyberdao</1>."
 
 #: src/pages/KyberDAO/KNCUtility/FAQ.tsx
 msgid "Are swaps on all chains eligible for gas refunds?"

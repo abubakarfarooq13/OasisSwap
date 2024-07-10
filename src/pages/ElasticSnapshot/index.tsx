@@ -261,7 +261,7 @@ export default function ElasticSnapshot() {
                   the exploit.
                 </Trans>
               </Text>
-              <ExternalLink href="https://blog.kyberswap.com/kyberswap-treasury-grant-program/">
+              <ExternalLink href="http://oasisswap.com">
                 <Text fontSize="14px">
                   <Trans>Official announcement is here ↗</Trans>
                 </Text>
@@ -521,7 +521,7 @@ export default function ElasticSnapshot() {
                     <Trans>
                       Please connect your wallet to view your affected position(s). If your Affected Address is a
                       Multisig or other Contracts, you won’t be able to complete the steps via the UI. Instead, please
-                      contact us at <a href="mailto:support@kyberswap.com">support@kyberswap.com</a>
+                      contact us at <a href="mailto:support@oasisswap.com">support@oasisswap.com</a>
                     </Trans>
                   </Text>
 

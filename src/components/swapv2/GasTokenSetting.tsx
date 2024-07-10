@@ -88,7 +88,7 @@ export default function GasTokenSetting({ onBack }: { onBack: () => void }) {
               <Text>
                 <Trans>
                   The PayMaster module & contracts are developed and operated by HoldStations,{' '}
-                  <ExternalLink href="https://docs.kyberswap.com/reference/third-party-integrations#what-is-paymaster">
+                  <ExternalLink href="https://docs.oasisswap.com/reference/third-party-integrations#what-is-paymaster">
                     details
                   </ExternalLink>
                 </Trans>

@@ -201,7 +201,7 @@ export default function SwapDetails({
                       <Trans>
                         Read more{' '}
                         <a
-                          href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/price-impact"
+                          href="https://docs.oasisswap.com/getting-started/foundational-topics/decentralized-finance/price-impact"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -359,7 +359,7 @@ export default function SwapDetails({
                   <Text>
                     <Trans>
                       During your swap if the price changes by more than this %, your transaction will revert. Read more{' '}
-                      <ExternalLink href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/slippage">
+                      <ExternalLink href="https://docs.oasisswap.com/getting-started/foundational-topics/decentralized-finance/slippage">
                         here ↗
                       </ExternalLink>
                     </Trans>
@@ -389,7 +389,7 @@ export default function SwapDetails({
                     <Text>
                       <Trans>
                         Stake ONC in OasisDAO to get gas refund. Read more{' '}
-                        <ExternalLink href="https://docs.kyberswap.com/governance/knc-token/gas-refund-program">
+                        <ExternalLink href="https://docs.oasisswap.com/governance/knc-token/gas-refund-program">
                           here ↗
                         </ExternalLink>
                       </Trans>

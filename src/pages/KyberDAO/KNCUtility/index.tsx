@@ -223,7 +223,7 @@ export default function KNCUtility() {
                 <Text fontSize={16} fontWeight={400} lineHeight="24px" color={theme.subText} as="span">
                   <Trans>
                     The amount of the gas refunded will depend on your tier displayed below. Read more{' '}
-                    <ExternalLink href="https://docs.kyberswap.com/governance/knc-token/gas-refund-program">
+                    <ExternalLink href="https://docs.oasisswap.com/governance/knc-token/gas-refund-program">
                       here ↗
                     </ExternalLink>
                   </Trans>

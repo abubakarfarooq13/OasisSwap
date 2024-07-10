@@ -74,6 +74,7 @@ export const MAINNET_NETWORKS = [
   ChainId.BASE,
   ChainId.SCROLL,
   ChainId.BSCMAINNET,
+  ChainId.BSCTESTNET,
   ChainId.AVAXMAINNET,
   ChainId.FANTOM,
   ChainId.BTTC,

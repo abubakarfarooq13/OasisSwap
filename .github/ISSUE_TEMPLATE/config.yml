@@ -1,11 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Discord
-    url: https://discord.gg/NB3vc8J9uv
+    url: https://discord.gg/
     about: Please ask and answer questions here
   - name: Telegram
-    url: https://t.me/kybernetwork
-    about: Kyber Network Official
-
-
-
+    url: https://t.me/
+    about: OasisSwap Official

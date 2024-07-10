@@ -171,10 +171,10 @@ export const ShareGroupButtons = ({
 
 export const getSocialShareUrls = (shareUrl: string) => {
   return {
-    telegram: 'https://telegram.me/share/url?url=' + encodeURIComponent(shareUrl),
-    twitter: 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareUrl),
-    facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl),
-    discord: 'https://discord.com/app/',
+    telegram: '#' + encodeURIComponent(shareUrl),
+    twitter: '#' + encodeURIComponent(shareUrl),
+    facebook: '#' + encodeURIComponent(shareUrl),
+    discord: '#',
   }
 }
 

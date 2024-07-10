@@ -42,7 +42,7 @@ export const BAD_RECIPIENT_ADDRESSES: Set<string> = new Set(
 export class AbortedError extends Error {}
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 
-const DMM_ANALYTICS = 'https://analytics.kyberswap.com/classic'
+const DMM_ANALYTICS = '#'
 
 export const DMM_ANALYTICS_URL: { [chainId in ChainId]: string } = SUPPORTED_NETWORKS.reduce((acc, cur) => {
   return {
@@ -51,8 +51,8 @@ export const DMM_ANALYTICS_URL: { [chainId in ChainId]: string } = SUPPORTED_NET
   }
 }, {}) as { [chainId in ChainId]: string }
 
-const PROMM_ANALYTICS = 'https://analytics.kyberswap.com/elastic'
-export const AGGREGATOR_ANALYTICS_URL = 'https://lookerstudio.google.com/reporting/a2a0c9ff-6388-4d3a-bbf0-0fcfce9d5def'
+const PROMM_ANALYTICS = '#'
+export const AGGREGATOR_ANALYTICS_URL = '#'
 
 export const PROMM_ANALYTICS_URL: { [chainId in ChainId]: string } = SUPPORTED_NETWORKS.reduce((acc, cur) => {
   return {
@@ -161,13 +161,13 @@ export const APP_PATHS = {
   IAM_LOGOUT: '/logout',
   IAM_CONSENT: '/consent',
 
-  DEPRECATED_NOTI_CENTER: '/notification-center/overview',
-  ELASTIC_SNAPSHOT: '/elastic-snapshot',
+  DEPRECATED_NOTI_CENTER: '/#',
+  ELASTIC_SNAPSHOT: '/#',
 } as const
 
 export const TERM_FILES_PATH = {
-  KYBERSWAP_TERMS: '/files/Kyber - Terms of Use - 20 November 2023.pdf',
-  PRIVACY_POLICY: '/files/Kyber - Privacy Policy - 20 November 2023.pdf',
+  KYBERSWAP_TERMS: '/',
+  PRIVACY_POLICY: '/',
   // Timestamp of changed date, update this to latest timestamp whenever change any above files. This also used to check on client side for updated to force user to disconnect and re-accept terms.
   VERSION: 1700438400000,
 }

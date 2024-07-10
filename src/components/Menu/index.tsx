@@ -343,7 +343,7 @@ export default function Menu() {
                   title={t`About`}
                   link={'/about'}
                   options={[
-                    { link: '/about/kyberswap', label: 'KyberSwap' },
+                    { link: '/about/', label: 'OasisSwap' },
                     { link: '/about/knc', label: 'KNC' },
                   ]}
                 />
@@ -352,7 +352,7 @@ export default function Menu() {
 
             <MenuItem>
               <ExternalLink
-                href="https://docs.kyberswap.com"
+                href="https://docs.oasisswap.com"
                 onClick={() => {
                   handleMenuClickMixpanel('Docs')
                 }}
@@ -364,7 +364,7 @@ export default function Menu() {
 
             <MenuItem>
               <ExternalLink
-                href="https://kyberswap.canny.io/"
+                href="http://oasisswap.com"
                 onClick={() => {
                   toggle()
                   handleMenuClickMixpanel('Roadmap')
@@ -377,7 +377,7 @@ export default function Menu() {
 
             <MenuItem>
               <ExternalLink
-                href="https://gov.kyber.org"
+                href="http://oasisswap.com"
                 onClick={() => {
                   toggle()
                   handleMenuClickMixpanel('Forum')
@@ -390,7 +390,7 @@ export default function Menu() {
 
             {showBlog && (
               <MenuItem>
-                <ExternalLink href="https://blog.kyberswap.com">
+                <ExternalLink href="http://oasisswap.com/">
                   <BlogIcon />
                   <Trans>Blog</Trans>
                 </ExternalLink>
@@ -399,7 +399,7 @@ export default function Menu() {
 
             <MenuItem>
               <ExternalLink
-                href={TERM_FILES_PATH.KYBERSWAP_TERMS}
+                href={'#'}
                 onClick={() => {
                   toggle()
                   handleMenuClickMixpanel('Terms')
@@ -411,7 +411,7 @@ export default function Menu() {
             </MenuItem>
             <MenuItem>
               <ExternalLink
-                href={TERM_FILES_PATH.PRIVACY_POLICY}
+                href={'#'}
                 onClick={() => {
                   toggle()
                   handleMenuClickMixpanel('Privacy Policy')

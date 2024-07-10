@@ -113,7 +113,7 @@ const FarmStepGuide: FC<FarmStepGuideProps> = ({ version, onChangeVersion }) => 
           <Trans>
             Static farms incentivize farmers that provide liquidity to a pool in a pre-configured farming price range
             that is set by the farm administrator. Learn more{' '}
-            <ExternalLink href="https://docs.kyberswap.com/liquidity-solutions/kyberswap-elastic/user-guides/yield-farming-on-static-farms">
+            <ExternalLink href="https://docs.oasisswap.com/liquidity-solutions/kyberswap-elastic/user-guides/yield-farming-on-static-farms">
               here ↗
             </ExternalLink>
           </Trans>
@@ -261,7 +261,7 @@ const FarmStepGuide: FC<FarmStepGuideProps> = ({ version, onChangeVersion }) => 
           <Trans>
             Dynamic farms incentivize farmers that provide liquidity to a pool in a customizable price range that
             supports the current price of the pool. Each farmer can choose their own price range. Learn more{' '}
-            <ExternalLink href="https://docs.kyberswap.com/liquidity-solutions/kyberswap-elastic/user-guides/yield-farming-on-dynamic-farms">
+            <ExternalLink href="https://docs.oasisswap.com/liquidity-solutions/kyberswap-elastic/user-guides/yield-farming-on-dynamic-farms">
               here ↗
             </ExternalLink>
             .

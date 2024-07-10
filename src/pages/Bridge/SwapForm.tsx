@@ -88,7 +88,7 @@ const Footer = () => {
         style={{
           fontSize: '12px',
         }}
-        href="https://docs.kyberswap.com/kyberswap-solutions/kyberswap-interface/user-guides/bridge-your-assets-across-multiple-chains"
+        href="https://docs.oasisswap.com/kyberswap-solutions/kyberswap-interface/user-guides/bridge-your-assets-across-multiple-chains"
       >
         Guide
       </ExternalLink>

@@ -288,7 +288,7 @@ export default function OrderItem({
         texts.push(<> </>)
         texts.push(
           <Trans key={1}>
-            Once you add {order.makerAssetSymbol}, the order will be executed at{' '}
+            Once you add {order.makerAssetSymbol}, the order will be executed
             <WarningText>{percent.toFixed(2)}%</WarningText> below the market price.
           </Trans>,
         )

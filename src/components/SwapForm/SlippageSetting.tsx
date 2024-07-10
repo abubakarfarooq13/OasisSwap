@@ -75,7 +75,7 @@ const SlippageSetting = ({ isStablePairSwap, isCorrelatedPair, rightComponent, t
                       During your swap if the price changes by more than this %, your transaction will revert. Read more{' '}
                       <ExternalLink
                         href={
-                          'https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/slippage'
+                          'https://docs.oasisswap.com/getting-started/foundational-topics/decentralized-finance/slippage'
                         }
                       >
                         here ↗
