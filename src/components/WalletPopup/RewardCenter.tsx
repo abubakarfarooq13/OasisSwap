@@ -145,7 +145,7 @@ export default function RewardCenter() {
                 </MouseoverTooltip>
               </Flex>
 
-              <BalanceValue>{formatNumberWithPrecisionRange(totalReward.knc, 0, 8)} KNC</BalanceValue>
+              <BalanceValue>{formatNumberWithPrecisionRange(totalReward.knc, 0, 8)} ONC</BalanceValue>
               <Text fontSize={12} fontWeight={500} lineHeight="16px" color={theme.subText}>
                 {typeof totalReward.usd === 'number'
                   ? `${totalReward.usd > 0 ? '~ ' : ''}$${formatNumberWithPrecisionRange(totalReward.usd, 0, 8)}`
@@ -164,7 +164,7 @@ export default function RewardCenter() {
           <RewardWrapper>
             <DollarIcon width={12} height={12} color={theme.subText} />
             <Text fontSize={12} fontWeight={400} lineHeight="16px">
-              {currentReward.knc} KNC
+              {currentReward.knc} ONC
             </Text>
           </RewardWrapper>
           <ButtonPrimary

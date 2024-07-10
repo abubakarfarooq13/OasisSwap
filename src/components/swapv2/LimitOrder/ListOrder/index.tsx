@@ -129,6 +129,7 @@ const SearchInputWrapped = styled(SearchInput)`
      width: 100%;
      max-width: unset;
   `};
+  
 `
 
 export default function ListLimitOrder({ customChainId }: { customChainId?: ChainId }) {

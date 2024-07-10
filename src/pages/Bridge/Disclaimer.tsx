@@ -40,15 +40,15 @@ export default function Disclaimer() {
         </Flex>
         <TextWrapper>
           <Trans>
-            KyberSwap strives to offer its users the best DeFi experience on a single platform. In order to do that,
-            KyberSwap partners with 3rd party platforms like Multichain.
+            OasisSwap strives to offer its users the best DeFi experience on a single platform. In order to do that,
+            OasisSwap partners with 3rd party platforms like Multichain.
           </Trans>
         </TextWrapper>
         <TextWrapper>
           <Trans>
             <ExternalLink href="https://multichain.org/">Multichain</ExternalLink> is a well-known cross-chain router
             protocol that facilitates transfer of tokens between chains. However, in the event of a security breach on
-            our partners platform, KyberSwap won&apos;t assume any liability for any losses incurred.
+            our partners platform, OasisSwap won&apos;t assume any liability for any losses incurred.
           </Trans>
         </TextWrapper>
         <ButtonWarning style={{ marginTop: 20 }} onClick={handleClickUnderstand}>
@@ -79,15 +79,15 @@ export function DisclaimerCrossChain() {
         </Flex>
         <TextWrapper>
           <Trans>
-            KyberSwap strives to offer its users the best DeFi experience on a single platform. In order to do that,
-            KyberSwap partners with 3rd party platforms like{' '}
+            OasisSwap strives to offer its users the best DeFi experience on a single platform. In order to do that,
+            OasisSwap partners with 3rd party platforms like{' '}
             <ExternalLink href="https://axelar.network/">Axelar</ExternalLink> and{' '}
             <ExternalLink href="https://www.squidrouter.com/">Squid</ExternalLink>.
           </Trans>
         </TextWrapper>
         <TextWrapper>
           <Trans>
-            However, in the event of a security breach on our partners platform, KyberSwap won&apos;t assume any
+            However, in the event of a security breach on our partners platform, OasisSwap won&apos;t assume any
             liability for any losses incurred.
           </Trans>
         </TextWrapper>

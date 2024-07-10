@@ -39,19 +39,19 @@ const AboutNavGroup = () => {
               flexDirection: 'column',
             }}
           >
-            <StyledNavLink id="about-kyberswap" to={`${APP_PATHS.ABOUT}/kyberswap`}>
+            <StyledNavLink id="about-kyberswap" to={"#"}>
               <Trans>OasisSwap</Trans>
             </StyledNavLink>
 
-            <StyledNavLink id="about-knc" to={`${APP_PATHS.ABOUT}/knc`}>
+            <StyledNavLink id="about-knc" to={"#"}>
               <Trans> ONC</Trans>
             </StyledNavLink>
             <StyledNavExternalLink
               onClick={() => {
                 mixpanelHandler(MIXPANEL_TYPE.BLOG_MENU_CLICKED)
               }}
-              target="_blank"
-              href="https://blog.oasisswap.com"
+              target=""
+              href={"#"}
             >
               <Trans>Blog</Trans>
             </StyledNavExternalLink>

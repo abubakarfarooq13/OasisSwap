@@ -10,7 +10,9 @@ import SelectNetwork from 'components/Header/web3/SelectNetwork'
 import SelectWallet from 'components/Header/web3/SelectWallet'
 import Menu from 'components/Menu'
 import Row, { RowFixed } from 'components/Row'
-import { AGGREGATOR_ANALYTICS_URL, APP_PATHS } from 'constants/index'
+import { 
+  // AGGREGATOR_ANALYTICS_URL,
+   APP_PATHS } from 'constants/index'
 import { Z_INDEXS } from 'constants/styles'
 import { useActiveWeb3React } from 'hooks'
 import useTheme from 'hooks/useTheme'
@@ -209,7 +211,7 @@ export default function Header() {
           <HeaderLinks>
             <SwapNavGroup />
             {/* <KyberDAONavGroup /> */}
-            <StyledNavExternalLink target="_blank" href={AGGREGATOR_ANALYTICS_URL}>
+            <StyledNavExternalLink target="_blank" href={"#"}>
               <Trans>Analytics</Trans>
             </StyledNavExternalLink>
             <AboutNavGroup />
