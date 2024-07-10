@@ -457,7 +457,7 @@ export default memo(function TutorialSwap() {
   }
 
   if (!show) return null
-  if (isMobile) return <TutorialMobile stopTutorial={stopTutorial} steps={steps as ToggleItemType[]} />
+  if (false) return <TutorialMobile stopTutorial={stopTutorial} steps={steps as ToggleItemType[]} />
   return (
     <>
       <Walktour

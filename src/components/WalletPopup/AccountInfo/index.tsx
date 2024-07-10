@@ -1,6 +1,10 @@
 import { Trans } from '@lingui/macro'
-import { ChevronRight, Eye, EyeOff, Star } from 'react-feather'
-import { Flex, Text } from 'rebass'
+import { 
+  // ChevronRight,
+   Eye, EyeOff,
+    // Star
+   } from 'react-feather'
+import { Flex } from 'rebass'
 import styled, { css } from 'styled-components'
 
 import CoinbaseSubscribeBtn from 'components/CoinbaseSubscribeBtn'
@@ -8,21 +12,20 @@ import Loader from 'components/Loader'
 import ActionButtonGroup from 'components/WalletPopup/AccountInfo/ActionButtonGroup'
 import CardBackground from 'components/WalletPopup/AccountInfo/CardBackground'
 import MinimalActionButtonGroup from 'components/WalletPopup/AccountInfo/MinimalActionButtonGroup'
-import { useRewards } from 'hooks/useRewards'
+// import { useRewards } from 'hooks/useRewards'
 import useTheme from 'hooks/useTheme'
 import { formatNumberWithPrecisionRange } from 'utils'
 
-import { View } from '../type'
+// import { View } from '../type'
 
 const ContentWrapper = styled.div`
   position: relative;
   width: 100%;
 `
 
-const RewardWrapper = styled.div`
-  position: relative;
-  width: 100%;
-`
+// const RewardWrapper = styled.div`
+//   position: relative;
+//   width: 100%;`
 
 const Content = styled.div`
   position: relative;
@@ -116,12 +119,12 @@ export default function AccountInfo({
   isMinimal,
   showBalance,
   toggleShowBalance,
-  setView,
+  // setView,
 }: Props) {
   const theme = useTheme()
-  const {
-    totalReward: { usd },
-  } = useRewards()
+  // const {
+  //   totalReward: { usd },
+  // } = useRewards()
 
   return (
     <Wrapper $minimal={isMinimal}>
@@ -174,7 +177,7 @@ export default function AccountInfo({
           </Flex>
         </Content>
       </ContentWrapper>
-      <RewardWrapper>
+      {/* <RewardWrapper>
         <Flex flexDirection="row" alignContent="center">
           <CardBackground noLogo />
           <Content style={{ padding: '10px 12px' }}>
@@ -198,13 +201,13 @@ export default function AccountInfo({
             </Flex>
           </Content>
         </Flex>
-      </RewardWrapper>
-      <ActionButtonGroup
+      </RewardWrapper> */}
+      {/* <ActionButtonGroup
         disabledSend={disabledSend}
         onClickBuy={onClickBuy}
         onClickReceive={onClickReceive}
         onClickSend={onClickSend}
-      />
+      /> */}
     </Wrapper>
   )
 }

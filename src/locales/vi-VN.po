@@ -118,6 +118,10 @@ msgstr ""
 msgid "Total Gas Refund = Available + Pending + Claimed Gas Refund"
 msgstr ""
 
+#: src/pages/Bridge/Disclaimer.tsx
+msgid "OasisSwap strives to offer its users the best DeFi experience on a single platform. In order to do that, OasisSwap partners with 3rd party platforms like Multichain."
+msgstr ""
+
 #: src/components/EarningPieChart/index.tsx
 #: src/components/EarningPieChart/index.tsx
 msgid "loading..."
@@ -1709,6 +1713,10 @@ msgstr ""
 msgid "Wallet is not connected"
 msgstr ""
 
+#: src/pages/Bridge/Disclaimer.tsx
+msgid "<0>Multichain</0> is a well-known cross-chain router protocol that facilitates transfer of tokens between chains. However, in the event of a security breach on our partners platform, OasisSwap won't assume any liability for any losses incurred."
+msgstr ""
+
 #: src/components/ConfirmAddModalBottom/index.tsx
 #: src/components/ConfirmModal.tsx
 #: src/components/SwapForm/SwapModal/SwapModalAreYouSure.tsx
@@ -3215,6 +3223,10 @@ msgstr ""
 msgid "{0} Custom Tokens"
 msgstr ""
 
+#: src/pages/Bridge/Disclaimer.tsx
+msgid "However, in the event of a security breach on our partners platform, OasisSwap won't assume any liability for any losses incurred."
+msgstr ""
+
 #: src/components/Tutorial/TutorialSwap/index.tsx
 #~ msgid "You can <0>Buy crypto easily with over 50+ currencies using a wide range of payment options!</0> or <1>Easily transfer tokens from one chain to another</1>"
 #~ msgstr ""
@@ -3377,8 +3389,8 @@ msgid "Claim Error"
 msgstr ""
 
 #: src/pages/Bridge/Disclaimer.tsx
-msgid "KyberSwap strives to offer its users the best DeFi experience on a single platform. In order to do that, KyberSwap partners with 3rd party platforms like <0>Axelar</0> and <1>Squid</1>."
-msgstr ""
+#~ msgid "KyberSwap strives to offer its users the best DeFi experience on a single platform. In order to do that, KyberSwap partners with 3rd party platforms like <0>Axelar</0> and <1>Squid</1>."
+#~ msgstr ""
 
 #: src/components/YieldPools/ElasticFarmSummary/SummaryContent.tsx
 #~ msgid "Your liquidity position needs to achieve the <0>required target volume</0> (represented by a progress bar). You will accumulate farming rewards even if your liquidity position hasn't hit the required Target Volume. But as soon as your position hits the required Target Volume (i.e. progress bar is 100%), from thereafter, you will earn 100% of the rewards for that liquidity position."
@@ -6103,8 +6115,8 @@ msgid "You have no Transaction History."
 msgstr ""
 
 #: src/pages/Bridge/Disclaimer.tsx
-msgid "KyberSwap strives to offer its users the best DeFi experience on a single platform. In order to do that, KyberSwap partners with 3rd party platforms like Multichain."
-msgstr ""
+#~ msgid "KyberSwap strives to offer its users the best DeFi experience on a single platform. In order to do that, KyberSwap partners with 3rd party platforms like Multichain."
+#~ msgstr ""
 
 #: src/components/Header/web3/WalletModal/WarningBox.tsx
 msgid "Brave wallet can only be used in Brave Browser. Download it"
@@ -6983,6 +6995,10 @@ msgstr ""
 
 #: src/pages/KyberDAO/KNCUtility/index.tsx
 msgid "The amount of the gas refunded will depend on your tier displayed below. Read more <0>here ↗</0>"
+msgstr ""
+
+#: src/pages/Bridge/Disclaimer.tsx
+msgid "OasisSwap strives to offer its users the best DeFi experience on a single platform. In order to do that, OasisSwap partners with 3rd party platforms like <0>Axelar</0> and <1>Squid</1>."
 msgstr ""
 
 #: src/components/swapv2/LimitOrder/EditOrderModal.tsx
@@ -10059,8 +10075,8 @@ msgstr ""
 #~ msgstr "Giao dịch sẽ hoàn nguyên nếu nó đang chờ xử lý lâu hơn thời gian đã chỉ định"
 
 #: src/pages/Bridge/Disclaimer.tsx
-msgid "<0>Multichain</0> is a well-known cross-chain router protocol that facilitates transfer of tokens between chains. However, in the event of a security breach on our partners platform, KyberSwap won't assume any liability for any losses incurred."
-msgstr ""
+#~ msgid "<0>Multichain</0> is a well-known cross-chain router protocol that facilitates transfer of tokens between chains. However, in the event of a security breach on our partners platform, KyberSwap won't assume any liability for any losses incurred."
+#~ msgstr ""
 
 #: src/pages/TrueSight/components/FilterBar/TrueSightToggle.tsx
 #~ msgid "TrueSight"
@@ -10198,8 +10214,8 @@ msgstr ""
 #~ msgstr ""
 
 #: src/pages/Bridge/Disclaimer.tsx
-msgid "However, in the event of a security breach on our partners platform, KyberSwap won't assume any liability for any losses incurred."
-msgstr ""
+#~ msgid "However, in the event of a security breach on our partners platform, KyberSwap won't assume any liability for any losses incurred."
+#~ msgstr ""
 
 #: src/utils/errorMessage.ts
 msgid "User rejected the transaction."
