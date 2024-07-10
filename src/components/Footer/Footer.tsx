@@ -82,7 +82,7 @@ export const FooterSocialLink = () => {
   const theme = useTheme()
   return (
     <Flex alignItems="center" justifyContent="center" sx={{ gap: '24px' }}>
-      <ExternalLinkNoLineHeight href="https://t.me/kybernetwork">
+      <ExternalLinkNoLineHeight href="#">
         <Telegram size={16} color={theme.subText} />
       </ExternalLinkNoLineHeight>
       <ExternalLinkNoLineHeight href={KYBER_NETWORK_TWITTER_URL}>
@@ -106,7 +106,7 @@ function Footer() {
             <Text marginRight="6px">
               <Trans>Web v1.73.0</Trans>
             </Text>
-            <ExternalLink href="https://kyber.network" style={{ display: 'flex' }}>
+            <ExternalLink href="#" style={{ display: 'flex' }}>
               <PoweredByIconDark />
             </ExternalLink>
           </Item>
@@ -114,7 +114,7 @@ function Footer() {
             <Text marginRight="6px">
               <Trans>Vault Relayer v1.4.0</Trans>
             </Text>
-            <ExternalLink href="https://kyber.network" style={{ display: 'flex' }}>
+            <ExternalLink href="#" style={{ display: 'flex' }}>
               <PoweredByIconDark />
             </ExternalLink>
           </Item>
@@ -122,7 +122,7 @@ function Footer() {
             <Text marginRight="6px">
               <Trans>Settlement Contract v1.4.0</Trans>
             </Text>
-            <ExternalLink href="https://kyber.network" style={{ display: 'flex' }}>
+            <ExternalLink href="#" style={{ display: 'flex' }}>
               <PoweredByIconDark />
             </ExternalLink>
           </Item>

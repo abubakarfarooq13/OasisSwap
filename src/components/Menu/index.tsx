@@ -352,7 +352,7 @@ export default function Menu() {
 
             <MenuItem>
               <ExternalLink
-                href="https://docs.kyberswap.com"
+                href="#"
                 onClick={() => {
                   handleMenuClickMixpanel('Docs')
                 }}
@@ -364,7 +364,7 @@ export default function Menu() {
 
             <MenuItem>
               <ExternalLink
-                href="https://kyberswap.canny.io/"
+                href="#"
                 onClick={() => {
                   toggle()
                   handleMenuClickMixpanel('Roadmap')
@@ -377,7 +377,7 @@ export default function Menu() {
 
             <MenuItem>
               <ExternalLink
-                href="https://gov.kyber.org"
+                href="#"
                 onClick={() => {
                   toggle()
                   handleMenuClickMixpanel('Forum')
@@ -390,7 +390,7 @@ export default function Menu() {
 
             {showBlog && (
               <MenuItem>
-                <ExternalLink href="https://blog.kyberswap.com">
+                <ExternalLink href="#">
                   <BlogIcon />
                   <Trans>Blog</Trans>
                 </ExternalLink>

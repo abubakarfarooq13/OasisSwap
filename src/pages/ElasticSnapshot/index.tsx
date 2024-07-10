@@ -253,7 +253,7 @@ export default function ElasticSnapshot() {
             <>
               <Text fontSize={14} color={theme.subText} lineHeight="20px">
                 <Trans>
-                  You can find the list of your liquidity positions in KyberSwap Elastic pools that were affected by the
+                  You can find the list of your liquidity positions in OasisSwap Elastic pools that were affected by the
                   exploit below. Snapshots for each chain are taken based on the last block prior to the exploit.
                   <br />
                   <br />
@@ -521,7 +521,7 @@ export default function ElasticSnapshot() {
                     <Trans>
                       Please connect your wallet to view your affected position(s). If your Affected Address is a
                       Multisig or other Contracts, you won’t be able to complete the steps via the UI. Instead, please
-                      contact us at <a href="mailto:support@kyberswap.com">support@kyberswap.com</a>
+                      contact us at <a href="mailto:support@oasisswap.com">support@oasisswap.com</a>
                     </Trans>
                   </Text>
 

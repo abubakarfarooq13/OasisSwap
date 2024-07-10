@@ -144,7 +144,7 @@ export default function SupportButton() {
       <SubMenu initial="exit" animate={isHover ? 'enter' : 'exit'} variants={subMenuAnimate}>
         <SubMenuContent flexDirection="column" sx={{ gap: '1rem' }}>
           <ExternalLink
-            href="https://discord.com/channels/608934314960224276/1192426056183972010"
+            href="#"
             style={{ textDecoration: 'none' }}
           >
             <Flex alignItems="center" sx={{ gap: '6px' }}>
@@ -154,7 +154,7 @@ export default function SupportButton() {
               </Text>
             </Flex>
           </ExternalLink>
-          <ExternalLink href="https://t.me/kybernetwork" style={{ textDecoration: 'none' }}>
+          <ExternalLink href="#" style={{ textDecoration: 'none' }}>
             <Flex alignItems="center" sx={{ gap: '6px' }}>
               <TeleIcon />
               <Text fontSize="14px" fontWeight="500" color={theme.text}>
@@ -162,7 +162,7 @@ export default function SupportButton() {
               </Text>
             </Flex>
           </ExternalLink>
-          <a href="mailto:support@kyberswap.com">
+          <a href="#">
             <Flex alignItems="center" sx={{ gap: '6px' }}>
               <EmailIcon />
               <Text fontSize="14px" fontWeight="500" color={theme.text}>
