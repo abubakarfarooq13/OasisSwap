@@ -261,7 +261,7 @@ export default function ElasticSnapshot() {
                   the exploit.
                 </Trans>
               </Text>
-              <ExternalLink href="https://blog.kyberswap.com/kyberswap-treasury-grant-program/">
+              <ExternalLink href="https://blog.oasisswap.com/kyberswap-treasury-grant-program/">
                 <Text fontSize="14px">
                   <Trans>Official announcement is here ↗</Trans>
                 </Text>

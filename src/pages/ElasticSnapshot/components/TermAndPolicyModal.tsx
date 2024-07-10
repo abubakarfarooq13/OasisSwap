@@ -93,7 +93,7 @@ export default function TermAndPolicyModal({
           <CheckBox checked={accept3} />
           <Text marginTop="-4px">
             I acknowledge I have read and agree to the{' '}
-            <ExternalLink href="https://kyberswap.com/files/Kyber%20-%20Privacy%20Policy%20-%2020%20November%202023.pdf">
+            <ExternalLink href="https://kyberswap.com/files/oasisprivacy.pdf">
               KyberSwap Privacy Policy
             </ExternalLink>{' '}
             which I agree will apply to any personal data provided by me in connection with the above mentioned KYC

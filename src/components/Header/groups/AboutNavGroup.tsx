@@ -51,7 +51,7 @@ const AboutNavGroup = () => {
                 mixpanelHandler(MIXPANEL_TYPE.BLOG_MENU_CLICKED)
               }}
               target="_blank"
-              href="https://blog.kyberswap.com"
+              href="https://blog.oasisswap.com"
             >
               <Trans>Blog</Trans>
             </StyledNavExternalLink>

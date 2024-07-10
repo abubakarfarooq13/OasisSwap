@@ -25,6 +25,7 @@ export const NETWORK_LIST = [
   'Optimism',
   'Avalanche',
   'BNB Chain',
+  'BNB Testnet',
   'Polygon PoS',
   'Fantom',
   'Linea',

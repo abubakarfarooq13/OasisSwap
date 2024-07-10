@@ -2,7 +2,7 @@ import { Trans, t } from '@lingui/macro'
 import { useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect'
 import { AlertOctagon, BookOpen, ChevronDown, FileText, Info, MessageCircle, PieChart } from 'react-feather'
-import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { useMedia } from 'react-use'
 import { Text } from 'rebass'
 import styled, { css } from 'styled-components'
@@ -17,7 +17,7 @@ import { AutoColumn } from 'components/Column'
 import ArrowRight from 'components/Icons/ArrowRight'
 import Faucet from 'components/Icons/Faucet'
 import Icon from 'components/Icons/Icon'
-import MailIcon from 'components/Icons/MailIcon'
+// import MailIcon from 'components/Icons/MailIcon'
 import LanguageSelector from 'components/LanguageSelector'
 import Loader from 'components/Loader'
 import MenuFlyout from 'components/MenuFlyout'
@@ -33,10 +33,10 @@ import { useActiveWeb3React } from 'hooks'
 import useClaimReward from 'hooks/useClaimReward'
 import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
 import useTheme from 'hooks/useTheme'
-import { PROFILE_MANAGE_ROUTES } from 'pages/NotificationCenter/const'
+// import { PROFILE_MANAGE_ROUTES } from 'pages/NotificationCenter/const'
 import { ApplicationModal } from 'state/application/actions'
 import { useModalOpen, useToggleModal } from 'state/application/hooks'
-import { useTutorialSwapGuide } from 'state/tutorial/hooks'
+// import { useTutorialSwapGuide } from 'state/tutorial/hooks'
 import { useHolidayMode, useUserLocale } from 'state/user/hooks'
 import { ExternalLink, MEDIA_WIDTHS } from 'theme'
 import { isChristmasTime } from 'utils'
@@ -210,14 +210,14 @@ export default function Menu() {
   const location = useLocation()
 
   const { mixpanelHandler } = useMixpanel()
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const setShowTutorialSwapGuide = useTutorialSwapGuide()[1]
-  const openTutorialSwapGuide = () => {
-    setShowTutorialSwapGuide({ show: true, step: 0 })
-    mixpanelHandler(MIXPANEL_TYPE.TUTORIAL_CLICK_START)
-    toggle()
-  }
+  // const setShowTutorialSwapGuide = useTutorialSwapGuide()[1]
+  // const openTutorialSwapGuide = () => {
+  //   setShowTutorialSwapGuide({ show: true, step: 0 })
+  //   mixpanelHandler(MIXPANEL_TYPE.TUTORIAL_CLICK_START)
+  //   toggle()
+  // }
 
   const showAbout = useMedia(`(max-width: ${MEDIA_WIDTHS.upToExtraSmall}px)`)
   const showBlog = useMedia(`(max-width: ${MEDIA_WIDTHS.upToExtraSmall}px)`)
@@ -343,7 +343,7 @@ export default function Menu() {
                   title={t`About`}
                   link={'/about'}
                   options={[
-                    { link: '/about/kyberswap', label: 'KyberSwap' },
+                    { link: '/about/oasisswap', label: 'OasisSwap' },
                     { link: '/about/knc', label: 'KNC' },
                   ]}
                 />
@@ -440,7 +440,7 @@ export default function Menu() {
                 id={TutorialIds.BUTTON_VIEW_GUIDE_SWAP}
                 onClick={() => {
                   toggle()
-                  openTutorialSwapGuide()
+                  // openTutorialSwapGuide()
                   handlePreferenceClickMixpanel('Swap guide')
                 }}
               >
@@ -458,7 +458,7 @@ export default function Menu() {
               </NavLinkBetween>
             )}
 
-            <NavLinkBetween
+            {/* <NavLinkBetween
               onClick={() => {
                 navigate(`${APP_PATHS.PROFILE_MANAGE}${PROFILE_MANAGE_ROUTES.PREFERENCE}`)
                 mixpanelHandler(MIXPANEL_TYPE.NOTIFICATION_CLICK_MENU)
@@ -468,7 +468,7 @@ export default function Menu() {
             >
               <Trans>Notification Center</Trans>
               <MailIcon size={17} color={theme.text} />
-            </NavLinkBetween>
+            </NavLinkBetween> */}
             <NavLinkBetween
               onClick={() => {
                 setIsSelectingLanguage(true)

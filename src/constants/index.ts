@@ -166,8 +166,8 @@ export const APP_PATHS = {
 } as const
 
 export const TERM_FILES_PATH = {
-  KYBERSWAP_TERMS: '/files/Kyber - Terms of Use - 20 November 2023.pdf',
-  PRIVACY_POLICY: '/files/Kyber - Privacy Policy - 20 November 2023.pdf',
+  KYBERSWAP_TERMS: '/files/oasisterms.pdf',
+  PRIVACY_POLICY: '/files/oasispolicy.pdf',
   // Timestamp of changed date, update this to latest timestamp whenever change any above files. This also used to check on client side for updated to force user to disconnect and re-accept terms.
   VERSION: 1700438400000,
 }
