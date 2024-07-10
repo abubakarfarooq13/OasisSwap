@@ -43,9 +43,9 @@
       window.global = window
     </script>
     <script type="module">
-      import { Buffer } from 'buffer'
-      import EventEmitter from 'events'
-      import process from 'process'
+      import { Buffer } from "buffer"
+      import EventEmitter from "events"
+      import process from "process"
 
       window.Buffer = Buffer
       window.process = process
@@ -58,10 +58,10 @@
       window._paq = window._paq || []
       ;(function () {
         var d = document,
-          g = d.createElement('script'),
-          s = d.getElementsByTagName('script')[0]
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0]
         g.async = true
-        g.src = '/libs/cookie3.js'
+        g.src = "/libs/cookie3.js"
         s.parentNode.insertBefore(g, s)
       })()
     </script>
@@ -70,30 +70,30 @@
       !(function () {
         var analytics = (window.analytics = window.analytics || [])
         if (!analytics.initialize)
-          if (analytics.invoked) window.console && console.error && console.error('Segment snippet included twice.')
+          if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice.")
           else {
             analytics.invoked = !0
             analytics.methods = [
-              'trackSubmit',
-              'trackClick',
-              'trackLink',
-              'trackForm',
-              'pageview',
-              'identify',
-              'reset',
-              'group',
-              'track',
-              'ready',
-              'alias',
-              'debug',
-              'page',
-              'once',
-              'off',
-              'on',
-              'addSourceMiddleware',
-              'addIntegrationMiddleware',
-              'setAnonymousId',
-              'addDestinationMiddleware',
+              "trackSubmit",
+              "trackClick",
+              "trackLink",
+              "trackForm",
+              "pageview",
+              "identify",
+              "reset",
+              "group",
+              "track",
+              "ready",
+              "alias",
+              "debug",
+              "page",
+              "once",
+              "off",
+              "on",
+              "addSourceMiddleware",
+              "addIntegrationMiddleware",
+              "setAnonymousId",
+              "addDestinationMiddleware"
             ]
             analytics.factory = function (e) {
               return function () {
@@ -109,17 +109,17 @@
               analytics[key] = analytics.factory(key)
             }
             analytics.load = function (key, i) {
-              var t = document.createElement('script')
-              t.type = 'text/javascript'
+              var t = document.createElement("script")
+              t.type = "text/javascript"
               t.async = !0
-              t.src = '/libs/red2.js'
-              var n = document.getElementsByTagName('script')[0]
+              t.src = "/libs/red2.js"
+              var n = document.getElementsByTagName("script")[0]
               n.parentNode.insertBefore(t, n)
               analytics._loadOptions = i
             }
-            analytics._writeKey = 'DgnqvAHbWsKaPnkdvC19EMC8DbXh1G52'
-            analytics.SNIPPET_VERSION = '4.16.1'
-            analytics.load('DgnqvAHbWsKaPnkdvC19EMC8DbXh1G52')
+            analytics._writeKey = "DgnqvAHbWsKaPnkdvC19EMC8DbXh1G52"
+            analytics.SNIPPET_VERSION = "4.16.1"
+            analytics.load("DgnqvAHbWsKaPnkdvC19EMC8DbXh1G52")
             analytics.page()
           }
       })()
@@ -139,7 +139,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        font-family: 'Work Sans', 'Inter var', sans-serif;
+        font-family: "Work Sans", "Inter var", sans-serif;
       }
 
       .preloadhtml {
