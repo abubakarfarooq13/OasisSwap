@@ -467,7 +467,7 @@ export default memo(function TutorialSwap() {
           <CustomPopup {...(props || ({} as WalktourLogic))} />
         )}
         steps={steps as Step[]}
-        isOpen={show}
+        isOpen={false}
         initialStepIndex={step}
         customNextFunc={onNext}
         customPrevFunc={onBack}
