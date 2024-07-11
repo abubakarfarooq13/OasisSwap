@@ -28,7 +28,9 @@ import { useSingleCallResult } from 'state/multicall/hooks'
 import { useIsTransactionPending } from 'state/transactions/hooks'
 import { useViewMode } from 'state/user/hooks'
 import { VIEW_MODE } from 'state/user/reducer'
-import { ExternalLink, MEDIA_WIDTHS } from 'theme'
+import { 
+  // ExternalLink, 
+  MEDIA_WIDTHS } from 'theme'
 import { formatDollarAmount } from 'utils/numbers'
 
 import { ClickableText, ProMMFarmTableHeader } from '../styleds'
@@ -480,8 +482,8 @@ const ElasticFarmGroup: React.FC<Props> = ({ address, onOpenModal, pools, onShow
                   Once you have fully unlocked the target volume, you will start earning the maximum rewards per second.
                   Adjusting the staked amount will recalculate the target volume.
                   <br />
-                  Learn more{' '}
-                  <ExternalLink href="https://docs.kyberswap.com/guides/farming-mechanisms">here.</ExternalLink>
+                  {/* Learn more{' '}
+                  <ExternalLink href="https://docs.kyberswap.com/guides/farming-mechanisms">here.</ExternalLink> */}
                 </Trans>
               </Text>
             }

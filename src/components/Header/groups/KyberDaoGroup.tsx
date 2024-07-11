@@ -58,8 +58,8 @@ const KyberDAONavGroup = () => {
             </StyledNavLink>
             <StyledNavExternalLink
               id="kyberdao-feature-request"
-              href="https://kyberswap.canny.io/feature-request"
-              target="_blank"
+              href="#"
+              // target="_blank"
               style={{ gap: '12px' }}
               onClick={() => {
                 mixpanelHandler(MIXPANEL_TYPE.KYBER_DAO_FEATURE_REQUEST_CLICK)

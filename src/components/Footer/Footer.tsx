@@ -71,10 +71,13 @@ const InfoWrapper = styled.div`
 const Item = styled.div`
   display: flex;
   align-items: center;
+  gap: 1rem;
   color: ${({ theme }) => theme.subText};
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
+    gap: 1px;
+    font-size: 0.6rem;
+    // max-width: 4rem;
   `};
 `
 
@@ -103,27 +106,27 @@ function Footer() {
       <FooterContent>
         <InfoWrapper>
           <Item>
-            <Text marginRight="6px">
+            <Text>
               <Trans>Web v1.73.0</Trans>
             </Text>
             <ExternalLink href="#" style={{ display: 'flex' }}>
-              <PoweredByIconDark />
+              <PoweredByIconDark width={'1rem'} height={'1rem'}/>
             </ExternalLink>
           </Item>
           <Item>
-            <Text marginRight="6px">
+            <Text>
               <Trans>Vault Relayer v1.4.0</Trans>
             </Text>
             <ExternalLink href="#" style={{ display: 'flex' }}>
-              <PoweredByIconDark />
+              <PoweredByIconDark  width={'1rem'} height={'1rem'}/>
             </ExternalLink>
           </Item>
           <Item>
-            <Text marginRight="6px">
+            <Text>
               <Trans>Settlement Contract v1.4.0</Trans>
             </Text>
             <ExternalLink href="#" style={{ display: 'flex' }}>
-              <PoweredByIconDark />
+              <PoweredByIconDark  width={'1rem'} height={'1rem'}/>
             </ExternalLink>
           </Item>
           {/* <Separator />

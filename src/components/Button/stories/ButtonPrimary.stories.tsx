@@ -4,7 +4,7 @@ import { ButtonPrimary } from '../index'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof ButtonPrimary> = {
-  title: 'Kyberswap/Shared Components/Buttons/ButtonPrimary',
+  title: 'Oasisswap/Shared Components/Buttons/ButtonPrimary',
   component: ButtonPrimary,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout

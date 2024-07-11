@@ -4,7 +4,7 @@ import LocalLoader from './index'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof LocalLoader> = {
-  title: 'Kyberswap/Shared Components/Loader/LocalLoader',
+  title: 'Oasisswap/Shared Components/Loader/LocalLoader',
   component: LocalLoader,
   decorators: Component => (
     <div style={{ border: '1px solid #FF9901' }}>

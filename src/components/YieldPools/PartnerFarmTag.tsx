@@ -17,8 +17,8 @@ export const PartnerFarmTag = ({ farmPoolAddress }: { farmPoolAddress: string })
       <MouseoverTooltip
         text={
           <Trans>
-            KyberSwap Frax farms do not currently receive KNC incentives. They are continuously available for staking so
-            that users can participate in KyberSwap Frax gauges to earn FXS emissions. The amount of FXS emissions
+            OasisSwap Frax farms do not currently receive ONC incentives. They are continuously available for staking so
+            that users can participate in OasisSwap Frax gauges to earn FXS emissions. The amount of FXS emissions
             depends on the results of each weekly Frax gauge voting cycle. More info:{' '}
             <ExternalLink href="https://app.frax.finance/gauge">https://app.frax.finance/gauge</ExternalLink> and{' '}
             <ExternalLink href="https://docs.frax.finance/vefxs/gauge">

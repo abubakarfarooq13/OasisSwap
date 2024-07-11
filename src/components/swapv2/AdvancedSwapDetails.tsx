@@ -53,7 +53,7 @@ const PriceImpactNote = () => {
           <div>
             <Trans>Estimated change in price due to the size of your transaction.</Trans>
             <Text fontSize={12}>
-              <Trans>
+              {/* <Trans>
                 Read more{' '}
                 <a
                   href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/price-impact"
@@ -62,7 +62,7 @@ const PriceImpactNote = () => {
                 >
                   <b>here ↗</b>.
                 </a>
-              </Trans>
+              </Trans> */}
             </Text>
           </div>
         }
@@ -456,7 +456,7 @@ export function TradeSummaryCrossChain({
             <TextDashed fontSize={12} fontWeight={400} color={theme.subText}>
               <MouseoverTooltip
                 width="200px"
-                text={<Trans>Fees charged by KyberSwap and Squid.</Trans>}
+                text={<Trans>Fees charged by OasisSwap and Squid.</Trans>}
                 placement="right"
               >
                 <Trans>Service Fee</Trans>

@@ -8,7 +8,7 @@ import PriceVisualize from './PriceVisualize'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof PriceVisualize> = {
-  title: 'Kyberswap/Elastic Components/PriceVisualize',
+  title: 'Oasisswap/Elastic Components/PriceVisualize',
   component: PriceVisualize,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout

@@ -9,10 +9,10 @@ import BackgroundImage from 'assets/images/limit_order_pnl.png'
 import { ButtonPrimary } from 'components/Button'
 import Column from 'components/Column'
 import Row from 'components/Row'
-import { DOCS_LINKS } from 'components/swapv2/LimitOrder/const'
+// import { DOCS_LINKS } from 'components/swapv2/LimitOrder/const'
 import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
 import useTheme from 'hooks/useTheme'
-import { ExternalLink } from 'theme'
+// import { ExternalLink } from 'theme'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 16px;
-  background-image: url(${BackgroundImage});
+  /* background-image: url(${BackgroundImage}); */
   background-repeat: no-repeat;
   background-size: 100%;
 `
@@ -98,9 +98,9 @@ export default function Tutorial({ onClose }: { onClose: () => void }) {
 
       <Column gap="16px" width={'100%'}>
         <Text fontSize={'14px'} textAlign={'center'} color={theme.text}>
-          <Trans>
-            Learn more about our limit orders <ExternalLink href={DOCS_LINKS.USER_GUIDE}>here</ExternalLink>.
-          </Trans>
+          {/* <Trans>
+            Learn more about our limit orders <ExternalLink href={"#"}>here</ExternalLink>.
+          </Trans> */}
         </Text>
         <ButtonPrimary height="40px" width={'100%'} onClick={onGetStart} data-testid="get-started-button">
           <Trans>Get Started</Trans>

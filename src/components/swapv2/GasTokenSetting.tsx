@@ -11,7 +11,7 @@ import { GAS_TOKENS, NativeCurrencies } from 'constants/tokens'
 import useTheme from 'hooks/useTheme'
 import { usePaymentToken } from 'state/user/hooks'
 import { useCurrencyBalances, useNativeBalance } from 'state/wallet/hooks'
-import { ExternalLink } from 'theme'
+// import { ExternalLink } from 'theme'
 
 export default function GasTokenSetting({ onBack }: { onBack: () => void }) {
   const theme = useTheme()
@@ -88,9 +88,9 @@ export default function GasTokenSetting({ onBack }: { onBack: () => void }) {
               <Text>
                 <Trans>
                   The PayMaster module & contracts are developed and operated by HoldStations,{' '}
-                  <ExternalLink href="https://docs.kyberswap.com/reference/third-party-integrations#what-is-paymaster">
+                  {/* <ExternalLink href="https://docs.kyberswap.com/reference/third-party-integrations#what-is-paymaster">
                     details
-                  </ExternalLink>
+                  </ExternalLink> */}
                 </Trans>
               </Text>
             }

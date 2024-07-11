@@ -103,9 +103,9 @@ function Banner({
   const ALL_BANNERS = useMemo(
     () => [
       {
-        // KyberSwap Work Your Assets
-        id: 'KyberSwap-Work-Your-Assets',
-        name: 'KyberSwap Work Your Assets',
+        // OasisSwap Work Your Assets
+        id: 'OasisSwap-Work-Your-Assets',
+        name: 'OasisSwap Work Your Assets',
         start: new Date('2022-12-06T00:00:00.000Z'),
         end: new Date('2022-12-30T23:59:59.000Z'),
         img: isInModal
@@ -115,7 +115,7 @@ function Banner({
           : w > 500
           ? WorkYourAssetsTablet
           : WorkYourAssetsMobile,
-        link: 'https://kyberswap.com/elastic/add/0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/40',
+        link: '#',
       },
     ],
     [isInModal, w],

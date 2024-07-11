@@ -25,7 +25,9 @@ import Row, { AutoRow } from 'components/Row'
 import Toggle from 'components/Toggle'
 import { TutorialIds } from 'components/Tutorial/TutorialSwap/constant'
 import { ENV_LEVEL, TAG } from 'constants/env'
-import { AGGREGATOR_ANALYTICS_URL, APP_PATHS, TERM_FILES_PATH } from 'constants/index'
+import { AGGREGATOR_ANALYTICS_URL, APP_PATHS, 
+  // TERM_FILES_PATH
+ } from 'constants/index'
 import { getLocaleLabel } from 'constants/locales'
 import { FAUCET_NETWORKS } from 'constants/networks'
 import { ENV_TYPE } from 'constants/type'
@@ -399,7 +401,7 @@ export default function Menu() {
 
             <MenuItem>
               <ExternalLink
-                href={TERM_FILES_PATH.KYBERSWAP_TERMS}
+                href={'#'}
                 onClick={() => {
                   toggle()
                   handleMenuClickMixpanel('Terms')
@@ -411,7 +413,7 @@ export default function Menu() {
             </MenuItem>
             <MenuItem>
               <ExternalLink
-                href={TERM_FILES_PATH.PRIVACY_POLICY}
+                href={'#'}
                 onClick={() => {
                   toggle()
                   handleMenuClickMixpanel('Privacy Policy')

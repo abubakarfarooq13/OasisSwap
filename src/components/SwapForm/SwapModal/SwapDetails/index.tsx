@@ -197,7 +197,7 @@ export default function SwapDetails({
                 text={
                   <div>
                     <Trans>Estimated change in price due to the size of your transaction.</Trans>
-                    <Text fontSize={12}>
+                    {/* <Text fontSize={12}>
                       <Trans>
                         Read more{' '}
                         <a
@@ -208,7 +208,7 @@ export default function SwapDetails({
                           <b>here ↗</b>
                         </a>
                       </Trans>
-                    </Text>
+                    </Text> */}
                   </div>
                 }
                 placement="right"
@@ -358,10 +358,11 @@ export default function SwapDetails({
                 text={
                   <Text>
                     <Trans>
-                      During your swap if the price changes by more than this %, your transaction will revert. Read more{' '}
+                      During your swap if the price changes by more than this %, your transaction will revert.
+                       {/* Read more{' '}
                       <ExternalLink href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/slippage">
                         here ↗
-                      </ExternalLink>
+                      </ExternalLink> */}
                     </Trans>
                   </Text>
                 }
@@ -388,10 +389,11 @@ export default function SwapDetails({
                   text={
                     <Text>
                       <Trans>
-                        Stake ONC in OasisDAO to get gas refund. Read more{' '}
+                        Stake ONC in OasisDAO to get gas refund.
+                         {/* Read more{' '}
                         <ExternalLink href="https://docs.kyberswap.com/governance/knc-token/gas-refund-program">
                           here ↗
-                        </ExternalLink>
+                        </ExternalLink> */}
                       </Trans>
                     </Text>
                   }

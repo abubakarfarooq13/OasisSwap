@@ -10,7 +10,7 @@ import { DEFAULT_SLIPPAGE, DEFAULT_SLIPPAGE_STABLE_PAIR_SWAP } from 'constants/i
 import useTheme from 'hooks/useTheme'
 import { useCheckCorrelatedPair, useCheckStablePairSwap } from 'state/swap/hooks'
 import { useSlippageSettingByPage } from 'state/user/hooks'
-import { ExternalLink } from 'theme'
+// import { ExternalLink } from 'theme'
 import { SLIPPAGE_STATUS, checkRangeSlippage } from 'utils/slippage'
 
 const Message = styled.div`
@@ -57,10 +57,11 @@ const SlippageSetting: React.FC<Props> = ({ shouldShowPinButton = true }) => {
             text={
               <Text>
                 <Trans>
-                  During your swap if the price changes by more than this %, your transaction will revert. Read more{' '}
-                  <ExternalLink href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/slippage">
+                  During your swap if the price changes by more than this %, your transaction will revert.
+                   Read more{' '}
+                  {/* <ExternalLink href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/slippage">
                     here ↗
-                  </ExternalLink>
+                  </ExternalLink> */}
                   .
                 </Trans>
               </Text>

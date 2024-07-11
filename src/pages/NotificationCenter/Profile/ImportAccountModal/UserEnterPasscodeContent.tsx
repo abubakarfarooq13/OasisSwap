@@ -11,7 +11,7 @@ import Input from 'components/Input'
 import useTheme from 'hooks/useTheme'
 import { ButtonExport } from 'pages/NotificationCenter/Profile/buttons'
 import { useNotify } from 'state/application/hooks'
-import { ExternalLink } from 'theme'
+// import { ExternalLink } from 'theme'
 
 import { Label } from '../ExportAccountModal/styled'
 
@@ -73,12 +73,13 @@ const UserEnterPasscodeContent: React.FC<Props> = ({ onImportToken, dismissModal
         }}
       >
         <Trans>
-          You can keep your information synced across all of your devices by importing your profile. Learn more about
+          You can keep your information synced across all of your devices by importing your profile.
+           {/* Learn more about
           profiles{' '}
           <ExternalLink href="https://docs.kyberswap.com/kyberswap-solutions/kyberswap-interface/profiles/sync-profile-across-devices">
             here
           </ExternalLink>
-          .
+          . */}
         </Trans>
       </Text>
 

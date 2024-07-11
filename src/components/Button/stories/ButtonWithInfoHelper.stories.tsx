@@ -4,7 +4,7 @@ import { ButtonWithInfoHelper } from '../index'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof ButtonWithInfoHelper> = {
-  title: 'Kyberswap/Shared Components/Buttons/ButtonWithInfoHelper',
+  title: 'Oasisswap/Shared Components/Buttons/ButtonWithInfoHelper',
   component: ButtonWithInfoHelper,
   decorators: Component => (
     <div style={{ minWidth: '400px' }}>

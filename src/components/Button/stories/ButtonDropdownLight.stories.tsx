@@ -4,7 +4,7 @@ import { ButtonDropdownLight } from '../index'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof ButtonDropdownLight> = {
-  title: 'Kyberswap/Shared Components/Buttons/ButtonDropdownLight',
+  title: 'Oasisswap/Shared Components/Buttons/ButtonDropdownLight',
   component: ButtonDropdownLight,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout

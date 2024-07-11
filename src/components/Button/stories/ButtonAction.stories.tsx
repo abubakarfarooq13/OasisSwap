@@ -6,7 +6,7 @@ import { ButtonAction } from '../index'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof ButtonAction> = {
-  title: 'Kyberswap/Shared Components/Buttons/ButtonAction',
+  title: 'OasisSwap/Shared Components/Buttons/ButtonAction',
   component: ButtonAction,
   decorators: Component => (
     <Flex style={{ minWidth: '400px' }} flexShrink={0}>

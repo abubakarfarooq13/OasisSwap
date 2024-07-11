@@ -16,7 +16,9 @@ import { useActiveWeb3React } from 'hooks'
 import { isSupportKyberDao, useGasRefundTier } from 'hooks/kyberdao'
 import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
 import useTheme from 'hooks/useTheme'
-import { ExternalLink, TYPE } from 'theme'
+import { 
+  // ExternalLink,
+   TYPE } from 'theme'
 import { DetailedRouteSummary } from 'types/route'
 import { formattedNum } from 'utils'
 import { minimumAmountAfterSlippage } from 'utils/currencyAmount'
@@ -77,16 +79,18 @@ export const TooltipTextOfSwapFee: React.FC<TooltipTextOfSwapFeeProps> = ({ feeB
     style: 'percent',
     fractionDigits: 2,
   })
-  const hereLink = (
-    <ExternalLink href="https://docs.kyberswap.com/kyberswap-solutions/kyberswap-interface/user-guides/instantly-swap-at-superior-rates#swap-fees-supporting-transactions-on-low-trading-volume-chains">
-      <b>
-        <Trans>here</Trans> ↗
-      </b>
-    </ExternalLink>
-  )
+  // const hereLink = (
+  //   <ExternalLink href="https://docs.kyberswap.com/kyberswap-solutions/kyberswap-interface/user-guides/instantly-swap-at-superior-rates#swap-fees-supporting-transactions-on-low-trading-volume-chains">
+  //     <b>
+  //       <Trans>here</Trans> ↗
+  //     </b>
+  //   </ExternalLink>
+  // )
 
   if (!feeAmountText || !feePercent) {
-    return <Trans>Read more about the fees {hereLink}</Trans>
+    return <Trans>Read more about the fees 
+      {/* {hereLink} */}
+      </Trans>
   }
 
   if (clientId) {
@@ -96,7 +100,8 @@ export const TooltipTextOfSwapFee: React.FC<TooltipTextOfSwapFeeProps> = ({ feeB
   return (
     <Trans>
       A {feePercent} fee ({feeAmountText}) will incur on this swap. The Est. Output amount you see above is inclusive of
-      this fee. Read more about the fees {hereLink}
+      this fee. Read more about the fees 
+      {/* {hereLink} */}
     </Trans>
   )
 }

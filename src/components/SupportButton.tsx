@@ -105,7 +105,7 @@ export default function SupportButton() {
   return (
     <Wrapper onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
       <Flex
-        backgroundColor={theme.footerbackground}
+        // backgroundColor={theme.footerbackground}
         alignItems="end"
         // justifyContent="center"
         sx={{

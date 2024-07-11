@@ -5,7 +5,7 @@ import { MouseoverTooltip } from 'components/Tooltip'
 import { NUMBERS } from 'components/WalletPopup/Transactions/helper'
 import useTheme from 'hooks/useTheme'
 import ErrorWarningPanel from 'pages/Bridge/ErrorWarning'
-import { ExternalLink } from 'theme'
+// import { ExternalLink } from 'theme'
 
 export default function PendingWarning() {
   const theme = useTheme()
@@ -21,9 +21,9 @@ export default function PendingWarning() {
             <MouseoverTooltip
               text={t`Stuck transaction. Your transaction has been processing for more than ${min} mins.`}
             >
-              <ExternalLink href="https://support.kyberswap.com/hc/en-us/articles/13785666409881-Why-is-my-transaction-stuck-in-Pending-state-">
+              {/* <ExternalLink href="https://support.kyberswap.com/hc/en-us/articles/13785666409881-Why-is-my-transaction-stuck-in-Pending-state-">
                 See here
-              </ExternalLink>
+              </ExternalLink> */}
             </MouseoverTooltip>
           </Trans>
         </Text>

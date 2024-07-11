@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { useMedia, usePrevious } from 'react-use'
 import {
   ANNOUNCEMENT_TAGS,
-  useAckPrivateAnnouncementsByIdsMutation,
+  // useAckPrivateAnnouncementsByIdsMutation,
   useLazyGetAnnouncementsQuery,
   useLazyGetPrivateAnnouncementsQuery,
 } from 'services/announcement'
@@ -20,7 +20,9 @@ import useInterval from 'hooks/useInterval'
 import { useInvalidateTagAnnouncement } from 'hooks/useInvalidateTags'
 import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
 import { ApplicationModal } from 'state/application/actions'
-import { useDetailAnnouncement, useModalOpen, useToggleNotificationCenter } from 'state/application/hooks'
+import { useDetailAnnouncement, useModalOpen,
+  //  useToggleNotificationCenter
+   } from 'state/application/hooks'
 import { useSessionInfo } from 'state/authen/hooks'
 import { MEDIA_WIDTHS } from 'theme'
 
@@ -87,7 +89,7 @@ export default function AnnouncementComponent() {
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const isOpenInbox = useModalOpen(ApplicationModal.NOTIFICATION_CENTER)
-  const toggleNotificationCenter = useToggleNotificationCenter()
+  // const toggleNotificationCenter = useToggleNotificationCenter()
   const isMobile = useMedia(`(max-width: ${MEDIA_WIDTHS.upToSmall}px)`)
 
   const [curPage, setPage] = useState(1)
@@ -230,12 +232,12 @@ export default function AnnouncementComponent() {
 
   useInterval(prefetchPrivateAnnouncements, 10_000)
 
-  const [readAllAnnouncement] = useAckPrivateAnnouncementsByIdsMutation()
+  // const [readAllAnnouncement] = useAckPrivateAnnouncementsByIdsMutation()
   const togglePopupWithAckAllMessage = () => {
-    toggleNotificationCenter()
-    if (isOpenInbox && numberOfUnread) {
-      readAllAnnouncement({})
-    }
+    // toggleNotificationCenter()
+    // if (isOpenInbox && numberOfUnread) {
+    //   readAllAnnouncement({})
+    // }
   }
 
   const [, setAnnouncementDetail] = useDetailAnnouncement()

@@ -96,7 +96,7 @@ const ModalConfirmProfile: React.FC = () => {
       <Column gap="12px">
         <Text as="p" lineHeight={'20px'}>
           <Trans>
-            You are connected to KyberSwap with wallet <Highlight>{getShortenAddress(account ?? '')}</Highlight> while
+            You are connected to OasisSwap with wallet <Highlight>{getShortenAddress(account ?? '')}</Highlight> while
             your current profile <Highlight>{currentProfileName}</Highlight> was created by wallet{' '}
             <Highlight>{getShortenAddress(signedAccount ?? '')}</Highlight>. Do you wish to keep using
           </Trans>

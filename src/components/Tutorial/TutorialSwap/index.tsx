@@ -117,7 +117,7 @@ const HighlightText = styled.span`
 function Welcome() {
   return (
     <Layout>
-      <img src={WelcomeImage} alt="welcome to kyberswap" style={{ maxWidth: '100%', marginTop: 10 }} />
+      <img src={WelcomeImage} alt="welcome to Oasisswap" style={{ maxWidth: '100%', marginTop: 10 }} />
       <Desc>
         <Trans>
           OasisSwap is a decentralized exchange (DEX) aggregator and an automated market maker (AMM). We provide our

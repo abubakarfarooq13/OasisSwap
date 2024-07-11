@@ -12,7 +12,7 @@ import { ReactComponent as Close } from 'assets/images/x.svg'
 import Modal from 'components/Modal'
 import { RowBetween } from 'components/Row'
 import WalletPopup from 'components/WalletPopup'
-import { TERM_FILES_PATH } from 'constants/index'
+// import { TERM_FILES_PATH } from 'constants/index'
 import { useActiveWeb3React } from 'hooks'
 import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
 import useTheme from 'hooks/useTheme'
@@ -193,16 +193,16 @@ export default function WalletModal() {
             />
             <Text color={theme.subText}>
               <Trans>Accept </Trans>{' '}
-              <ExternalLink href={TERM_FILES_PATH.KYBERSWAP_TERMS} onClick={e => e.stopPropagation()}>
+              <ExternalLink href={'#'} onClick={e => e.stopPropagation()}>
                 <Trans>OasisSwap&lsquo;s Terms of Use</Trans>
               </ExternalLink>{' '}
               <Trans>and</Trans>{' '}
-              <ExternalLink href={TERM_FILES_PATH.PRIVACY_POLICY} onClick={e => e.stopPropagation()}>
+              <ExternalLink href={'#'} onClick={e => e.stopPropagation()}>
                 <Trans>Privacy Policy</Trans>
               </ExternalLink>
               {'. '}
               <Text fontSize={10} as="span">
-                <Trans>Last updated: {dayjs(TERM_FILES_PATH.VERSION).format('DD MMM YYYY')}</Trans>
+                <Trans>Last updated: {dayjs('').format('DD MMM YYYY')}</Trans>
               </Text>
             </Text>
           </TermAndCondition>

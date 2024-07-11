@@ -8,7 +8,7 @@ import { ReactComponent as DropdownSVG } from 'assets/svg/down.svg'
 import { ButtonPrimary } from 'components/Button'
 import Modal from 'components/Modal'
 import useTheme from 'hooks/useTheme'
-import { ExternalLink } from 'theme'
+// import { ExternalLink } from 'theme'
 
 import v1Step1 from './images/v1/step1.png'
 import v1Step2 from './images/v1/step2.png'
@@ -113,9 +113,9 @@ const FarmStepGuide: FC<FarmStepGuideProps> = ({ version, onChangeVersion }) => 
           <Trans>
             Static farms incentivize farmers that provide liquidity to a pool in a pre-configured farming price range
             that is set by the farm administrator. Learn more{' '}
-            <ExternalLink href="https://docs.kyberswap.com/liquidity-solutions/kyberswap-elastic/user-guides/yield-farming-on-static-farms">
+            {/* <ExternalLink href="https://docs.kyberswap.com/liquidity-solutions/kyberswap-elastic/user-guides/yield-farming-on-static-farms">
               here ↗
-            </ExternalLink>
+            </ExternalLink> */}
           </Trans>
         </Text>
       ),
@@ -145,7 +145,7 @@ const FarmStepGuide: FC<FarmStepGuideProps> = ({ version, onChangeVersion }) => 
           <Trans>
             To join the Farm, you must approve the{' '}
             <Text as="span" color={theme.text} fontWeight="500">
-              KyberSwap Farming contract
+              OasisSwap Farming contract
             </Text>{' '}
             to let it access your liquidity positions.
           </Trans>
@@ -260,10 +260,11 @@ const FarmStepGuide: FC<FarmStepGuideProps> = ({ version, onChangeVersion }) => 
         <Text fontSize="12px" color={theme.subText} paddingTop="12px">
           <Trans>
             Dynamic farms incentivize farmers that provide liquidity to a pool in a customizable price range that
-            supports the current price of the pool. Each farmer can choose their own price range. Learn more{' '}
-            <ExternalLink href="https://docs.kyberswap.com/liquidity-solutions/kyberswap-elastic/user-guides/yield-farming-on-dynamic-farms">
+            supports the current price of the pool. Each farmer can choose their own price range.
+             {/* Learn more{' '} */}
+            {/* <ExternalLink href="https://docs.kyberswap.com/liquidity-solutions/kyberswap-elastic/user-guides/yield-farming-on-dynamic-farms">
               here ↗
-            </ExternalLink>
+            </ExternalLink> */}
             .
           </Trans>
         </Text>
@@ -293,7 +294,7 @@ const FarmStepGuide: FC<FarmStepGuideProps> = ({ version, onChangeVersion }) => 
           <Trans>
             To join the Farm, you must approve the{' '}
             <Text as="span" color={theme.text} fontWeight="500">
-              KyberSwap Farming contract
+              OasisSwap Farming contract
             </Text>{' '}
             to let it access your liquidity positions.
           </Trans>

@@ -6,7 +6,7 @@ import { ButtonApprove } from '../index'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof ButtonApprove> = {
-  title: 'Kyberswap/Shared Components/Buttons/ButtonApprove',
+  title: 'Oasisswap/Shared Components/Buttons/ButtonApprove',
   component: ButtonApprove,
   decorators: Component => (
     <div style={{ minWidth: '400px' }}>

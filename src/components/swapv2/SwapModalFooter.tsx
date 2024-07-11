@@ -15,7 +15,9 @@ import useTheme from 'hooks/useTheme'
 import { Field } from 'state/swap/actions'
 import { useCheckCorrelatedPair, useCheckStablePairSwap } from 'state/swap/hooks'
 import { useDegenModeManager } from 'state/user/hooks'
-import { ExternalLink, TYPE } from 'theme'
+import { 
+  // ExternalLink,
+   TYPE } from 'theme'
 import { formattedNum } from 'utils'
 import { Aggregator } from 'utils/aggregator'
 import { useCurrencyConvertedToNative } from 'utils/dmm'
@@ -109,7 +111,7 @@ export default function SwapModalFooter({
                   <div>
                     <Trans>Estimated change in price due to the size of your transaction.</Trans>
                     <Text fontSize={12}>
-                      <Trans>
+                      {/* <Trans>
                         Read more{' '}
                         <a
                           href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/price-impact"
@@ -118,7 +120,7 @@ export default function SwapModalFooter({
                         >
                           <b>here ↗</b>
                         </a>
-                      </Trans>
+                      </Trans> */}
                     </Text>
                   </div>
                 }
@@ -143,10 +145,11 @@ export default function SwapModalFooter({
                 text={
                   <Text>
                     <Trans>
-                      During your swap if the price changes by more than this %, your transaction will revert. Read more{' '}
+                      During your swap if the price changes by more than this %, your transaction will revert.
+                       {/* Read more{' '}
                       <ExternalLink href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/slippage">
                         here ↗
-                      </ExternalLink>
+                      </ExternalLink> */}
                     </Trans>
                   </Text>
                 }

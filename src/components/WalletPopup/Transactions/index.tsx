@@ -112,7 +112,7 @@ function ListTransaction({ isMinimal }: { isMinimal: boolean }) {
       { title: t`All`, value: '' },
       { title: t`Swaps`, value: TRANSACTION_GROUP.SWAP },
       { title: t`Liquidity`, value: TRANSACTION_GROUP.LIQUIDITY },
-      { title: t`KyberDAO`, value: TRANSACTION_GROUP.KYBERDAO },
+      // { title: t`KyberDAO`, value: TRANSACTION_GROUP.KYBERDAO },
       { title: t`Others`, value: TRANSACTION_GROUP.OTHER },
     ],
     [],

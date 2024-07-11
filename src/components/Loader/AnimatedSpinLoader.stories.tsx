@@ -4,7 +4,7 @@ import AnimatedSpinLoader from './AnimatedSpinLoader'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof AnimatedSpinLoader> = {
-  title: 'Kyberswap/Shared Components/Loader/AnimatedSpinLoader',
+  title: 'Oasisswap/Shared Components/Loader/AnimatedSpinLoader',
   component: AnimatedSpinLoader,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout

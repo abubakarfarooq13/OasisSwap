@@ -84,7 +84,7 @@ const disabledPrimary = css<{
 `
 export const ButtonPrimary = styled(Base)`
   background-color: ${({ theme, backgroundColor }) => backgroundColor || theme.primary};
-  color: ${({ theme, color }) => color || theme.textReverse};
+  color: ${({ theme, color }) => color || theme.text};
   &:hover {
     color: ${({ theme, color }) => color || theme.textReverse};
     filter: brightness(0.8);
