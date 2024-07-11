@@ -38,8 +38,8 @@ msgstr "Please type the word <0>Confirm</0> below to enable Degen Mode"
 #~ msgstr "Input Token"
 
 #: src/components/swapv2/LimitOrder/ActionButtonLimitOrder.tsx
-msgid "You need to first allow KyberSwap smart contracts to use your {inSymbol}. This has to be done only once for each token."
-msgstr "You need to first allow KyberSwap smart contracts to use your {inSymbol}. This has to be done only once for each token."
+#~ msgid "You need to first allow KyberSwap smart contracts to use your {inSymbol}. This has to be done only once for each token."
+#~ msgstr "You need to first allow KyberSwap smart contracts to use your {inSymbol}. This has to be done only once for each token."
 
 #: src/components/WalletPopup/AccountInfo/Settings.tsx
 #~ msgid "Disconnect"
@@ -535,8 +535,8 @@ msgid "Tradable token pair price range for this pool based on AMP. If the price 
 msgstr "Tradable token pair price range for this pool based on AMP. If the price goes below or above this range, the pool may become inactive."
 
 #: src/components/WalletPopup/Transactions/PendingWarning.tsx
-msgid "Transaction stuck? <0><1>See here</1></0>"
-msgstr "Transaction stuck? <0><1>See here</1></0>"
+#~ msgid "Transaction stuck? <0><1>See here</1></0>"
+#~ msgstr "Transaction stuck? <0><1>See here</1></0>"
 
 #: src/components/SwapForm/TradeTypeSelection.tsx
 #: src/components/swapv2/TradeTypeSelection.tsx
@@ -629,8 +629,8 @@ msgstr "Add Custom RPC Endpoint"
 #~ msgstr "<0>A unique trading insight offered by KyberAI is the <1>KyberScore</1>. KyberScore uses <2>AI</2> to measure the upcoming trend (bullish or bearish) of a token by taking into account multiple on-chain and off-chain indicators. The score ranges from 0 to 100. Higher the score, more bullish the token in the <3>short-term</3>.</0> <4>Each token supported by KyberAI is assigned a KyberScore. It refreshes multiple times a day as we collect more data on the token. You can find the KyberScore of a token in the <5>Rankings</5> or <6>Explore</6> section. Read more about the calculation here.</4> <7><8>Note: KyberScore should not be considered as financial advice</8></7>"
 
 #: src/components/SwapForm/SwapActionButton/index.tsx
-msgid "You need to first give a temporary 24H approval to OasisSwap's smart contract to use your {0}. This doesn't require a gas fees. <0>Read more ↗</0>"
-msgstr "You need to first give a temporary 24H approval to OasisSwap's smart contract to use your {0}. This doesn't require a gas fees. <0>Read more ↗</0>"
+#~ msgid "You need to first give a temporary 24H approval to OasisSwap's smart contract to use your {0}. This doesn't require a gas fees. <0>Read more ↗</0>"
+#~ msgstr "You need to first give a temporary 24H approval to OasisSwap's smart contract to use your {0}. This doesn't require a gas fees. <0>Read more ↗</0>"
 
 #: src/components/Vesting/VestingCard.tsx
 msgid "Total Harvested Rewards"
@@ -1001,8 +1001,8 @@ msgid "The amount to bridge must be less than {amount} {symbol}."
 msgstr "The amount to bridge must be less than {amount} {symbol}."
 
 #: src/components/SwapForm/TradeSummary.tsx
-msgid "Read more about the fees {hereLink}"
-msgstr "Read more about the fees {hereLink}"
+#~ msgid "Read more about the fees {hereLink}"
+#~ msgstr "Read more about the fees {hereLink}"
 
 #: src/pages/Bridge/SwapForm.tsx
 #~ msgid "The amount to bridge must be more than {0} {1}"
@@ -1354,6 +1354,10 @@ msgstr "There was an issue while trying to find a price for these tokens. Please
 #: src/pages/NotificationCenter/CreateAlert/InputNote.tsx
 msgid "Add a note"
 msgstr "Add a note"
+
+#: src/components/Tutorial/index.tsx
+msgid "To learn more about how to add liquidity to OasisSwap Elastic,"
+msgstr "To learn more about how to add liquidity to OasisSwap Elastic,"
 
 #: src/components/swapv2/TokenInfo/utils.ts
 msgid "Trading Volume (24H)"
@@ -2059,6 +2063,10 @@ msgstr "Est. Output"
 msgid "Claim your rewards"
 msgstr "Claim your rewards"
 
+#: src/components/SwapForm/SwapModal/SwapDetails/index.tsx
+msgid "Stake ONC in OasisDAO to get gas refund."
+msgstr "Stake ONC in OasisDAO to get gas refund."
+
 #: src/components/YieldPools/FairLaunchPools.tsx
 msgid "After harvesting, your rewards will unlock linearly over the indicated time period"
 msgstr "After harvesting, your rewards will unlock linearly over the indicated time period"
@@ -2154,8 +2162,8 @@ msgstr "Profile updated failed"
 #~ msgstr "Search"
 
 #: src/components/Tutorial/index.tsx
-msgid "To learn more about how to increase liquidity to KyberSwap Elastic, view <0> here</0>"
-msgstr "To learn more about how to increase liquidity to KyberSwap Elastic, view <0> here</0>"
+#~ msgid "To learn more about how to increase liquidity to KyberSwap Elastic, view <0> here</0>"
+#~ msgstr "To learn more about how to increase liquidity to KyberSwap Elastic, view <0> here</0>"
 
 #: src/components/swapv2/LimitOrder/Modals/CancelButtons.tsx
 msgid "This chain is not supported gasless cancel. It's coming soon."
@@ -2288,6 +2296,10 @@ msgstr "This action"
 #: src/components/SearchModal/CurrencySearch.tsx
 #~ msgid "Manage Token Lists"
 #~ msgstr "Manage Token Lists"
+
+#: src/components/swapv2/AdvancedSwapDetails.tsx
+msgid "Fees charged by OasisSwap and Squid."
+msgstr "Fees charged by OasisSwap and Squid."
 
 #: src/components/YieldPools/FarmGuide.tsx
 #~ msgid "Identify the Elastic farm you would like to participate in"
@@ -3118,6 +3130,7 @@ msgid "If you wish to unstake your liquidity position from the farm, click on th
 msgstr "If you wish to unstake your liquidity position from the farm, click on the <0>Unstake </0> button on the card. Any rewards you have earned will be automatically harvested and sent to your wallet.<1>If you can’t find your Liquidity, you can check the <2>Ended</2> or <3>My Farms</3> tab.</1>"
 
 #: src/components/ProAmm/ProAmmPriceRangeConfirm.tsx
+#: src/components/swapv2/SwapSettingsPanel/SlippageSetting.tsx
 msgid "During your swap if the price changes by more than this %, your transaction will revert. Read more ."
 msgstr "During your swap if the price changes by more than this %, your transaction will revert. Read more ."
 
@@ -3374,8 +3387,8 @@ msgstr "Show closed positions"
 
 #: src/components/YieldPools/FarmStepGuide/index.tsx
 #: src/components/YieldPools/FarmStepGuide/index.tsx
-msgid "To join the Farm, you must approve the <0>KyberSwap Farming contract</0> to let it access your liquidity positions."
-msgstr "To join the Farm, you must approve the <0>KyberSwap Farming contract</0> to let it access your liquidity positions."
+#~ msgid "To join the Farm, you must approve the <0>KyberSwap Farming contract</0> to let it access your liquidity positions."
+#~ msgstr "To join the Farm, you must approve the <0>KyberSwap Farming contract</0> to let it access your liquidity positions."
 
 #: src/components/WalletPopup/RewardCenter.tsx
 #: src/hooks/kyberdao/index.tsx
@@ -3772,8 +3785,8 @@ msgid "MY DEPOSIT ↑"
 msgstr "MY DEPOSIT ↑"
 
 #: src/components/swapv2/SwapSettingsPanel/SlippageSetting.tsx
-msgid "During your swap if the price changes by more than this %, your transaction will revert. Read more <0>here ↗</0>."
-msgstr "During your swap if the price changes by more than this %, your transaction will revert. Read more <0>here ↗</0>."
+#~ msgid "During your swap if the price changes by more than this %, your transaction will revert. Read more <0>here ↗</0>."
+#~ msgstr "During your swap if the price changes by more than this %, your transaction will revert. Read more <0>here ↗</0>."
 
 #: src/components/swapv2/TokenInfo/index.tsx
 msgid "Market Info"
@@ -4162,6 +4175,10 @@ msgstr "Claim your farming rewards by clicking the harvest button."
 msgid "FILLED % | STATUS"
 msgstr "FILLED % | STATUS"
 
+#: src/pages/NotificationCenter/Profile/ImportAccountModal/UserEnterPasscodeContent.tsx
+msgid "You can keep your information synced across all of your devices by importing your profile."
+msgstr "You can keep your information synced across all of your devices by importing your profile."
+
 #: src/components/ElasticZap/QuickZap.tsx
 #: src/pages/AddLiquidityV2/index.tsx
 #: src/pages/IncreaseLiquidity/index.tsx
@@ -4196,8 +4213,8 @@ msgid "Note"
 msgstr "Note"
 
 #: src/pages/CrossChain/SwapForm/index.tsx
-msgid "Guide"
-msgstr "Guide"
+#~ msgid "Guide"
+#~ msgstr "Guide"
 
 #: src/components/Header/web3/SelectWallet.tsx
 msgid "Wrong Network"
@@ -4275,8 +4292,8 @@ msgstr "Available Farming Range"
 #~ msgstr "Wallets with more than $5m in assets across multiple chains"
 
 #: src/components/SwapForm/TradeSummary.tsx
-msgid "A {feePercent} fee ({feeAmountText}) will incur on this swap. The Est. Output amount you see above is inclusive of this fee. Read more about the fees {hereLink}"
-msgstr "A {feePercent} fee ({feeAmountText}) will incur on this swap. The Est. Output amount you see above is inclusive of this fee. Read more about the fees {hereLink}"
+#~ msgid "A {feePercent} fee ({feeAmountText}) will incur on this swap. The Est. Output amount you see above is inclusive of this fee. Read more about the fees {hereLink}"
+#~ msgstr "A {feePercent} fee ({feeAmountText}) will incur on this swap. The Est. Output amount you see above is inclusive of this fee. Read more about the fees {hereLink}"
 
 #: src/components/Vesting/VestingCard.tsx
 msgid "Rewards Breakdown"
@@ -4804,7 +4821,6 @@ msgid "Add Liquidity"
 msgstr "Add Liquidity"
 
 #: src/components/Header/web3/WalletModal/WarningBox.tsx
-#: src/components/SwapForm/TradeSummary.tsx
 #: src/pages/CreatePool/index.tsx
 #: src/pages/MyEarnings/ClassicPools/SinglePool/index.tsx
 msgid "here"
@@ -4841,8 +4857,8 @@ msgstr "Unstake"
 #~ msgstr "KyberSwap offers the best prices for traders, attractive earning rewards & smart trading insights. Are you FOMOing yet?"
 
 #: src/components/YieldPools/FarmGuide.tsx
-msgid "here ↗"
-msgstr "here ↗"
+#~ msgid "here ↗"
+#~ msgstr "here ↗"
 
 #: src/pages/TrueSightV2/components/shareContent/ExploreTopShareContent.tsx
 #: src/pages/TrueSightV2/components/shareContent/ExploreTopShareContent.tsx
@@ -5011,8 +5027,8 @@ msgstr "No notification yet"
 
 #: src/components/SwapForm/SwapModal/SwapDetails/index.tsx
 #: src/components/swapv2/SwapModalFooter.tsx
-msgid "Read more <0><1>here ↗</1></0>"
-msgstr "Read more <0><1>here ↗</1></0>"
+#~ msgid "Read more <0><1>here ↗</1></0>"
+#~ msgstr "Read more <0><1>here ↗</1></0>"
 
 #: src/components/SearchModal/CurrencySearch.tsx
 #~ msgid "Find a token by searching for its name or symbol or by pasting its address below.<0/>You can select and trade any token on KyberSwap."
@@ -5234,6 +5250,10 @@ msgstr "Claim your KNC rewards"
 msgid "Cancel Limit Orders Submitted!"
 msgstr "Cancel Limit Orders Submitted!"
 
+#: src/components/Tutorial/index.tsx
+msgid "To learn more about how to increase liquidity to OasisSwap Elastic,"
+msgstr "To learn more about how to increase liquidity to OasisSwap Elastic,"
+
 #: src/components/YieldPools/FarmStepGuide/index.tsx
 msgid "You can unstake your liquidity from a farm anytime you want by clicking the <0>Unstake</0> button on the card.<1>If you can’t find your Liquidity, you can check the <2>Ended</2> or <3>My Farms</3> tab.</1>"
 msgstr "You can unstake your liquidity from a farm anytime you want by clicking the <0>Unstake</0> button on the card.<1>If you can’t find your Liquidity, you can check the <2>Ended</2> or <3>My Farms</3> tab.</1>"
@@ -5266,6 +5286,11 @@ msgstr "Unstake liquidity from farm."
 #: src/components/FarmIssueAnnouncement.tsx
 #~ msgid "If you do this, your farming rewards will <0>not</0> be automatically harvested but we can <1>manually transfer</1> your farming rewards to you."
 #~ msgstr "If you do this, your farming rewards will <0>not</0> be automatically harvested but we can <1>manually transfer</1> your farming rewards to you."
+
+#: src/components/YieldPools/FarmStepGuide/index.tsx
+#: src/components/YieldPools/FarmStepGuide/index.tsx
+msgid "To join the Farm, you must approve the <0>OasisSwap Farming contract</0> to let it access your liquidity positions."
+msgstr "To join the Farm, you must approve the <0>OasisSwap Farming contract</0> to let it access your liquidity positions."
 
 #: src/pages/ElasticSnapshot/components/SelectTreasuryGrant.tsx
 msgid "Verified"
@@ -5416,9 +5441,13 @@ msgstr "Total Amount (USD) = Total Liquidity Amount (USD) + Total Fees Amount (U
 msgid "Invalid pair"
 msgstr "Invalid pair"
 
+#: src/components/swapv2/GasTokenSetting.tsx
+msgid "The PayMaster module & contracts are developed and operated by HoldStations,"
+msgstr "The PayMaster module & contracts are developed and operated by HoldStations,"
+
 #: src/pages/NotificationCenter/Profile/ImportAccountModal/UserEnterPasscodeContent.tsx
-msgid "You can keep your information synced across all of your devices by importing your profile. Learn more about profiles <0>here</0>."
-msgstr "You can keep your information synced across all of your devices by importing your profile. Learn more about profiles <0>here</0>."
+#~ msgid "You can keep your information synced across all of your devices by importing your profile. Learn more about profiles <0>here</0>."
+#~ msgstr "You can keep your information synced across all of your devices by importing your profile. Learn more about profiles <0>here</0>."
 
 #: src/components/ClassicElasticTab.tsx
 #: src/components/ClassicElasticTab.tsx
@@ -5486,6 +5515,10 @@ msgstr "Edit immediately by paying {gasAmountDisplay} gas fees."
 #: src/components/swapv2/AdvancedSwapDetails.tsx
 msgid "half a minute"
 msgstr "half a minute"
+
+#: src/components/SwapForm/SwapActionButton/index.tsx
+msgid "You need to first allow OasisSwap's smart contract to use your {0}."
+msgstr "You need to first allow OasisSwap's smart contract to use your {0}."
 
 #: src/components/swapv2/LimitOrder/ListOrder/OrderItem.tsx
 msgid "Partially Filled"
@@ -5604,8 +5637,8 @@ msgstr "ONC enables OasisDAO to shape token behaviour and upgrades, making ONC m
 #~ msgstr "View our KyberSwap Guide again"
 
 #: src/components/Tutorial/index.tsx
-msgid "To learn more about how to add liquidity to KyberSwap Elastic, view <0> here</0>"
-msgstr "To learn more about how to add liquidity to KyberSwap Elastic, view <0> here</0>"
+#~ msgid "To learn more about how to add liquidity to KyberSwap Elastic, view <0> here</0>"
+#~ msgstr "To learn more about how to add liquidity to KyberSwap Elastic, view <0> here</0>"
 
 #: src/components/SwapForm/SwapModal/ConfirmSwapModalContent.tsx
 msgid "Checking price"
@@ -5856,6 +5889,10 @@ msgstr "Docs"
 msgid "Affected Assets presently locked in Affected Pools due to incorrect pool state as a result of the Primary Exploit and MBA."
 msgstr "Affected Assets presently locked in Affected Pools due to incorrect pool state as a result of the Primary Exploit and MBA."
 
+#: src/components/Tutorial/index.tsx
+msgid "To learn more about how to add liquidity to OsisSwap Classic,"
+msgstr "To learn more about how to add liquidity to OsisSwap Classic,"
+
 #: src/pages/KyberDAO/Vote/VoteConfirmModal.tsx
 msgid "You are voting for <0>{options}</0> on <1>{title}</1> with your KIP voting power"
 msgstr "You are voting for <0>{options}</0> on <1>{title}</1> with your KIP voting power"
@@ -5967,6 +6004,10 @@ msgstr "Your passcode must be at least 6 characters long"
 #: src/components/SwapForm/PriceImpactNote.tsx
 msgid "You can turn on Degen Mode from Settings to execute trades when price impact cannot be calculated. This can result in bad rates and loss of funds!"
 msgstr "You can turn on Degen Mode from Settings to execute trades when price impact cannot be calculated. This can result in bad rates and loss of funds!"
+
+#: src/components/Tutorial/index.tsx
+msgid "To learn more about how to remove liquidity on OasisSwap Elastic,"
+msgstr "To learn more about how to remove liquidity on OasisSwap Elastic,"
 
 #: src/pages/TrueSight/components/TrendingLayout/TrendingTokenItemMobileOnly.tsx
 #: src/pages/TrueSight/components/TrendingSoonLayout/TrendingSoonTokenItemDetailsOnMobile.tsx
@@ -6229,6 +6270,10 @@ msgstr "AMP factor x Liquidity in the pool. Amplified pools have higher capital 
 #~ msgid "KyberSwap is DeFi’s premier automated market maker, providing the best token prices for traders across multiple exchanges, and maximizing earnings for liquidity providers, in one decentralized platform."
 #~ msgstr "KyberSwap is DeFi’s premier automated market maker, providing the best token prices for traders across multiple exchanges, and maximizing earnings for liquidity providers, in one decentralized platform."
 
+#: src/components/YieldPools/FarmStepGuide/index.tsx
+msgid "Dynamic farms incentivize farmers that provide liquidity to a pool in a customizable price range that supports the current price of the pool. Each farmer can choose their own price range. ."
+msgstr "Dynamic farms incentivize farmers that provide liquidity to a pool in a customizable price range that supports the current price of the pool. Each farmer can choose their own price range. ."
+
 #: src/components/Header/web3/NetworkModal/components/DraggableNetworkButton.tsx
 msgid "Coming Soon"
 msgstr "Coming Soon"
@@ -6300,8 +6345,8 @@ msgstr "An error occurred"
 #~ msgstr "We introduce to you, <0>KyberAI</0>"
 
 #: src/components/Header/web3/SignWallet/ConfirmModal.tsx
-msgid "You are connected to KyberSwap with wallet <0>{0}</0> while your current profile <1>{currentProfileName}</1> was created by wallet <2>{1}</2>. Do you wish to keep using"
-msgstr "You are connected to KyberSwap with wallet <0>{0}</0> while your current profile <1>{currentProfileName}</1> was created by wallet <2>{1}</2>. Do you wish to keep using"
+#~ msgid "You are connected to KyberSwap with wallet <0>{0}</0> while your current profile <1>{currentProfileName}</1> was created by wallet <2>{1}</2>. Do you wish to keep using"
+#~ msgstr "You are connected to KyberSwap with wallet <0>{0}</0> while your current profile <1>{currentProfileName}</1> was created by wallet <2>{1}</2>. Do you wish to keep using"
 
 #: src/components/SwapForm/SwapModal/SwapDetails/index.tsx
 #: src/components/SwapForm/TradeSummary.tsx
@@ -6395,11 +6440,9 @@ msgstr "You can search and select <0>any token</0> on OasisSwap."
 #~ msgstr "Deposit your liquidity from the Elastic Pools here, and then stake it to earn even more attractive farming rewards."
 
 #: src/components/WalletPopup/Transactions/index.tsx
-msgid "KyberDAO"
-msgstr "KyberDAO"
+#~ msgid "KyberDAO"
+#~ msgstr "KyberDAO"
 
-#: src/components/SwapForm/SwapModal/SwapDetails/index.tsx
-#: src/components/swapv2/SwapModalFooter.tsx
 #: src/pages/RemoveLiquidityProAmm/index.tsx
 msgid "During your swap if the price changes by more than this %, your transaction will revert. Read more <0>here ↗</0>"
 msgstr "During your swap if the price changes by more than this %, your transaction will revert. Read more <0>here ↗</0>"
@@ -6775,8 +6818,8 @@ msgstr "Step 1"
 #~ msgstr "Currently there are no Projects."
 
 #: src/components/Tutorial/index.tsx
-msgid "To learn more about how to remove liquidity on KyberSwap Elastic, view <0> here</0>"
-msgstr "To learn more about how to remove liquidity on KyberSwap Elastic, view <0> here</0>"
+#~ msgid "To learn more about how to remove liquidity on KyberSwap Elastic, view <0> here</0>"
+#~ msgstr "To learn more about how to remove liquidity on KyberSwap Elastic, view <0> here</0>"
 
 #: src/components/PoolList/ItemCard/index.tsx
 #: src/components/YieldPools/FarmingPoolAPRCell.tsx
@@ -7301,7 +7344,6 @@ msgstr "Input Amount"
 msgid "Your profile has been successfully updated"
 msgstr "Your profile has been successfully updated"
 
-#: src/components/YieldPools/FarmGuide.tsx
 #: src/pages/Pools/InstructionAndGlobalData.tsx
 msgid "Learn More ↗"
 msgstr "Learn More ↗"
@@ -7406,6 +7448,10 @@ msgstr "Oasis Network Crystal <0>(ONC)</0>"
 #: src/pages/Verify/VerifyCodeModal/index.tsx
 msgid "Verifying"
 msgstr "Verifying"
+
+#: src/components/WalletPopup/Transactions/PendingWarning.tsx
+msgid "Transaction stuck? <0></0>"
+msgstr "Transaction stuck? <0></0>"
 
 #: src/components/FarmIssueAnnouncement.tsx
 #~ msgid "Important Announcement"
@@ -7844,7 +7890,6 @@ msgstr "Classic Pools"
 msgid "Your currently existing order is {filledPercent}% filled."
 msgstr "Your currently existing order is {filledPercent}% filled."
 
-#: src/components/YieldPools/FarmStepGuide/index.tsx
 #: src/pages/Farm/index.tsx
 msgid "Static farms incentivize farmers that provide liquidity to a pool in a pre-configured farming price range that is set by the farm administrator. Learn more <0>here ↗</0>"
 msgstr "Static farms incentivize farmers that provide liquidity to a pool in a pre-configured farming price range that is set by the farm administrator. Learn more <0>here ↗</0>"
@@ -8219,6 +8264,10 @@ msgstr "None of the liquidity position(s) held by your wallet ({0}) were affecte
 msgid "Prices and Pool share"
 msgstr "Prices and Pool share"
 
+#: src/components/YieldPools/PartnerFarmTag.tsx
+msgid "OasisSwap Frax farms do not currently receive ONC incentives. They are continuously available for staking so that users can participate in OasisSwap Frax gauges to earn FXS emissions. The amount of FXS emissions depends on the results of each weekly Frax gauge voting cycle. More info: <0>https://app.frax.finance/gauge</0> and <1>https://docs.frax.finance/vefxs/gauge</1>"
+msgstr "OasisSwap Frax farms do not currently receive ONC incentives. They are continuously available for staking so that users can participate in OasisSwap Frax gauges to earn FXS emissions. The amount of FXS emissions depends on the results of each weekly Frax gauge voting cycle. More info: <0>https://app.frax.finance/gauge</0> and <1>https://docs.frax.finance/vefxs/gauge</1>"
+
 #: src/utils/time.ts
 #~ msgid "{hour} hours ago"
 #~ msgstr "{hour} hours ago"
@@ -8318,8 +8367,8 @@ msgstr "Limit Orders"
 #~ msgstr "<0>Add liquidity</0> to the corresponding <1>Elastic pool</1> and receive a NFT token for your liquidity position"
 
 #: src/components/SwapForm/SwapActionButton/index.tsx
-msgid "You need to first allow OasisSwap's smart contract to use your {0}. <0>Read more ↗</0>"
-msgstr "You need to first allow OasisSwap's smart contract to use your {0}. <0>Read more ↗</0>"
+#~ msgid "You need to first allow OasisSwap's smart contract to use your {0}. <0>Read more ↗</0>"
+#~ msgstr "You need to first allow OasisSwap's smart contract to use your {0}. <0>Read more ↗</0>"
 
 #: src/components/SwapForm/OutputCurrencyPanel.tsx
 #~ msgid "This is the estimated output amount. Do review the actual output amount in the confirmation stage."
@@ -8384,8 +8433,8 @@ msgstr "You have turned on <0>Degen Mode</0> from settings. Trades can still be 
 #~ msgstr "If you purchase a token from this list, you may not be able to sell it back."
 
 #: src/components/Tutorial/index.tsx
-msgid "To learn more about how to add liquidity to KyberSwap Classic, view <0> here</0>"
-msgstr "To learn more about how to add liquidity to KyberSwap Classic, view <0> here</0>"
+#~ msgid "To learn more about how to add liquidity to KyberSwap Classic, view <0> here</0>"
+#~ msgstr "To learn more about how to add liquidity to KyberSwap Classic, view <0> here</0>"
 
 #: src/pages/RemoveLiquidity/TokenPair.tsx
 #: src/pages/RemoveLiquidity/ZapOut.tsx
@@ -8691,8 +8740,8 @@ msgid "TVL From DEXs"
 msgstr "TVL From DEXs"
 
 #: src/components/swapv2/GasTokenSetting.tsx
-msgid "The PayMaster module & contracts are developed and operated by HoldStations, <0>details</0>"
-msgstr "The PayMaster module & contracts are developed and operated by HoldStations, <0>details</0>"
+#~ msgid "The PayMaster module & contracts are developed and operated by HoldStations, <0>details</0>"
+#~ msgstr "The PayMaster module & contracts are developed and operated by HoldStations, <0>details</0>"
 
 #: src/components/NavigationTabs/index.tsx
 #: src/components/YieldPools/ShareFarmAddressModal.tsx
@@ -8985,6 +9034,10 @@ msgstr "Sign in with the connected wallet"
 #: src/pages/About/AboutKyberSwap/index.tsx
 #~ msgid "On-chain & Open Source"
 #~ msgstr "On-chain & Open Source"
+
+#: src/components/SwapForm/TradeSummary.tsx
+msgid "Read more about the fees"
+msgstr "Read more about the fees"
 
 #: src/pages/SwapV2/index.tsx
 #~ msgid "Price Impact is Very High"
@@ -9654,8 +9707,8 @@ msgstr "Phase 2"
 #~ msgstr "You don't have any order history"
 
 #: src/components/swapv2/AdvancedSwapDetails.tsx
-msgid "Fees charged by KyberSwap and Squid."
-msgstr "Fees charged by KyberSwap and Squid."
+#~ msgid "Fees charged by KyberSwap and Squid."
+#~ msgstr "Fees charged by KyberSwap and Squid."
 
 #: src/components/YieldPools/FarmPoolSort.tsx
 msgid "MY DEPOSIT ↓"
@@ -9989,8 +10042,8 @@ msgid "We got you a higher amount. The initial output amount was {output}"
 msgstr "We got you a higher amount. The initial output amount was {output}"
 
 #: src/components/swapv2/LimitOrder/Tutorial.tsx
-msgid "Learn more about our limit orders <0>here</0>."
-msgstr "Learn more about our limit orders <0>here</0>."
+#~ msgid "Learn more about our limit orders <0>here</0>."
+#~ msgstr "Learn more about our limit orders <0>here</0>."
 
 #: src/state/farms/elastic/hooks.ts
 msgid "Stake Error"
@@ -10250,6 +10303,10 @@ msgstr "Profile Details"
 #: src/components/Header/web3/WalletModal/index.tsx
 msgid "Connecting Wallet"
 msgstr "Connecting Wallet"
+
+#: src/components/SwapForm/SwapActionButton/index.tsx
+msgid "You need to first give a temporary 24H approval to OasisSwap's smart contract to use your {0}. This doesn't require a gas fees."
+msgstr "You need to first give a temporary 24H approval to OasisSwap's smart contract to use your {0}. This doesn't require a gas fees."
 
 #: 
 #~ msgid "{0} on {1}"
@@ -10623,8 +10680,8 @@ msgid "Price Range ({0} per {1})"
 msgstr "Price Range ({0} per {1})"
 
 #: src/components/YieldPools/FarmStepGuide/index.tsx
-msgid "Dynamic farms incentivize farmers that provide liquidity to a pool in a customizable price range that supports the current price of the pool. Each farmer can choose their own price range. Learn more <0>here ↗</0>."
-msgstr "Dynamic farms incentivize farmers that provide liquidity to a pool in a customizable price range that supports the current price of the pool. Each farmer can choose their own price range. Learn more <0>here ↗</0>."
+#~ msgid "Dynamic farms incentivize farmers that provide liquidity to a pool in a customizable price range that supports the current price of the pool. Each farmer can choose their own price range. Learn more <0>here ↗</0>."
+#~ msgstr "Dynamic farms incentivize farmers that provide liquidity to a pool in a customizable price range that supports the current price of the pool. Each farmer can choose their own price range. Learn more <0>here ↗</0>."
 
 #: src/components/YieldPools/HarvestAll.tsx
 #~ msgid "My Total Rewards"
@@ -10635,8 +10692,8 @@ msgid "Tip"
 msgstr "Tip"
 
 #: src/components/swapv2/AdvancedSwapDetails.tsx
-msgid "Read more <0><1>here ↗</1>.</0>"
-msgstr "Read more <0><1>here ↗</1>.</0>"
+#~ msgid "Read more <0><1>here ↗</1>.</0>"
+#~ msgstr "Read more <0><1>here ↗</1>.</0>"
 
 #: src/components/PositionCard/index.tsx
 msgid "Note: {warningToken} is now <10% of the pool. Pool might become inactive if {warningToken} reaches 0%."
@@ -10657,6 +10714,10 @@ msgstr "Expired Orders"
 #: src/components/YieldPools/ElasticFarmGroup/index.tsx
 #~ msgid "Average estimated return based on yearly fees of the pool and if it's still active, plus bonus rewards of the pool"
 #~ msgstr "Average estimated return based on yearly fees of the pool and if it's still active, plus bonus rewards of the pool"
+
+#: src/components/YieldPools/ElasticFarmGroup/index.tsx
+msgid "Some farms have a target trading volume (represented by the progress bar) to determine the amount of reward you will earn. The more trading volume your liquidity positions support, the more rewards per second you will make.<0/><1/>Once you have fully unlocked the target volume, you will start earning the maximum rewards per second. Adjusting the staked amount will recalculate the target volume.<2/>"
+msgstr "Some farms have a target trading volume (represented by the progress bar) to determine the amount of reward you will earn. The more trading volume your liquidity positions support, the more rewards per second you will make.<0/><1/>Once you have fully unlocked the target volume, you will start earning the maximum rewards per second. Adjusting the staked amount will recalculate the target volume.<2/>"
 
 #: src/components/swapv2/LimitOrder/useWarningCreateOrder.tsx
 msgid "Limit order price is >={BETTER_PRICE_DIFF_THRESHOLD}% higher than the market. We just want to make sure this is correct"
@@ -10792,8 +10853,8 @@ msgid "Import it."
 msgstr "Import it."
 
 #: src/components/YieldPools/ElasticFarmGroup/index.tsx
-msgid "Some farms have a target trading volume (represented by the progress bar) to determine the amount of reward you will earn. The more trading volume your liquidity positions support, the more rewards per second you will make.<0/><1/>Once you have fully unlocked the target volume, you will start earning the maximum rewards per second. Adjusting the staked amount will recalculate the target volume.<2/>Learn more <3>here.</3>"
-msgstr "Some farms have a target trading volume (represented by the progress bar) to determine the amount of reward you will earn. The more trading volume your liquidity positions support, the more rewards per second you will make.<0/><1/>Once you have fully unlocked the target volume, you will start earning the maximum rewards per second. Adjusting the staked amount will recalculate the target volume.<2/>Learn more <3>here.</3>"
+#~ msgid "Some farms have a target trading volume (represented by the progress bar) to determine the amount of reward you will earn. The more trading volume your liquidity positions support, the more rewards per second you will make.<0/><1/>Once you have fully unlocked the target volume, you will start earning the maximum rewards per second. Adjusting the staked amount will recalculate the target volume.<2/>Learn more <3>here.</3>"
+#~ msgstr "Some farms have a target trading volume (represented by the progress bar) to determine the amount of reward you will earn. The more trading volume your liquidity positions support, the more rewards per second you will make.<0/><1/>Once you have fully unlocked the target volume, you will start earning the maximum rewards per second. Adjusting the staked amount will recalculate the target volume.<2/>Learn more <3>here.</3>"
 
 #: src/pages/TrueSightV2/components/DisplaySettings.tsx
 #~ msgid "Live DEX Trades"
@@ -10802,6 +10863,10 @@ msgstr "Some farms have a target trading volume (represented by the progress bar
 #: src/components/Announcement/PrivateAnnoucement/NotificationCenter/KyberAI.tsx
 #~ msgid "Here are our top tokens by KyberAI:"
 #~ msgstr "Here are our top tokens by KyberAI:"
+
+#: src/components/SwapForm/TradeSummary.tsx
+msgid "A {feePercent} fee ({feeAmountText}) will incur on this swap. The Est. Output amount you see above is inclusive of this fee. Read more about the fees"
+msgstr "A {feePercent} fee ({feeAmountText}) will incur on this swap. The Est. Output amount you see above is inclusive of this fee. Read more about the fees"
 
 #: src/components/YieldPools/FairLaunchPools.tsx
 msgid "POOLS | AMP"
@@ -10972,6 +11037,10 @@ msgstr "Stake Amount"
 #: src/components/YieldPools/FarmStepGuide/index.tsx
 msgid "Step 4: Stake in a farm"
 msgstr "Step 4: Stake in a farm"
+
+#: src/components/YieldPools/FarmStepGuide/index.tsx
+msgid "Static farms incentivize farmers that provide liquidity to a pool in a pre-configured farming price range that is set by the farm administrator. Learn more"
+msgstr "Static farms incentivize farmers that provide liquidity to a pool in a pre-configured farming price range that is set by the farm administrator. Learn more"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #~ msgid "Add {0} to Metamask"
@@ -11152,8 +11221,8 @@ msgid "Chain under maintenance. We will be back as soon as possible."
 msgstr "Chain under maintenance. We will be back as soon as possible."
 
 #: src/components/SwapForm/SwapModal/SwapDetails/index.tsx
-msgid "Stake ONC in OasisDAO to get gas refund. Read more <0>here ↗</0>"
-msgstr "Stake ONC in OasisDAO to get gas refund. Read more <0>here ↗</0>"
+#~ msgid "Stake ONC in OasisDAO to get gas refund. Read more <0>here ↗</0>"
+#~ msgstr "Stake ONC in OasisDAO to get gas refund. Read more <0>here ↗</0>"
 
 #: src/components/ErrorBoundary/FallbackView.tsx
 msgid "Oops! Something went wrong"
@@ -11415,6 +11484,10 @@ msgstr "Processing"
 msgid "Imported Guest"
 msgstr "Imported Guest"
 
+#: src/components/swapv2/LimitOrder/ActionButtonLimitOrder.tsx
+msgid "You need to first allow OasisSwap smart contracts to use your {inSymbol}. This has to be done only once for each token."
+msgstr "You need to first allow OasisSwap smart contracts to use your {inSymbol}. This has to be done only once for each token."
+
 #: src/pages/KyberDAO/Vote/index.tsx
 #~ msgid "You have to stake KNC to be able to vote and earn voting reward."
 #~ msgstr "You have to stake KNC to be able to vote and earn voting reward."
@@ -11430,8 +11503,8 @@ msgstr "Send axlUSDC to {dstChainName}"
 #~ msgstr "Maximum Sold"
 
 #: src/components/YieldPools/PartnerFarmTag.tsx
-msgid "KyberSwap Frax farms do not currently receive KNC incentives. They are continuously available for staking so that users can participate in KyberSwap Frax gauges to earn FXS emissions. The amount of FXS emissions depends on the results of each weekly Frax gauge voting cycle. More info: <0>https://app.frax.finance/gauge</0> and <1>https://docs.frax.finance/vefxs/gauge</1>"
-msgstr "KyberSwap Frax farms do not currently receive KNC incentives. They are continuously available for staking so that users can participate in KyberSwap Frax gauges to earn FXS emissions. The amount of FXS emissions depends on the results of each weekly Frax gauge voting cycle. More info: <0>https://app.frax.finance/gauge</0> and <1>https://docs.frax.finance/vefxs/gauge</1>"
+#~ msgid "KyberSwap Frax farms do not currently receive KNC incentives. They are continuously available for staking so that users can participate in KyberSwap Frax gauges to earn FXS emissions. The amount of FXS emissions depends on the results of each weekly Frax gauge voting cycle. More info: <0>https://app.frax.finance/gauge</0> and <1>https://docs.frax.finance/vefxs/gauge</1>"
+#~ msgstr "KyberSwap Frax farms do not currently receive KNC incentives. They are continuously available for staking so that users can participate in KyberSwap Frax gauges to earn FXS emissions. The amount of FXS emissions depends on the results of each weekly Frax gauge voting cycle. More info: <0>https://app.frax.finance/gauge</0> and <1>https://docs.frax.finance/vefxs/gauge</1>"
 
 #: src/pages/Campaign/CampaignActions.tsx
 #~ msgid "Banned"
@@ -11444,6 +11517,11 @@ msgstr "You don't have sufficient fund for this transaction."
 #: src/pages/NotificationCenter/Profile/ImportAccountModal/index.tsx
 msgid "Import Profile"
 msgstr "Import Profile"
+
+#: src/components/SwapForm/SwapModal/SwapDetails/index.tsx
+#: src/components/swapv2/SwapModalFooter.tsx
+msgid "During your swap if the price changes by more than this %, your transaction will revert."
+msgstr "During your swap if the price changes by more than this %, your transaction will revert."
 
 #: src/components/swapv2/LimitOrder/LimitOrderForm.tsx
 msgid "Order Placed"
@@ -11697,6 +11775,10 @@ msgstr "all orders"
 #: src/components/swapv2/LimitOrder/const.ts
 msgid "All Active Orders"
 msgstr "All Active Orders"
+
+#: src/components/Header/web3/SignWallet/ConfirmModal.tsx
+msgid "You are connected to OasisSwap with wallet <0>{0}</0> while your current profile <1>{currentProfileName}</1> was created by wallet <2>{1}</2>. Do you wish to keep using"
+msgstr "You are connected to OasisSwap with wallet <0>{0}</0> while your current profile <1>{currentProfileName}</1> was created by wallet <2>{1}</2>. Do you wish to keep using"
 
 #: src/components/PoolList/index.tsx
 msgid "AMP LIQUIDITY"
