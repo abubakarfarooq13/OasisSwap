@@ -1,24 +1,25 @@
-import { ActivationStatus, useActivationState } from 'connection/activate'
-import { Connection } from 'connection/types'
-import { darken } from 'polished'
-import React from 'react'
-import styled, { css } from 'styled-components'
-
-import { useActiveWeb3React } from 'hooks'
-import { useCloseModal } from 'state/application/hooks'
-import { ApplicationModal } from 'state/application/types'
-import { useIsAcceptedTerm } from 'state/user/hooks'
+import { ActivationStatus, useActivationState } from "connection/activate"
+import { Connection } from "connection/types"
+import { darken } from "polished"
+import React from "react"
+import styled, { css } from "styled-components"
+import { useActiveWeb3React } from "hooks"
+import { useCloseModal } from "state/application/hooks"
+import { ApplicationModal } from "state/application/types"
+import { useIsAcceptedTerm } from "state/user/hooks"
 
 const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
-
+  background-color: ${({ theme }) => theme.bt1};
+  padding: 10px;
+  border-radius: 40px;
   & > img,
   span {
-    height: 20px;
-    width: 20px;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 40px;
   }
   ${({ theme }) => theme.mediaWidth.upToMedium`
     align-items: flex-end;
@@ -27,8 +28,10 @@ const IconWrapper = styled.div`
 
 const HeaderText = styled.div`
   ${({ theme }) => theme.flexRowNoWrap};
-  color: ${({ theme }) => theme.subText};
-  font-weight: 500;
+  color: ${({ theme }) => theme.text};
+  font-weight: 400;
+  line-height: 1rem;
+  font-size: 0.9rem;
 `
 
 const OptionCardClickable = styled.div<{
@@ -37,21 +40,21 @@ const OptionCardClickable = styled.div<{
   isDisabled?: boolean
   overridden?: boolean
 }>`
-  height: 36px;
-  width: 100%;
-  border-radius: 18px;
+  height: 7rem;
+  width: 10rem;
+  border-radius: 12px;
   display: flex;
-  flex-direction: row;
-  gap: 8px;
+  flex-direction: column;
+  gap: 1rem;
   align-items: center;
-  padding: 8px 10px;
-  background-color: ${({ theme }) => theme.tableHeader};
+  padding: 1rem;
+  background-color: ${({ theme }) => theme.buttonBlack};
   overflow: hidden;
   white-space: nowrap;
   font-size: 14px;
 
   cursor: ${({ isDisabled, installLink, overridden }) =>
-    !isDisabled && !installLink && !overridden ? 'pointer' : 'not-allowed'};
+    !isDisabled && !installLink && !overridden ? "pointer" : "not-allowed"};
 
   ${({ isDisabled, connected, theme }) =>
     !isDisabled && connected
@@ -61,13 +64,13 @@ const OptionCardClickable = styled.div<{
         color: ${theme.darkText} !important;
       }
     `
-      : ''}
+      : ""}
 
   &:hover {
     text-decoration: none;
     ${({ installLink, isDisabled, overridden }) =>
       installLink || isDisabled || overridden
-        ? ''
+        ? ""
         : css`
             background-color: ${({ theme }) => darken(0.1, theme.tableHeader)};
             color: ${({ theme }) => theme.text} !important;
@@ -82,12 +85,13 @@ const OptionCardClickable = styled.div<{
         color: ${theme.border};
       }
     `
-      : ''}
+      : ""}
 `
 
 const OptionCardLeft = styled.div`
   ${({ theme }) => theme.flexColumnNoWrap};
   justify-content: center;
+  align-items: center;
   height: 100%;
 `
 
@@ -122,14 +126,14 @@ const Option = ({ connection }: { connection: Connection }) => {
           () => {
             closeWalletModal()
           },
-          chainId,
+          chainId
         )
       }
       connected={isCurrentOptionPending}
       isDisabled={!isAcceptedTerm}
     >
       <IconWrapper>
-        <img src={icon} alt={'Icon'} />
+        <img src={icon} alt={"Icon"} />
       </IconWrapper>
       <OptionCardLeft>
         <HeaderText>{name}</HeaderText>

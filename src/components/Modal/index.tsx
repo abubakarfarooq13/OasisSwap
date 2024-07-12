@@ -1,10 +1,10 @@
-import { DialogContent, DialogOverlay } from '@reach/dialog'
-import '@reach/dialog/styles.css'
-import { AnimatePresence, motion } from 'framer-motion'
-import { transparentize } from 'polished'
-import React, { useCallback } from 'react'
-import { isMobile } from 'react-device-detect'
-import styled, { css } from 'styled-components'
+import { DialogContent, DialogOverlay } from "@reach/dialog"
+import "@reach/dialog/styles.css"
+import { AnimatePresence, motion } from "framer-motion"
+import { transparentize } from "polished"
+import React, { useCallback } from "react"
+import { isMobile } from "react-device-detect"
+import styled, { css } from "styled-components"
 
 const AnimatedDialogOverlay = motion(DialogOverlay)
 
@@ -26,20 +26,20 @@ const AnimatedDialogContent = motion(DialogContent)
 const StyledDialogContent = styled(
   ({ borderRadius, minHeight, maxHeight, maxWidth, width, height, bgColor, mobile, isOpen, margin, ...rest }) => (
     <AnimatedDialogContent {...rest} />
-  ),
+  )
 ).attrs({
-  'aria-label': 'dialog',
+  "aria-label": "dialog"
 })`
   &[data-reach-dialog-content] {
-    margin: ${({ margin }) => margin || '0 0 2rem 0'};
+    margin: ${({ margin }) => margin || "0 0 2rem 0"};
     background-color: ${({ theme, bgColor }) => bgColor || theme.tableHeader};
     box-shadow: 0 4px 8px 0 ${({ theme }) => transparentize(0.95, theme.shadow1)};
     padding: 0;
-    width: ${({ width }) => width || '50vw'};
-    height: ${({ height }) => height || 'auto'};
+    width: ${({ width }) => width || "50vw"};
+    height: ${({ height }) => height || "auto"};
     overflow-y: scroll;
     overflow-x: hidden;
-    align-self: ${({ mobile }) => (mobile ? 'flex-end' : 'center')};
+    align-self: ${({ mobile }) => (mobile ? "flex-end" : "center")};
     max-width: ${({ maxWidth }) => (maxWidth && !isNaN(maxWidth) ? `${maxWidth}px` : maxWidth)};
     ${({ maxHeight }) =>
       maxHeight &&
@@ -58,7 +58,7 @@ const StyledDialogContent = styled(
         border-radius: ${borderRadius};
       `}
     ${({ theme, width }) => theme.mediaWidth.upToMedium`
-      width:  ${width || '65vw'};
+      width:  ${width || "65vw"};
       margin: 0;
     `}
     ${({ theme, mobile, borderRadius }) => theme.mediaWidth.upToSmall`
@@ -103,7 +103,7 @@ export default function Modal({
     // when not pass prop onDismiss, we stop close Modal when click outside Modal
   },
   minHeight = false,
-  margin = '',
+  margin = "",
   maxHeight = 90,
   maxWidth = 420,
   width,
@@ -114,16 +114,16 @@ export default function Modal({
   children,
   transition = true,
   zindex = 100,
-  borderRadius = '20px',
+  borderRadius = "20px",
   enableSwipeGesture = false,
   bypassScrollLock = false,
-  bypassFocusLock = false,
+  bypassFocusLock = false
 }: ModalProps) {
   const animateValues = {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
     exit: { opacity: 0 },
-    transition: { duration: transition ? 0.2 : 0 },
+    transition: { duration: transition ? 0.2 : 0 }
   }
 
   const handleDrag = useCallback(
@@ -132,7 +132,7 @@ export default function Modal({
         onDismiss()
       }
     },
-    [onDismiss],
+    [onDismiss]
   )
 
   return (
@@ -146,7 +146,7 @@ export default function Modal({
           {...animateValues}
         >
           <StyledDialogContent
-            drag={isMobile && enableSwipeGesture && 'y'}
+            drag={isMobile && enableSwipeGesture && "y"}
             dragConstraints={{ top: 0, bottom: 0 }}
             dragElastic={{ top: 0, bottom: 0.5 }}
             onDrag={handleDrag}

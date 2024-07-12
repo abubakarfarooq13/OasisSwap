@@ -1,25 +1,24 @@
-import { ChainId, Token } from '@kyberswap/ks-sdk-core'
-import { useCallback, useMemo } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-
-import { INITIAL_ALLOWED_SLIPPAGE, TERM_FILES_PATH } from 'constants/index'
-import { LOCALE_INFO, SupportedLocale } from 'constants/locales'
-import { GAS_TOKENS } from 'constants/tokens'
-import { useActiveWeb3React } from 'hooks'
-import { useAllTokens } from 'hooks/Tokens'
+import { ChainId, Token } from "@kyberswap/ks-sdk-core"
+import { useCallback, useMemo } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { INITIAL_ALLOWED_SLIPPAGE, TERM_FILES_PATH } from "constants/index"
+import { LOCALE_INFO, SupportedLocale } from "constants/locales"
+import { GAS_TOKENS } from "constants/tokens"
+import { useActiveWeb3React } from "hooks"
+import { useAllTokens } from "hooks/Tokens"
 import {
   useDynamicFeeFactoryContract,
   useOldStaticFeeFactoryContract,
-  useStaticFeeFactoryContract,
-} from 'hooks/useContract'
-import usePageLocation from 'hooks/usePageLocation'
-import { AppDispatch, AppState } from 'state'
-import { useKyberSwapConfig } from 'state/application/hooks'
-import { useAppDispatch, useAppSelector } from 'state/hooks'
-import { WrappedTokenInfo } from 'state/lists/wrappedTokenInfo'
-import { useSingleContractMultipleData } from 'state/multicall/hooks'
-import { useUserLiquidityPositions } from 'state/pools/hooks'
-import { useCheckStablePairSwap } from 'state/swap/hooks'
+  useStaticFeeFactoryContract
+} from "hooks/useContract"
+import usePageLocation from "hooks/usePageLocation"
+import { AppDispatch, AppState } from "state"
+import { useKyberSwapConfig } from "state/application/hooks"
+import { useAppDispatch, useAppSelector } from "state/hooks"
+import { WrappedTokenInfo } from "state/lists/wrappedTokenInfo"
+import { useSingleContractMultipleData } from "state/multicall/hooks"
+import { useUserLiquidityPositions } from "state/pools/hooks"
+import { useCheckStablePairSwap } from "state/swap/hooks"
 import {
   SerializedToken,
   ToggleFavoriteTokenPayload,
@@ -43,10 +42,10 @@ import {
   updateUserDeadline,
   updateUserDegenMode,
   updateUserLocale,
-  updateUserSlippageTolerance,
-} from 'state/user/actions'
-import { CROSS_CHAIN_SETTING_DEFAULT, CrossChainSetting, VIEW_MODE } from 'state/user/reducer'
-import { isAddress } from 'utils'
+  updateUserSlippageTolerance
+} from "state/user/actions"
+import { CROSS_CHAIN_SETTING_DEFAULT, CrossChainSetting, VIEW_MODE } from "state/user/reducer"
+import { isAddress } from "utils"
 
 const MAX_FAVORITE_LIMIT = 12
 
@@ -57,7 +56,7 @@ function serializeToken(token: Token | WrappedTokenInfo): SerializedToken {
     decimals: token.decimals,
     symbol: token.symbol,
     name: token.name,
-    logoURI: token instanceof WrappedTokenInfo ? token.logoURI : undefined,
+    logoURI: token instanceof WrappedTokenInfo ? token.logoURI : undefined
   }
 }
 
@@ -66,24 +65,24 @@ function deserializeToken(serializedToken: SerializedToken): Token {
     ? new WrappedTokenInfo({
         chainId: serializedToken.chainId,
         address: serializedToken.address,
-        name: serializedToken.name ?? '',
-        symbol: serializedToken.symbol ?? '',
+        name: serializedToken.name ?? "",
+        symbol: serializedToken.symbol ?? "",
         decimals: serializedToken.decimals,
-        logoURI: serializedToken.logoURI,
+        logoURI: serializedToken.logoURI
       })
     : new Token(
         serializedToken.chainId,
         serializedToken.address,
         serializedToken.decimals,
         serializedToken.symbol,
-        serializedToken.name,
+        serializedToken.name
       )
 }
 
 export function useUserLocale(): SupportedLocale | null {
   const userLocale = useAppSelector(state => state.user.userLocale)
   if (Object.keys(LOCALE_INFO).includes(userLocale)) return userLocale
-  return 'en-US'
+  return "en-US"
 }
 
 export function useUserLocaleManager(): [SupportedLocale | null, (newLocale: SupportedLocale) => void] {
@@ -94,7 +93,7 @@ export function useUserLocaleManager(): [SupportedLocale | null, (newLocale: Sup
     (newLocale: SupportedLocale) => {
       dispatch(updateUserLocale({ userLocale: newLocale }))
     },
-    [dispatch],
+    [dispatch]
   )
 
   return [locale, setLocale]
@@ -102,17 +101,17 @@ export function useUserLocaleManager(): [SupportedLocale | null, (newLocale: Sup
 
 export function useIsAcceptedTerm(): [boolean, (isAcceptedTerm: boolean) => void] {
   const dispatch = useAppDispatch()
-  const acceptedTermVersion = useSelector<AppState, AppState['user']['acceptedTermVersion']>(
-    state => state.user.acceptedTermVersion,
+  const acceptedTermVersion = useSelector<AppState, AppState["user"]["acceptedTermVersion"]>(
+    state => state.user.acceptedTermVersion
   )
 
-  const isAcceptedTerm = !!acceptedTermVersion && acceptedTermVersion === TERM_FILES_PATH.VERSION
+  const isAcceptedTerm = !acceptedTermVersion || acceptedTermVersion === TERM_FILES_PATH.VERSION
 
   const setIsAcceptedTerm = useCallback(
     (isAcceptedTerm: boolean) => {
       dispatch(updateAcceptedTermVersion(isAcceptedTerm ? TERM_FILES_PATH.VERSION : null))
     },
-    [dispatch],
+    [dispatch]
   )
 
   return [isAcceptedTerm, setIsAcceptedTerm]
@@ -133,7 +132,7 @@ export function useSwapDegenMode(): [boolean, () => void] {
   const dispatch = useDispatch<AppDispatch>()
   const isStablePairSwap = useCheckStablePairSwap()
 
-  const userDegenMode = useSelector<AppState, AppState['user']['userDegenMode']>(state => state.user.userDegenMode)
+  const userDegenMode = useSelector<AppState, AppState["user"]["userDegenMode"]>(state => state.user.userDegenMode)
   const toggleUserDegenMode = useCallback(() => {
     dispatch(updateUserDegenMode({ userDegenMode: !userDegenMode, isStablePairSwap }))
   }, [userDegenMode, dispatch, isStablePairSwap])
@@ -145,7 +144,7 @@ export function usePoolDegenMode(): [boolean, () => void] {
   const dispatch = useDispatch<AppDispatch>()
   const isStablePairSwap = useCheckStablePairSwap()
 
-  const poolDegenMode = useSelector<AppState, AppState['user']['poolDegenMode']>(state => state.user.poolDegenMode)
+  const poolDegenMode = useSelector<AppState, AppState["user"]["poolDegenMode"]>(state => state.user.poolDegenMode)
   const togglePoolDegenMode = useCallback(() => {
     dispatch(updatePoolDegenMode({ poolDegenMode: !poolDegenMode, isStablePairSwap }))
   }, [poolDegenMode, dispatch, isStablePairSwap])
@@ -155,8 +154,8 @@ export function usePoolDegenMode(): [boolean, () => void] {
 
 export function useAggregatorForZapSetting(): [boolean, () => void] {
   const dispatch = useDispatch<AppDispatch>()
-  const isUseAggregatorForZap = useSelector<AppState, AppState['user']['useAggregatorForZap']>(
-    state => state.user.useAggregatorForZap,
+  const isUseAggregatorForZap = useSelector<AppState, AppState["user"]["useAggregatorForZap"]>(
+    state => state.user.useAggregatorForZap
   )
 
   const toggle = useCallback(() => {
@@ -179,35 +178,35 @@ export function useUserSlippageTolerance(): [number, (slippage: number) => void]
 
 export function useSwapSlippageTolerance(): [number, (slippage: number) => void] {
   const dispatch = useDispatch<AppDispatch>()
-  const userSlippageTolerance = useSelector<AppState, AppState['user']['userSlippageTolerance']>(state => {
+  const userSlippageTolerance = useSelector<AppState, AppState["user"]["userSlippageTolerance"]>(state => {
     return state.user.userSlippageTolerance
   })
   const setUserSlippageTolerance = useCallback(
     (userSlippageTolerance: number) => {
       dispatch(updateUserSlippageTolerance({ userSlippageTolerance }))
     },
-    [dispatch],
+    [dispatch]
   )
   return [userSlippageTolerance, setUserSlippageTolerance]
 }
 
 export function usePoolSlippageTolerance(): [number, (slippage: number) => void] {
   const dispatch = useDispatch<AppDispatch>()
-  const poolSlippageTolerance = useSelector<AppState, AppState['user']['poolSlippageTolerance']>(state => {
+  const poolSlippageTolerance = useSelector<AppState, AppState["user"]["poolSlippageTolerance"]>(state => {
     return state.user.poolSlippageTolerance || INITIAL_ALLOWED_SLIPPAGE
   })
   const setPoolSlippageTolerance = useCallback(
     (poolSlippageTolerance: number) => {
       dispatch(updatePoolSlippageTolerance({ poolSlippageTolerance }))
     },
-    [dispatch],
+    [dispatch]
   )
   return [poolSlippageTolerance, setPoolSlippageTolerance]
 }
 
 export function useUserTransactionTTL(): [number, (slippage: number) => void] {
   const dispatch = useDispatch<AppDispatch>()
-  const userDeadline = useSelector<AppState, AppState['user']['userDeadline']>(state => {
+  const userDeadline = useSelector<AppState, AppState["user"]["userDeadline"]>(state => {
     return state.user.userDeadline
   })
 
@@ -215,7 +214,7 @@ export function useUserTransactionTTL(): [number, (slippage: number) => void] {
     (userDeadline: number) => {
       dispatch(updateUserDeadline({ userDeadline }))
     },
-    [dispatch],
+    [dispatch]
   )
 
   return [userDeadline, setUserDeadline]
@@ -227,7 +226,7 @@ export function useAddUserToken(): (token: Token) => void {
     (token: Token) => {
       dispatch(addSerializedToken({ serializedToken: serializeToken(token) }))
     },
-    [dispatch],
+    [dispatch]
   )
 }
 
@@ -237,13 +236,13 @@ export function useRemoveUserAddedToken(): (chainId: number, address: string) =>
     (chainId: number, address: string) => {
       dispatch(removeSerializedToken({ chainId, address }))
     },
-    [dispatch],
+    [dispatch]
   )
 }
 
 export function useUserAddedTokens(customChain?: ChainId): Token[] {
   const { chainId: currentChain } = useActiveWeb3React()
-  const serializedTokensMap = useSelector<AppState, AppState['user']['tokens']>(({ user: { tokens } }) => tokens)
+  const serializedTokensMap = useSelector<AppState, AppState["user"]["tokens"]>(({ user: { tokens } }) => tokens)
   const chainId = customChain || currentChain
   return useMemo(() => {
     if (!chainId) return []
@@ -262,17 +261,17 @@ export function usePairAdderByTokens(): (token0: Token, token1: Token) => void {
         addSerializedPair({
           serializedPair: {
             token0: serializeToken(token0),
-            token1: serializeToken(token1),
-          },
-        }),
+            token1: serializeToken(token1)
+          }
+        })
       )
     },
-    [dispatch],
+    [dispatch]
   )
 }
 
 export function useToV2LiquidityTokens(
-  tokenCouples: [Token, Token][],
+  tokenCouples: [Token, Token][]
 ): { liquidityTokens: []; tokens: [Token, Token] }[] {
   const oldStaticContract = useOldStaticFeeFactoryContract()
   const staticContract = useStaticFeeFactoryContract()
@@ -280,23 +279,23 @@ export function useToV2LiquidityTokens(
 
   const addresses = useMemo(
     () => tokenCouples.map(([tokenA, tokenB]) => [tokenA.address, tokenB.address]),
-    [tokenCouples],
+    [tokenCouples]
   )
 
-  const result1 = useSingleContractMultipleData(staticContract, 'getPools', addresses)
-  const result2 = useSingleContractMultipleData(dynamicContract, 'getPools', addresses)
-  const result3 = useSingleContractMultipleData(oldStaticContract, 'getPools', addresses)
+  const result1 = useSingleContractMultipleData(staticContract, "getPools", addresses)
+  const result2 = useSingleContractMultipleData(dynamicContract, "getPools", addresses)
+  const result3 = useSingleContractMultipleData(oldStaticContract, "getPools", addresses)
   const result = useMemo(
     () =>
       result1?.map((call, index) => {
         return {
           ...call,
           result: [
-            call.result?.[0].concat(result2?.[index]?.result?.[0] || []).concat(result3?.[index]?.result?.[0] || []),
-          ],
+            call.result?.[0].concat(result2?.[index]?.result?.[0] || []).concat(result3?.[index]?.result?.[0] || [])
+          ]
         }
       }),
-    [result1, result2, result3],
+    [result1, result2, result3]
   )
   return useMemo(
     () =>
@@ -305,11 +304,11 @@ export function useToV2LiquidityTokens(
           tokens: tokenCouples[index],
           liquidityTokens:
             result?.result?.[0]?.map(
-              (address: string) => new Token(tokenCouples[index][0].chainId, address, 18, 'DMM-LP', 'DMM LP'),
-            ) ?? [],
+              (address: string) => new Token(tokenCouples[index][0].chainId, address, 18, "DMM-LP", "DMM LP")
+            ) ?? []
         }
       }),
-    [tokenCouples, result],
+    [tokenCouples, result]
   )
 }
 
@@ -340,7 +339,7 @@ export function useLiquidityPositionTokenPairs(): [Token, Token][] {
   }, [chainId, allTokens, userLiquidityPositions])
 
   // pairs saved by users
-  const savedSerializedPairs = useSelector<AppState, AppState['user']['pairs']>(({ user: { pairs } }) => pairs)
+  const savedSerializedPairs = useSelector<AppState, AppState["user"]["pairs"]>(({ user: { pairs } }) => pairs)
 
   const userPairs: [Token, Token][] = useMemo(() => {
     if (!savedSerializedPairs) return []
@@ -407,7 +406,7 @@ export const useUserFavoriteTokens = (customChain?: ChainId) => {
 
       dispatch(toggleFavoriteTokenAction({ ...payload, newValue }))
     },
-    [dispatch, favoriteTokens],
+    [dispatch, favoriteTokens]
   )
 
   return { favoriteTokens, toggleFavoriteToken }
@@ -456,20 +455,20 @@ export const useCrossChainSetting = () => {
     (data: CrossChainSetting) => {
       dispatch(setCrossChainSetting(data))
     },
-    [dispatch],
+    [dispatch]
   )
   const setExpressExecutionMode = useCallback(
     (enableExpressExecution: boolean) => {
       setSetting({ ...setting, enableExpressExecution })
     },
-    [setSetting, setting],
+    [setSetting, setting]
   )
 
   const setRawSlippage = useCallback(
     (slippageTolerance: number) => {
       setSetting({ ...setting, slippageTolerance })
     },
-    [setSetting, setting],
+    [setSetting, setting]
   )
 
   const toggleSlippageControlPinned = useCallback(() => {
@@ -492,7 +491,7 @@ export const useSlippageSettingByPage = () => {
   const {
     setting: { slippageTolerance: rawSlippageSwapCrossChain, isSlippageControlPinned: isPinSlippageCrossChain },
     setRawSlippage: setRawSlippageCrossChain,
-    toggleSlippageControlPinned: togglePinnedSlippageCrossChain,
+    toggleSlippageControlPinned: togglePinnedSlippageCrossChain
   } = useCrossChainSetting()
 
   const rawSlippage = isCrossChain ? rawSlippageSwapCrossChain : rawSlippageTolerance
@@ -504,12 +503,12 @@ export const useSlippageSettingByPage = () => {
     rawSlippage,
     setRawSlippage,
     isSlippageControlPinned,
-    togglePinSlippage,
+    togglePinSlippage
   }
 }
 
 export const usePermitData: (
-  address?: string,
+  address?: string
 ) => { rawSignature?: string; deadline?: number; value?: string; errorCount?: number } | null = address => {
   const { chainId, account } = useActiveWeb3React()
   const permitData = useAppSelector(state => state.user.permitData)
@@ -521,7 +520,7 @@ export const useShowMyEarningChart: () => [boolean, () => void] = () => {
   const dispatch = useAppDispatch()
 
   const isShowMyEarningChart = useAppSelector(state =>
-    state.user.myEarningChart === undefined ? true : state.user.myEarningChart,
+    state.user.myEarningChart === undefined ? true : state.user.myEarningChart
   )
   const toggle = useCallback(() => {
     dispatch(toggleMyEarningChart())

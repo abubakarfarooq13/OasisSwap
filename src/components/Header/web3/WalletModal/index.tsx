@@ -1,36 +1,34 @@
-import { Trans } from '@lingui/macro'
-import { ActivationStatus, useActivationState } from 'connection/activate'
-import { ConnectionType } from 'connection/types'
-import dayjs from 'dayjs'
-import { rgba } from 'polished'
-import { useEffect, useState } from 'react'
-import { ChevronLeft } from 'react-feather'
-import { Text } from 'rebass'
-import styled from 'styled-components'
-
-import { ReactComponent as Close } from 'assets/images/x.svg'
-import Modal from 'components/Modal'
-import { RowBetween } from 'components/Row'
-import WalletPopup from 'components/WalletPopup'
+import { Trans } from "@lingui/macro"
+import { ActivationStatus, useActivationState } from "connection/activate"
+import { ConnectionType } from "connection/types"
+// import dayjs from "dayjs"
+import { rgba } from "polished"
+import { useEffect, useState } from "react"
+import { ChevronLeft } from "react-feather"
+import { Text } from "rebass"
+import styled from "styled-components"
+import { ReactComponent as Close } from "assets/images/x.svg"
+import Modal from "components/Modal"
+import { RowBetween } from "components/Row"
+import WalletPopup from "components/WalletPopup"
 // import { TERM_FILES_PATH } from 'constants/index'
-import { useActiveWeb3React } from 'hooks'
-import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
-import useTheme from 'hooks/useTheme'
-import { ApplicationModal } from 'state/application/actions'
+import { useActiveWeb3React } from "hooks"
+// import useMixpanel, { MIXPANEL_TYPE } from "hooks/useMixpanel"
+import useTheme from "hooks/useTheme"
+import { ApplicationModal } from "state/application/actions"
 import {
   useCloseModal,
   useModalOpen,
   useOpenModal,
   useOpenNetworkModal,
-  useWalletModalToggle,
-} from 'state/application/hooks'
-import { useAppDispatch } from 'state/hooks'
-import { clearRecentConnectionMeta } from 'state/user/actions'
-import { useIsAcceptedTerm } from 'state/user/hooks'
-import { ExternalLink } from 'theme'
-
-import PendingView from './PendingView'
-import { useConnections } from './useConnections'
+  useWalletModalToggle
+} from "state/application/hooks"
+// import { useAppDispatch } from "state/hooks"
+// import { clearRecentConnectionMeta } from "state/user/actions"
+// import { useIsAcceptedTerm } from "state/user/hooks"
+import { ExternalLink } from "theme"
+import PendingView from "./PendingView"
+import { useConnections } from "./useConnections"
 
 const CloseIcon = styled.div`
   height: 22px;
@@ -62,15 +60,19 @@ const ContentWrapper = styled.div`
 `
 
 export const TermAndCondition = styled.div`
-  padding: 8px;
-  font-size: 12px;
+  padding: 1.5rem;
+  font-size: 0.8rem;
   font-weight: 500;
   line-height: 16px;
-  background-color: ${({ theme }) => rgba(theme.buttonBlack, 0.35)};
-  color: ${props => (props.color === 'blue' ? ({ theme }) => theme.primary : 'inherit')};
+  margin-top: 1rem;
+  width: 100%;
+  border: 1px solid ${({ theme }) => theme.bg7};
+  background-color: ${({ theme }) => theme.buttonBlack};
+  color: ${props => (props.color === "blue" ? ({ theme }) => theme.primary : "inherit")};
   accent-color: ${({ theme }) => theme.primary};
-  border-radius: 16px;
+  border-radius: 12px;
   display: flex;
+  text-align: center;
   align-items: center;
   cursor: pointer;
   :hover {
@@ -81,11 +83,10 @@ export const TermAndCondition = styled.div`
 const UpperSection = styled.div`
   position: relative;
   padding: 24px;
-  position: relative;
   background-color: ${({ theme }) => theme.bg8};
 `
 
-const gap = '1rem'
+const gap = "1rem"
 const OptionGrid = styled.div`
   display: flex;
   gap: ${gap};
@@ -112,6 +113,10 @@ const HoverText = styled.div`
     cursor: pointer;
   }
 `
+const Terms = styled.span`
+  color: ${({ theme }) => theme.primary};
+  text-decoration: underline;
+`
 
 export default function WalletModal() {
   const { isWrongNetwork, account } = useActiveWeb3React()
@@ -119,7 +124,7 @@ export default function WalletModal() {
   const { activationState, cancelActivation } = useActivationState()
 
   const theme = useTheme()
-  const dispatch = useAppDispatch()
+  // const dispatch = useAppDispatch()
 
   const walletModalOpen = useModalOpen(ApplicationModal.WALLET)
   const toggleWalletModal = useWalletModalToggle()
@@ -132,9 +137,9 @@ export default function WalletModal() {
     closeWalletModal()
   }
 
-  const [isAcceptedTerm, setIsAcceptedTerm] = useIsAcceptedTerm()
+  // const [isAcceptedTerm, setIsAcceptedTerm] = useIsAcceptedTerm()
 
-  const { mixpanelHandler } = useMixpanel()
+  // const { mixpanelHandler } = useMixpanel()
 
   useEffect(() => {
     if (isWrongNetwork) {
@@ -157,7 +162,7 @@ export default function WalletModal() {
               onClick={() => {
                 cancelActivation()
               }}
-              style={{ marginRight: '1rem', flex: 1 }}
+              style={{ marginRight: "1rem", flex: 1 }}
             >
               <ChevronLeft color={theme.primary} />
             </HoverText>
@@ -174,39 +179,7 @@ export default function WalletModal() {
             <Close />
           </CloseIcon>
         </RowBetween>
-        {activationState.status === ActivationStatus.IDLE && (
-          <TermAndCondition
-            onClick={() => {
-              if (!isAcceptedTerm) {
-                mixpanelHandler(MIXPANEL_TYPE.WALLET_CONNECT_ACCEPT_TERM_CLICK)
-              } else {
-                dispatch(clearRecentConnectionMeta())
-              }
-              setIsAcceptedTerm(!isAcceptedTerm)
-            }}
-          >
-            <input
-              type="checkbox"
-              checked={isAcceptedTerm}
-              data-testid="accept-term"
-              style={{ marginRight: '12px', height: '14px', width: '14px', minWidth: '14px', cursor: 'pointer' }}
-            />
-            <Text color={theme.subText}>
-              <Trans>Accept </Trans>{' '}
-              <ExternalLink href={'#'} onClick={e => e.stopPropagation()}>
-                <Trans>OasisSwap&lsquo;s Terms of Use</Trans>
-              </ExternalLink>{' '}
-              <Trans>and</Trans>{' '}
-              <ExternalLink href={'#'} onClick={e => e.stopPropagation()}>
-                <Trans>Privacy Policy</Trans>
-              </ExternalLink>
-              {'. '}
-              <Text fontSize={10} as="span">
-                <Trans>Last updated: {dayjs('').format('DD MMM YYYY')}</Trans>
-              </Text>
-            </Text>
-          </TermAndCondition>
-        )}
+
         <ContentWrapper>
           {activationState.status !== ActivationStatus.IDLE ? (
             <PendingView />
@@ -214,6 +187,40 @@ export default function WalletModal() {
             <OptionGrid>{orderedConnections}</OptionGrid>
           )}
         </ContentWrapper>
+        {activationState.status === ActivationStatus.IDLE && (
+          <TermAndCondition
+          // onClick={() => {
+          //   if (!isAcceptedTerm) {
+          //     mixpanelHandler(MIXPANEL_TYPE.WALLET_CONNECT_ACCEPT_TERM_CLICK)
+          //   } else {
+          //     dispatch(clearRecentConnectionMeta())
+          //   }
+          //   setIsAcceptedTerm(!isAcceptedTerm)
+          // }}
+          >
+            {/* <input
+              type="checkbox"
+              checked
+              data-testid="accept-term"
+              style={{
+                marginRight: "12px",
+                height: "14px",
+                width: "14px",
+                minWidth: "14px",
+                cursor: "pointer",
+                display: "none"
+              }}
+            /> */}
+            <Text color={theme.subText}>
+              <Trans>
+                By connecting a wallet, you acknowledge that you have read, understood and agree to the interface’s {" "}
+              </Trans>{" "}
+              <ExternalLink href={"#"} onClick={e => e.stopPropagation()} style={{}}>
+                <Terms>Terms & Conditions. </Terms>
+              </ExternalLink>
+            </Text>
+          </TermAndCondition>
+        )}
       </UpperSection>
     )
   }

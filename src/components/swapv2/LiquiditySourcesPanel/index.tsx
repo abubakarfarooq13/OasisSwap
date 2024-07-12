@@ -1,15 +1,13 @@
-import { ChainId } from '@kyberswap/ks-sdk-core'
-import { Trans, t } from '@lingui/macro'
-import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { ArrowLeft } from 'react-feather'
-import { Box, Flex, Text } from 'rebass'
-import styled from 'styled-components'
-
-import Checkbox from 'components/CheckBox'
-import useDebounce from 'hooks/useDebounce'
-import { useAllDexes, useExcludeDexes } from 'state/customizeDexes/hooks'
-
-import SearchBar from './SearchBar'
+import { ChainId } from "@kyberswap/ks-sdk-core"
+import { Trans, t } from "@lingui/macro"
+import React, { useEffect, useMemo, useRef, useState } from "react"
+import { ArrowLeft } from "react-feather"
+import { Box, Flex, Text } from "rebass"
+import styled from "styled-components"
+import Checkbox from "components/CheckBox"
+import useDebounce from "hooks/useDebounce"
+import { useAllDexes, useExcludeDexes } from "state/customizeDexes/hooks"
+import SearchBar from "./SearchBar"
 
 type Props = {
   onBack: () => void
@@ -107,10 +105,10 @@ const LiquiditySourceHeader = styled.div`
   align-items: center;
 `
 
-export const isKyberSwapDex = (id: string) => id.toLowerCase().includes('kyber')
+export const isKyberSwapDex = (id: string) => id.toLowerCase().includes("kyber")
 
 const LiquiditySourcesPanel: React.FC<Props> = ({ onBack, chainId }) => {
-  const [searchText, setSearchText] = useState('')
+  const [searchText, setSearchText] = useState("")
   const debouncedSearchText = useDebounce(searchText.toLowerCase(), 200).trim()
 
   const dexes = useAllDexes(chainId)
@@ -138,7 +136,7 @@ const LiquiditySourcesPanel: React.FC<Props> = ({ onBack, chainId }) => {
 
   const ksDexes = useMemo(
     () => dexes.filter(item => isKyberSwapDex(item.id)).sort((a, b) => a.sortId - b.sortId),
-    [dexes],
+    [dexes]
   )
 
   useEffect(() => {
@@ -168,17 +166,17 @@ const LiquiditySourcesPanel: React.FC<Props> = ({ onBack, chainId }) => {
   return (
     <Box width="100%">
       <Flex
-        width={'100%'}
-        flexDirection={'column'}
+        width={"100%"}
+        flexDirection={"column"}
         sx={{
-          rowGap: '20px',
+          rowGap: "20px"
         }}
       >
         <Flex
           alignItems="center"
           sx={{
             // this is to make the arrow stay exactly where it stays in Swap panel
-            marginTop: '5px',
+            marginTop: "5px"
           }}
         >
           <BackIconWrapper onClick={onBack}></BackIconWrapper>
@@ -216,23 +214,23 @@ const LiquiditySourcesPanel: React.FC<Props> = ({ onBack, chainId }) => {
                     } else {
                       const newData = [
                         ...excludeDexes.filter(item => !isKyberSwapDex(item)),
-                        ...ksDexes.map(item => item.id),
+                        ...ksDexes.map(item => item.id)
                       ]
                       setExcludeDexes(newData)
                     }
                   }}
                 />
                 <ImageWrapper>
-                  <img src="https://oasisswap.com/favicon.ico" alt="Os logo" />
+                  <img src="https://kyberswap.com/favicon.ico" alt="Os logo" />
                 </ImageWrapper>
-                <SourceName>OasisSwap - All</SourceName>
+                <SourceName>KyberSwap - All</SourceName>
               </Source>
 
               {ksDexes
                 .filter(item => item.name.toLowerCase().includes(debouncedSearchText))
                 .map(({ name, logoURL, id }) => {
                   return (
-                    <Source key={name} style={{ padding: '12px 48px' }}>
+                    <Source key={name} style={{ padding: "12px 48px" }}>
                       <Checkbox checked={!excludeDexes.includes(id)} onChange={() => handleToggleDex(id)} />
 
                       <ImageWrapper>

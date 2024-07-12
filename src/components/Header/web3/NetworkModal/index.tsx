@@ -1,32 +1,30 @@
-import { ChainId } from '@kyberswap/ks-sdk-core'
-import { Trans, t } from '@lingui/macro'
-import { LayoutGroup } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
-import { X } from 'react-feather'
-import { Text } from 'rebass'
-import { useUpdateProfileMutation } from 'services/identity'
+import { ChainId } from "@kyberswap/ks-sdk-core"
+import { Trans, t } from "@lingui/macro"
+import { LayoutGroup } from "framer-motion"
+import { useEffect, useRef, useState } from "react"
+import { X } from "react-feather"
+import { Text } from "rebass"
+import { useUpdateProfileMutation } from "services/identity"
+import { ButtonAction } from "components/Button"
+import Column from "components/Column"
+import Modal from "components/Modal"
+import Row, { RowBetween } from "components/Row"
+import { NetworkInfo } from "constants/networks/type"
+import { Z_INDEXS } from "constants/styles"
+import { useActiveWeb3React } from "hooks"
+import useChainsConfig from "hooks/useChainsConfig"
+import useMixpanel, { MIXPANEL_TYPE } from "hooks/useMixpanel"
+import useTheme from "hooks/useTheme"
+import { ApplicationModal } from "state/application/actions"
+import { useModalOpen, useNetworkModalToggle } from "state/application/hooks"
+import { useSessionInfo } from "state/authen/hooks"
+import { TYPE } from "theme"
+import DraggableNetworkButton from "./components/DraggableNetworkButton"
+import DropzoneOverlay from "./components/DropzoneOverlay"
+import { useDragAndDrop } from "./hooks"
+import { NetworkList, Wrapper } from "./styleds"
 
-import { ButtonAction } from 'components/Button'
-import Column from 'components/Column'
-import Modal from 'components/Modal'
-import Row, { RowBetween } from 'components/Row'
-import { NetworkInfo } from 'constants/networks/type'
-import { Z_INDEXS } from 'constants/styles'
-import { useActiveWeb3React } from 'hooks'
-import useChainsConfig from 'hooks/useChainsConfig'
-import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
-import useTheme from 'hooks/useTheme'
-import { ApplicationModal } from 'state/application/actions'
-import { useModalOpen, useNetworkModalToggle } from 'state/application/hooks'
-import { useSessionInfo } from 'state/authen/hooks'
-import { TYPE } from 'theme'
-
-import DraggableNetworkButton from './components/DraggableNetworkButton'
-import DropzoneOverlay from './components/DropzoneOverlay'
-import { useDragAndDrop } from './hooks'
-import { NetworkList, Wrapper } from './styleds'
-
-const FAVORITE_DROPZONE_ID = 'favorite-dropzone'
+const FAVORITE_DROPZONE_ID = "favorite-dropzone"
 
 export default function NetworkModal({
   activeChainIds,
@@ -34,7 +32,7 @@ export default function NetworkModal({
   customOnSelectNetwork,
   isOpen,
   customToggleModal,
-  disabledMsg,
+  disabledMsg
 }: {
   activeChainIds?: ChainId[]
   selectedId?: ChainId
@@ -66,7 +64,7 @@ export default function NetworkModal({
   const { orders, handleDrag, handleDrop, draggingItem, order } = useDragAndDrop(
     favoriteChains,
     favoriteDropRef,
-    updateOder,
+    updateOder
   )
   const isDraggingAddToFavorite =
     draggingItem !== undefined && !favoriteChains.includes(draggingItem) && order === undefined
@@ -136,13 +134,13 @@ export default function NetworkModal({
             <Text fontSize="10px" lineHeight="24px" color={theme.text} flexShrink={0}>
               <Trans>Favorite Chain(s)</Trans>
             </Text>
-            <hr style={{ borderWidth: '0 0 1px 0', borderColor: theme.border, width: '100%' }} />
+            <hr style={{ borderWidth: "0 0 1px 0", borderColor: theme.border, width: "100%" }} />
           </Row>
-          <div ref={favoriteDropRef} id={FAVORITE_DROPZONE_ID} style={{ position: 'relative' }}>
+          <div ref={favoriteDropRef} id={FAVORITE_DROPZONE_ID} style={{ position: "relative" }}>
             <DropzoneOverlay show={isDraggingAddToFavorite} text={t`Add to favorite`} />
             {favoriteChains.length === 0 && !isDraggingAddToFavorite ? (
               <Row
-                border={'1px dashed ' + theme.text + '32'}
+                border={"1px dashed " + theme.text + "32"}
                 borderRadius="16px"
                 padding="16px 12px"
                 justify="center"
@@ -156,11 +154,11 @@ export default function NetworkModal({
               <NetworkList>
                 <LayoutGroup>
                   {orders.map(chainId => {
-                    if (chainId === 'ghost') {
+                    if (chainId === "ghost") {
                       return (
                         <div
                           key="ghost"
-                          style={{ height: '60px', backgroundColor: theme.tableHeader + '80', borderRadius: '16px' }}
+                          style={{ height: "60px", backgroundColor: theme.tableHeader + "80", borderRadius: "16px" }}
                         />
                       )
                     }
@@ -179,13 +177,13 @@ export default function NetworkModal({
             <Text fontSize="10px" lineHeight="24px" color={theme.text} flexShrink={0}>
               <Trans>Chain List</Trans>
             </Text>
-            <hr style={{ borderWidth: '0 0 1px 0', borderColor: theme.border, width: '100%' }} />
+            <hr style={{ borderWidth: "0 0 1px 0", borderColor: theme.border, width: "100%" }} />
           </Row>
-          <div style={{ position: 'relative', marginBottom: '12px', flexGrow: 1 }}>
+          <div style={{ position: "relative", marginBottom: "12px", flexGrow: 1 }}>
             <DropzoneOverlay show={isDraggingRemoveFavorite} text={t`Remove from favorite`} />
             {supportedChains.filter(chain => !favoriteChains.some(_ => _ === chain.chainId.toString())).length === 0 ? (
               <Row
-                border={'1px dashed ' + theme.text + '32'}
+                border={"1px dashed " + theme.text + "32"}
                 borderRadius="16px"
                 padding="16px 12px"
                 justify="center"
