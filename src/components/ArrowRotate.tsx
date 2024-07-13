@@ -1,15 +1,14 @@
-import styled, { CSSProperties, css } from 'styled-components'
-
-import { ReactComponent as DropdownSVG } from 'assets/svg/down.svg'
-import { Swap as SwapIcon } from 'components/Icons'
-import useTheme from 'hooks/useTheme'
+import styled, { CSSProperties, css } from "styled-components"
+import { ReactComponent as DropdownSVG } from "assets/svg/down.svg"
+import { Swap as SwapIcon } from "components/Icons"
+import useTheme from "hooks/useTheme"
 
 const ArrowWrapper = styled.div<{ rotated?: boolean; isVertical?: boolean; disable?: boolean }>`
   padding: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${({ theme }) => theme.buttonBlack};
+  background: ${({ theme }) => theme.primary};
   width: 48px;
   height: 48px;
   border: 4px solid #111f12;
@@ -17,8 +16,8 @@ const ArrowWrapper = styled.div<{ rotated?: boolean; isVertical?: boolean; disab
 
   transform: rotate(
     ${({ rotated, isVertical }) => {
-      if (isVertical) return rotated ? '270deg' : '90deg'
-      return rotated ? '180deg' : '0'
+      if (isVertical) return rotated ? "270deg" : "90deg"
+      return rotated ? "180deg" : "0"
     }}
   );
   transition: transform 300ms;
@@ -39,7 +38,7 @@ export default function ArrowRotate({
   rotate,
   onClick,
   isVertical = false,
-  style = {},
+  style = {}
 }: {
   rotate: boolean
   onClick?: () => void
@@ -56,16 +55,16 @@ export default function ArrowRotate({
 
 const StyledIcon = styled.div<{ $rotate?: boolean; size?: number; color?: string }>`
   transition: transform 300ms;
-  transform: rotate(${({ $rotate }) => ($rotate ? '-180deg' : '0')});
+  transform: rotate(${({ $rotate }) => ($rotate ? "-180deg" : "0")});
   path {
-    fill: ${({ color }) => color || 'currentColor'};
+    fill: ${({ color }) => color || "currentColor"};
   }
 `
 // arrow icon can rotate
 export const DropdownArrowIcon = ({
   rotate,
   size = 24,
-  color,
+  color
 }: {
   rotate?: boolean
   size?: number

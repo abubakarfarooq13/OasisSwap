@@ -1,19 +1,18 @@
-import { Trans, t } from '@lingui/macro'
-import { Flex, Text } from 'rebass'
-import styled from 'styled-components'
-
-import { ButtonPrimary } from 'components/Button'
-import CurrencyLogo from 'components/CurrencyLogo'
-import { RowBetween } from 'components/Row'
-import TransactionConfirmationModal, { TransactionErrorContent } from 'components/TransactionConfirmationModal'
-import { KNC } from 'constants/tokens'
-import { useActiveWeb3React } from 'hooks'
-import useClaimReward from 'hooks/useClaimReward'
-import useTheme from 'hooks/useTheme'
-import { ApplicationModal } from 'state/application/actions'
-import { useModalOpen, useToggleModal } from 'state/application/hooks'
-import { CloseIcon } from 'theme'
-import { shortenAddress } from 'utils'
+import { Trans, t } from "@lingui/macro"
+import { Flex, Text } from "rebass"
+import styled from "styled-components"
+import { ButtonPrimary } from "components/Button"
+import CurrencyLogo from "components/CurrencyLogo"
+import { RowBetween } from "components/Row"
+import TransactionConfirmationModal, { TransactionErrorContent } from "components/TransactionConfirmationModal"
+import { KNC } from "constants/tokens"
+import { useActiveWeb3React } from "hooks"
+import useClaimReward from "hooks/useClaimReward"
+import useTheme from "hooks/useTheme"
+import { ApplicationModal } from "state/application/actions"
+import { useModalOpen, useToggleModal } from "state/application/hooks"
+import { CloseIcon } from "theme"
+import { shortenAddress } from "utils"
 
 const AddressWrapper = styled.div`
   background: ${({ theme }) => theme.buttonBlack};
@@ -41,9 +40,9 @@ function ClaimRewardModal() {
     txHash,
     pendingTx,
     error: claimRewardError,
-    resetTxn,
+    resetTxn
   } = useClaimReward()
-  const isCanClaim = isUserHasReward && rewardAmounts !== '0' && !pendingTx
+  const isCanClaim = isUserHasReward && rewardAmounts !== "0" && !pendingTx
 
   const modalContent = () =>
     claimRewardError ? (
@@ -55,7 +54,7 @@ function ClaimRewardModal() {
         message={claimRewardError}
       />
     ) : (
-      <Flex flexDirection={'column'} padding="26px 24px" style={{ gap: '25px' }}>
+      <Flex flexDirection={"column"} padding="26px 24px" style={{ gap: "25px" }}>
         <RowBetween>
           <Text fontSize={20} fontWeight={500} color={theme.text}>
             <Trans>Claim your rewards</Trans>
@@ -73,7 +72,7 @@ function ClaimRewardModal() {
           <Trans>If your wallet is eligible, you will be able to claim your reward below. You can claim:</Trans>
         </Text>
         <Text fontSize={32} lineHeight="38px" fontWeight={500}>
-          <CurrencyLogo currency={KNC[chainId]} /> {rewardAmounts} KNC
+          <CurrencyLogo currency={KNC[chainId]} /> {rewardAmounts} ONC
         </Text>
         <ButtonPrimary disabled={!isCanClaim} onClick={claimRewardsCallback}>
           <Trans>Claim</Trans>

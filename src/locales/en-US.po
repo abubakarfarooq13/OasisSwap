@@ -2332,8 +2332,8 @@ msgstr "voting power"
 #~ msgstr "Order Cancelled"
 
 #: src/components/WalletPopup/AccountInfo/index.tsx
-msgid "Total Balance"
-msgstr "Total Balance"
+#~ msgid "Total Balance"
+#~ msgstr "Total Balance"
 
 #: src/pages/TrueSightV2/pages/TechnicalAnalysis.tsx
 #~ msgid "Funding Rate on Centralized Exchanges."
@@ -2388,6 +2388,10 @@ msgstr "Active Alerts"
 #: src/pages/About/AboutKyberSwap/index.tsx
 #~ msgid "Applicable to KyberSwap Classic"
 #~ msgstr "Applicable to KyberSwap Classic"
+
+#: src/pages/BuyCrypto/index.tsx
+msgid "A cryptocurrency wallet gives you access to your digital tokens and acts as a gateway to many blockchain applications like OasisSwap. You can buy, store, send and swap tokens using this wallet.<0/><1/>On OasisSwap we support a list of wallets including: MetaMask, Coin98, Wallet Connect, Coinbase Wallet, Ledger and others."
+msgstr "A cryptocurrency wallet gives you access to your digital tokens and acts as a gateway to many blockchain applications like OasisSwap. You can buy, store, send and swap tokens using this wallet.<0/><1/>On OasisSwap we support a list of wallets including: MetaMask, Coin98, Wallet Connect, Coinbase Wallet, Ledger and others."
 
 #: src/components/EarningPieChart/index.tsx
 #: src/pages/Bridge/helpers.ts
@@ -4045,6 +4049,10 @@ msgstr "Alerts Created:"
 msgid "Stake"
 msgstr "Stake"
 
+#: src/components/WalletPopup/MyAssets.tsx
+msgid "Find a token by searching for name, symbol or address.<0/>You can select and import any token on OasisSwap."
+msgstr "Find a token by searching for name, symbol or address.<0/>You can select and import any token on OasisSwap."
+
 #: src/pages/Bridge/BridgeTransferHistory/TransferHistoryTable/Desktop.tsx
 #: src/pages/Bridge/BridgeTransferHistory/TransferHistoryTable/Mobile.tsx
 #: src/pages/CrossChain/TransfersHistory/HistoryTable/Desktop.tsx
@@ -4087,6 +4095,10 @@ msgstr "Cannot delegate to your wallet address"
 #: src/components/WalletPopup/type.ts
 msgid "Send"
 msgstr "Send"
+
+#: src/pages/BuyCrypto/index.tsx
+msgid "Now that you have purchased your crypto, you can trade from over 20,000+ tokens on OasisSwap! We give you superior rates!"
+msgstr "Now that you have purchased your crypto, you can trade from over 20,000+ tokens on OasisSwap! We give you superior rates!"
 
 #: src/pages/Campaign/CampaignItem.tsx
 #~ msgid "in"
@@ -5051,8 +5063,8 @@ msgid "Can I participate in the Gas Refund Program if I am not staking in KyberD
 msgstr "Can I participate in the Gas Refund Program if I am not staking in KyberDAO?"
 
 #: src/components/WalletPopup/MyAssets.tsx
-msgid "Find a token by searching for name, symbol or address.<0/>You can select and import any token on KyberSwap."
-msgstr "Find a token by searching for name, symbol or address.<0/>You can select and import any token on KyberSwap."
+#~ msgid "Find a token by searching for name, symbol or address.<0/>You can select and import any token on KyberSwap."
+#~ msgstr "Find a token by searching for name, symbol or address.<0/>You can select and import any token on KyberSwap."
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "To initialize this pool, select a starting price for the pool then enter your liquidity price range."
@@ -5066,6 +5078,7 @@ msgstr "You will receive {amount} {tokenSymbol} soon!"
 msgid "You do not have enough {nativeSymbol} to cover the estimated gas for this transaction."
 msgstr "You do not have enough {nativeSymbol} to cover the estimated gas for this transaction."
 
+#: src/components/WalletPopup/AccountInfo/index.tsx
 #: src/components/WalletPopup/RewardCenter.tsx
 msgid "Total Available Rewards"
 msgstr "Total Available Rewards"
@@ -5140,8 +5153,8 @@ msgid "Don't see a pool you joined?"
 msgstr "Don't see a pool you joined?"
 
 #: src/pages/BuyCrypto/index.tsx
-msgid "Swap on KyberSwap"
-msgstr "Swap on KyberSwap"
+#~ msgid "Swap on KyberSwap"
+#~ msgstr "Swap on KyberSwap"
 
 #: src/pages/Bridge/Disclaimer.tsx
 #: src/pages/Bridge/Disclaimer.tsx
@@ -7797,8 +7810,8 @@ msgid "View Selected Chains"
 msgstr "View Selected Chains"
 
 #: src/pages/BuyCrypto/index.tsx
-msgid "Now that you have purchased your crypto, you can trade from over 20,000+ tokens on KyberSwap! We give you superior rates!"
-msgstr "Now that you have purchased your crypto, you can trade from over 20,000+ tokens on KyberSwap! We give you superior rates!"
+#~ msgid "Now that you have purchased your crypto, you can trade from over 20,000+ tokens on KyberSwap! We give you superior rates!"
+#~ msgstr "Now that you have purchased your crypto, you can trade from over 20,000+ tokens on KyberSwap! We give you superior rates!"
 
 #: src/pages/BuyCrypto/index.tsx
 msgid "Step 2"
@@ -8408,6 +8421,10 @@ msgstr "Chains"
 #: src/pages/RemoveLiquidity/ZapOut.tsx
 msgid "Output"
 msgstr "Output"
+
+#: src/components/WalletPopup/AccountInfo/index.tsx
+msgid "Input amount"
+msgstr "Input amount"
 
 #: src/pages/KyberDAO/StakeKNC/StakeKNCComponent.tsx
 msgid "You already delegated to this address"
@@ -10242,8 +10259,8 @@ msgstr "Your limit order price is <0>{percentWithoutMinus}</0> lower than the ma
 #~ msgstr "HIGHER RETURNS"
 
 #: src/pages/BuyCrypto/index.tsx
-msgid "A cryptocurrency wallet gives you access to your digital tokens and acts as a gateway to many blockchain applications like KyberSwap. You can buy, store, send and swap tokens using this wallet.<0/><1/>On KyberSwap we support a list of wallets including: MetaMask, Coin98, Wallet Connect, Coinbase Wallet, Ledger and others."
-msgstr "A cryptocurrency wallet gives you access to your digital tokens and acts as a gateway to many blockchain applications like KyberSwap. You can buy, store, send and swap tokens using this wallet.<0/><1/>On KyberSwap we support a list of wallets including: MetaMask, Coin98, Wallet Connect, Coinbase Wallet, Ledger and others."
+#~ msgid "A cryptocurrency wallet gives you access to your digital tokens and acts as a gateway to many blockchain applications like KyberSwap. You can buy, store, send and swap tokens using this wallet.<0/><1/>On KyberSwap we support a list of wallets including: MetaMask, Coin98, Wallet Connect, Coinbase Wallet, Ledger and others."
+#~ msgstr "A cryptocurrency wallet gives you access to your digital tokens and acts as a gateway to many blockchain applications like KyberSwap. You can buy, store, send and swap tokens using this wallet.<0/><1/>On KyberSwap we support a list of wallets including: MetaMask, Coin98, Wallet Connect, Coinbase Wallet, Ledger and others."
 
 #: src/components/swapv2/LimitOrder/useNotificationLimitOrder.tsx
 msgid "Cancel all orders failed. Please try again."
@@ -10633,6 +10650,10 @@ msgstr "You are creating a new pool and will be the first liquidity provider. Th
 #: src/pages/Bridge/SwapForm.tsx
 msgid "Your amount is invalid."
 msgstr "Your amount is invalid."
+
+#: src/pages/BuyCrypto/index.tsx
+msgid "Swap on OasisSwap"
+msgstr "Swap on OasisSwap"
 
 #: src/components/Header/web3/SignWallet/ConfirmModal.tsx
 msgid "this profile"

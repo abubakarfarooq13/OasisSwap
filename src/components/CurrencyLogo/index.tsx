@@ -1,12 +1,11 @@
-import { Currency } from '@kyberswap/ks-sdk-core'
-import React, { memo, useCallback, useMemo } from 'react'
-import styled from 'styled-components'
-
-import Logo from 'components/Logo'
-import useHttpLocations from 'hooks/useHttpLocations'
-import { WrappedTokenInfo } from 'state/lists/wrappedTokenInfo'
-import { getNativeTokenLogo, getTokenLogoURL } from 'utils'
-import { getProxyTokenLogo } from 'utils/tokenInfo'
+import { Currency } from "@kyberswap/ks-sdk-core"
+import React, { memo, useCallback, useMemo } from "react"
+import styled from "styled-components"
+import Logo from "components/Logo"
+import useHttpLocations from "hooks/useHttpLocations"
+import { WrappedTokenInfo } from "state/lists/wrappedTokenInfo"
+import { getNativeTokenLogo, getTokenLogoURL } from "utils"
+import { getProxyTokenLogo } from "utils/tokenInfo"
 
 const StyledNativeCurrencyLogo = styled.img<{ size: string }>`
   width: ${({ size }) => size};
@@ -26,9 +25,9 @@ const StyledLogo = styled(Logo)<{ size: string }>`
 
 function CurrencyLogo({
   currency,
-  size = '24px',
+  size = "24px",
   style,
-  useProxy = false,
+  useProxy = false
 }: {
   currency?: Currency | WrappedTokenInfo | null
   size?: string
@@ -43,7 +42,7 @@ function CurrencyLogo({
 
       return getProxyTokenLogo(uri)
     },
-    [useProxy],
+    [useProxy]
   )
 
   const logoURI = currency instanceof WrappedTokenInfo ? currency?.logoURI : undefined
@@ -73,6 +72,6 @@ function CurrencyLogo({
     )
   }
 
-  return <StyledLogo size={size} srcs={srcs} alt={`${currency?.symbol ?? 'token'} logo`} style={style} />
+  return <StyledLogo size={size} srcs={srcs} alt={`${currency?.symbol ?? "token"} logo`} style={style} />
 }
 export default memo(CurrencyLogo)

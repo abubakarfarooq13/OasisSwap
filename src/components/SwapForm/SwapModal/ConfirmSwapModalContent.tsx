@@ -39,6 +39,7 @@ const Wrapper = styled.div`
   width: 100%;
   padding: 24px;
   gap: 16px;
+  background: ${({ theme }) => theme.bg9};
   border-radius: 20px;
 `
 
@@ -257,7 +258,7 @@ export default function ConfirmSwapModalContent({
           </RowBetween>
 
           <RowBetween mt="12px">
-            <Text fontWeight={400} fontSize={12} color={theme.subText}>
+            <Text fontWeight={400} fontSize={12} color={theme.text}>
               <Trans>Please review the details of your swap:</Trans>
             </Text>
             {isBuildingRoute && (

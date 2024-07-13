@@ -1,31 +1,30 @@
-import { Trans } from '@lingui/macro'
-import React, { useEffect, useState } from 'react'
-import { NavLink, useSearchParams } from 'react-router-dom'
-import { Flex, Text } from 'rebass'
-import styled from 'styled-components'
-
-import { ReactComponent as RoutingIcon } from 'assets/svg/routing-icon.svg'
-import { ButtonLight } from 'components/Button'
-import { AutoColumn } from 'components/Column'
-import { RowBetween, RowFixed } from 'components/Row'
-import { useSwapFormContext } from 'components/SwapForm/SwapFormContext'
-import { MouseoverTooltip, TextDashed } from 'components/Tooltip'
-import TradePrice from 'components/swapv2/TradePrice'
-import { APP_PATHS, BIPS_BASE } from 'constants/index'
-import { useActiveWeb3React } from 'hooks'
-import { isSupportKyberDao, useGasRefundTier } from 'hooks/kyberdao'
-import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
-import useTheme from 'hooks/useTheme'
-import { 
+import { Trans } from "@lingui/macro"
+import React, { useEffect, useState } from "react"
+import { NavLink, useSearchParams } from "react-router-dom"
+import { Flex, Text } from "rebass"
+import styled from "styled-components"
+import { ReactComponent as RoutingIcon } from "assets/svg/routing-icon.svg"
+import { ButtonLight } from "components/Button"
+import { AutoColumn } from "components/Column"
+import { RowBetween, RowFixed } from "components/Row"
+import { useSwapFormContext } from "components/SwapForm/SwapFormContext"
+import { MouseoverTooltip, TextDashed } from "components/Tooltip"
+import TradePrice from "components/swapv2/TradePrice"
+import { APP_PATHS, BIPS_BASE } from "constants/index"
+import { useActiveWeb3React } from "hooks"
+import { isSupportKyberDao, useGasRefundTier } from "hooks/kyberdao"
+import useMixpanel, { MIXPANEL_TYPE } from "hooks/useMixpanel"
+import useTheme from "hooks/useTheme"
+import {
   // ExternalLink,
-   TYPE } from 'theme'
-import { DetailedRouteSummary } from 'types/route'
-import { formattedNum } from 'utils'
-import { minimumAmountAfterSlippage } from 'utils/currencyAmount'
-import { formatDisplayNumber } from 'utils/numbers'
-import { checkPriceImpact, formatPriceImpact } from 'utils/prices'
-
-import RefreshButton from './RefreshButton'
+  TYPE
+} from "theme"
+import { DetailedRouteSummary } from "types/route"
+import { formattedNum } from "utils"
+import { minimumAmountAfterSlippage } from "utils/currencyAmount"
+import { formatDisplayNumber } from "utils/numbers"
+import { checkPriceImpact, formatPriceImpact } from "utils/prices"
+import RefreshButton from "./RefreshButton"
 
 type WrapperProps = {
   $visible: boolean
@@ -42,8 +41,8 @@ export const RoutingIconWrapper = styled(RoutingIcon)`
 `
 
 const Wrapper = styled.div.attrs<WrapperProps>(props => ({
-  'data-visible': props.$visible,
-  'data-disabled': props.$disabled,
+  "data-visible": props.$visible,
+  "data-disabled": props.$disabled
 }))<WrapperProps>`
   display: none;
   padding: 0;
@@ -55,14 +54,14 @@ const Wrapper = styled.div.attrs<WrapperProps>(props => ({
   border: 1px solid ${({ theme }) => theme.border};
   overflow: hidden;
 
-  &[data-visible='true'] {
+  &[data-visible="true"] {
     display: block;
     padding: 12px 12px;
     max-height: max-content;
     color: ${({ theme }) => theme.text};
   }
 
-  &[data-disabled='true'] {
+  &[data-disabled="true"] {
     color: ${({ theme }) => theme.subText};
   }
 `
@@ -73,11 +72,11 @@ type TooltipTextOfSwapFeeProps = {
 }
 export const TooltipTextOfSwapFee: React.FC<TooltipTextOfSwapFeeProps> = ({ feeBips, feeAmountText }) => {
   const [searchParams] = useSearchParams()
-  const clientId = searchParams.get('clientId')
+  const clientId = searchParams.get("clientId")
 
   const feePercent = formatDisplayNumber(Number(feeBips) / Number(BIPS_BASE.toString()), {
-    style: 'percent',
-    fractionDigits: 2,
+    style: "percent",
+    fractionDigits: 2
   })
   // const hereLink = (
   //   <ExternalLink href="https://docs.kyberswap.com/kyberswap-solutions/kyberswap-interface/user-guides/instantly-swap-at-superior-rates#swap-fees-supporting-transactions-on-low-trading-volume-chains">
@@ -88,9 +87,12 @@ export const TooltipTextOfSwapFee: React.FC<TooltipTextOfSwapFeeProps> = ({ feeB
   // )
 
   if (!feeAmountText || !feePercent) {
-    return <Trans>Read more about the fees 
-      {/* {hereLink} */}
+    return (
+      <Trans>
+        Read more about the fees
+        {/* {hereLink} */}
       </Trans>
+    )
   }
 
   if (clientId) {
@@ -100,7 +102,7 @@ export const TooltipTextOfSwapFee: React.FC<TooltipTextOfSwapFeeProps> = ({ feeB
   return (
     <Trans>
       A {feePercent} fee ({feeAmountText}) will incur on this swap. The Est. Output amount you see above is inclusive of
-      this fee. Read more about the fees 
+      this fee. Read more about the fees
       {/* {hereLink} */}
     </Trans>
   )
@@ -111,16 +113,16 @@ const SwapFee: React.FC = () => {
   const { routeSummary } = useSwapFormContext()
 
   const {
-    formattedAmount: feeAmount = '',
-    formattedAmountUsd: feeAmountUsd = '',
-    currency = undefined,
+    formattedAmount: feeAmount = "",
+    formattedAmountUsd: feeAmountUsd = "",
+    currency = undefined
   } = routeSummary?.fee || {}
 
   if (!feeAmount) {
     return null
   }
 
-  const feeAmountWithSymbol = feeAmount && currency?.symbol ? `${feeAmount} ${currency.symbol}` : ''
+  const feeAmountWithSymbol = feeAmount && currency?.symbol ? `${feeAmount} ${currency.symbol}` : ""
 
   return (
     <RowBetween>
@@ -139,7 +141,7 @@ const SwapFee: React.FC = () => {
 
       <RowFixed>
         <TYPE.black color={theme.text} fontSize={12}>
-          {feeAmountUsd || feeAmountWithSymbol || '--'}
+          {feeAmountUsd || feeAmountWithSymbol || "--"}
         </TYPE.black>
       </RowFixed>
     </RowBetween>
@@ -170,14 +172,14 @@ const TradeSummary: React.FC<Props> = ({ routeSummary, slippage, disableRefresh,
         as="span"
         sx={{
           color: theme.text,
-          fontWeight: '500',
-          whiteSpace: 'nowrap',
+          fontWeight: "500",
+          whiteSpace: "nowrap"
         }}
       >
         {formattedNum(minimumAmountOut.toSignificant(10), false, 10)} {currencyOut.symbol}
       </Text>
     ) : (
-      ''
+      ""
     )
 
   const { mixpanelHandler } = useMixpanel()
@@ -197,7 +199,7 @@ const TradeSummary: React.FC<Props> = ({ routeSummary, slippage, disableRefresh,
             <Trans>Rate</Trans>
           </Text>
 
-          <Flex alignItems="center" sx={{ gap: '4px' }}>
+          <Flex alignItems="center" sx={{ gap: "4px" }}>
             <RefreshButton shouldDisable={disableRefresh} callback={refreshCallback} size={16} />
             <TradePrice price={routeSummary?.executionPrice} color={theme.text} />
           </Flex>
@@ -216,7 +218,7 @@ const TradeSummary: React.FC<Props> = ({ routeSummary, slippage, disableRefresh,
           </RowFixed>
           <RowFixed>
             <TYPE.black color={theme.text} fontSize={12}>
-              {minimumAmountOutStr || '--'}
+              {minimumAmountOutStr || "--"}
             </TYPE.black>
           </RowFixed>
         </RowBetween>
@@ -230,7 +232,7 @@ const TradeSummary: React.FC<Props> = ({ routeSummary, slippage, disableRefresh,
                     <Trans>Estimated change in price due to the size of your transaction.</Trans>
                     <Text fontSize={12}>
                       <Trans>
-                        Read more{' '}
+                        Read more{" "}
                         {/* <a
                           href="https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/price-impact"
                           target="_blank"
@@ -252,7 +254,7 @@ const TradeSummary: React.FC<Props> = ({ routeSummary, slippage, disableRefresh,
             fontSize={12}
             color={priceImpactResult.isVeryHigh ? theme.red : priceImpactResult.isHigh ? theme.warning : theme.text}
           >
-            {priceImpactResult.isInvalid || typeof priceImpact !== 'number' ? '--' : formatPriceImpact(priceImpact)}
+            {priceImpactResult.isInvalid || typeof priceImpact !== "number" ? "--" : formatPriceImpact(priceImpact)}
           </TYPE.black>
         </RowBetween>
 
@@ -263,7 +265,7 @@ const TradeSummary: React.FC<Props> = ({ routeSummary, slippage, disableRefresh,
                 <MouseoverTooltip
                   text={
                     <Trans>
-                      Stake ONC in OasisDAO to get gas refund. Read more{' '}
+                      Stake ONC in OasisDAO to get gas refund. Read more{" "}
                       {/* <ExternalLink href="https://docs.kyberswap.com/governance/knc-token/gas-refund-program">
                         here ↗
                       </ExternalLink> */}
@@ -276,13 +278,13 @@ const TradeSummary: React.FC<Props> = ({ routeSummary, slippage, disableRefresh,
               </TextDashed>
             </RowFixed>
             <NavLink
-              to={APP_PATHS.KYBERDAO_KNC_UTILITY}
+              to={"#"}
               onClick={() => {
-                mixpanelHandler(MIXPANEL_TYPE.GAS_REFUND_SOURCE_CLICK, { source: 'Swap_page_more_info' })
+                mixpanelHandler(MIXPANEL_TYPE.GAS_REFUND_SOURCE_CLICK, { source: "Swap_page_more_info" })
               }}
             >
               <ButtonLight padding="0px 8px" width="fit-content" fontSize={10} fontWeight={500} lineHeight="16px">
-                <Trans>{account ? gasRefundPercentage * 100 : '--'}% Refund</Trans>
+                <Trans>{account ? gasRefundPercentage * 100 : "--"}% Refund</Trans>
               </ButtonLight>
             </NavLink>
           </RowBetween>
