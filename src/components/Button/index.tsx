@@ -1,17 +1,15 @@
-import { Currency, CurrencyAmount } from '@kyberswap/ks-sdk-core'
-import { t } from '@lingui/macro'
-import { darken, rgba } from 'polished'
-import React, { ReactNode, useRef } from 'react'
-import { ChevronDown, Info } from 'react-feather'
-import { Flex, Text } from 'rebass'
-import { ButtonProps, Button as RebassButton } from 'rebass/styled-components'
-import styled, { css } from 'styled-components'
-
-import Loader from 'components/Loader'
-import { MouseoverTooltip } from 'components/Tooltip'
-import { ApprovalState } from 'hooks/useApproveCallback'
-
-import { RowBetween } from '../Row'
+import { Currency, CurrencyAmount } from "@kyberswap/ks-sdk-core"
+import { t } from "@lingui/macro"
+import { darken, rgba } from "polished"
+import React, { ReactNode, useRef } from "react"
+import { ChevronDown, Info } from "react-feather"
+import { Flex, Text } from "rebass"
+import { ButtonProps, Button as RebassButton } from "rebass/styled-components"
+import styled, { css } from "styled-components"
+import Loader from "components/Loader"
+import { MouseoverTooltip } from "components/Tooltip"
+import { ApprovalState } from "hooks/useApproveCallback"
+import { RowBetween } from "../Row"
 
 const disabledBase = css`
   cursor: auto;
@@ -31,18 +29,18 @@ const Base = styled(RebassButton)<{
   gap?: string
   $disabled?: boolean // use this for disabled button with MouseoverTooltip
 }>`
-  padding: ${({ padding }) => (padding ? padding : '12px')};
-  width: ${({ width }) => (width ? width : '100%')};
-  height: ${({ height }) => (height ? height : 'auto')};
-  margin: ${({ margin }) => (margin ? margin : 'unset')};
+  padding: ${({ padding }) => (padding ? padding : "12px")};
+  width: ${({ width }) => (width ? width : "100%")};
+  height: ${({ height }) => (height ? height : "auto")};
+  margin: ${({ margin }) => (margin ? margin : "unset")};
   gap: ${({ gap }) => gap && gap};
   font-weight: 500;
   font-size: 14px;
   text-align: center;
-  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : '999px')};
+  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "20px")};
   outline: none;
   border: 1px solid transparent;
-  color: ${({ color }) => color || 'white'};
+  color: ${({ color }) => color || "white"};
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -76,15 +74,16 @@ const disabledPrimary = css<{
 }>`
   background-color: ${({ theme, altDisabledStyle }) =>
     altDisabledStyle ? theme.primary : theme.buttonGray} !important;
-  color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? 'white' : theme.border)};
+  color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? "white" : theme.border)};
   box-shadow: none !important;
   border: 1px solid transparent;
   outline: none;
-  opacity: ${({ altDisabledStyle }) => (altDisabledStyle ? '0.7' : '1')};
+  opacity: ${({ altDisabledStyle }) => (altDisabledStyle ? "0.7" : "1")};
 `
 export const ButtonPrimary = styled(Base)`
   background-color: ${({ theme, backgroundColor }) => backgroundColor || theme.primary};
   color: ${({ theme, color }) => color || theme.text};
+  border-radius: 12px;
   &:hover {
     color: ${({ theme, color }) => color || theme.textReverse};
     filter: brightness(0.8);
@@ -176,7 +175,7 @@ export const ButtonSecondary = styled(Base)`
   background-color: transparent;
   font-size: 16px;
   border-radius: 12px;
-  padding: ${({ padding }) => (padding ? padding : '10px')};
+  padding: ${({ padding }) => (padding ? padding : "10px")};
 
   &:focus {
     box-shadow: 0 0 0 1pt ${({ theme }) => theme.primary};
@@ -199,16 +198,16 @@ export const ButtonSecondary = styled(Base)`
 const disabledOutlined = css<{
   altDisabledStyle?: boolean
 }>`
-  color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? 'white' : theme.border)};
+  color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? "white" : theme.border)};
   cursor: auto;
   box-shadow: none;
-  border: 1px solid ${({ theme, altDisabledStyle }) => (altDisabledStyle ? 'white' : theme.border)};
+  border: 1px solid ${({ theme, altDisabledStyle }) => (altDisabledStyle ? "white" : theme.border)};
 `
 export const ButtonOutlined = styled(Base)<{ color?: string }>`
-  border: 1px solid ${({ theme, color }) => color || theme.subText};
+  border: 1px solid ${({ theme, color }) => color || theme.border};
   background-color: transparent;
-  color: ${({ theme, color }) => color || theme.subText};
-  border-radius: 999px;
+  color: ${({ theme, color }) => color || theme.text};
+  border-radius: 12px;
   font-size: 14px;
   &:focus {
     box-shadow: 0 0 0 1px ${({ theme, color }) => color || theme.subText};
@@ -311,7 +310,7 @@ export function ButtonDropdownLight({
   return (
     <ButtonOutlined {...rest} disabled={disabled}>
       <RowBetween>
-        <div style={{ display: 'flex', alignItems: 'center' }}>{children}</div>
+        <div style={{ display: "flex", alignItems: "center" }}>{children}</div>
         <ChevronDown size={24} />
       </RowBetween>
     </ButtonOutlined>
@@ -332,7 +331,7 @@ export const ButtonWithInfoHelper = ({
   disabled,
   text,
   confirmed,
-  loading,
+  loading
 }: {
   tooltipMsg: string
   onClick: (() => void) | undefined | (() => Promise<void>)
@@ -345,7 +344,7 @@ export const ButtonWithInfoHelper = ({
     <BtnInfoWrapper disabled={disabled} altDisabledStyle={loading} confirmed={confirmed} onClick={onClick}>
       <MouseoverTooltip width="300px" text={tooltipMsg} disableTooltip={loading}>
         <Flex
-          sx={{ alignItems: 'center', height: '44px', paddingRight: '8px', paddingLeft: '2px' }}
+          sx={{ alignItems: "center", height: "44px", paddingRight: "8px", paddingLeft: "2px" }}
           onClick={e => e.stopPropagation()}
         >
           {loading ? <Loader stroke="white" /> : <Info size={20} />}
@@ -362,7 +361,7 @@ export const ButtonApprove = ({
   approval,
   approveCallback,
   disabled,
-  forceApprove = false,
+  forceApprove = false
 }: {
   tooltipMsg: string
   tokenSymbol: string | undefined
@@ -412,13 +411,13 @@ const StyledButtonAction = styled(RebassButton)<{ $color?: string }>`
   border-radius: 7px;
   border: 2px solid ${({ theme }) => theme.bt2};
   transition: all 0.1s;
-  background-color: ${({ $color }) => ($color ? $color + '32' : 'transparent')};
-  color: ${({ $color }) => ($color ? $color : 'unset')};
+  background-color: ${({ $color }) => ($color ? $color + "32" : "transparent")};
+  color: ${({ $color }) => ($color ? $color : "unset")};
   :hover {
-    background-color: ${({ theme, $color }) => ($color ? $color + '20' : theme.subText + '20')};
+    background-color: ${({ theme, $color }) => ($color ? $color + "20" : theme.subText + "20")};
   }
   :active {
-    background-color: ${({ theme, $color }) => ($color ? $color + '10' : theme.subText + '10')};
+    background-color: ${({ theme, $color }) => ($color ? $color + "10" : theme.subText + "10")};
     transform: translateY(2px);
   }
 `

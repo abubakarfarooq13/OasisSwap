@@ -3601,8 +3601,8 @@ msgid "My liquidity"
 msgstr ""
 
 #: src/components/Header/web3/WalletModal/index.tsx
-msgid "and"
-msgstr ""
+#~ msgid "and"
+#~ msgstr ""
 
 #: src/components/Popups/ListUpdatePopup.tsx
 #~ msgid "An update is available for the token list \"{0}\" ({1} to {2})."
@@ -3758,8 +3758,8 @@ msgid "You can select the appropriate fee tier for your pool. For each trade tha
 msgstr ""
 
 #: src/components/Header/web3/WalletModal/index.tsx
-msgid "Last updated: {0}"
-msgstr ""
+#~ msgid "Last updated: {0}"
+#~ msgstr ""
 
 #: src/pages/KyberDAO/KNCUtility/EligibleTxModal.tsx
 #: src/pages/KyberDAO/StakeKNC/YourTransactionsModal.tsx
@@ -4347,7 +4347,6 @@ msgstr ""
 #~ msgid "Feeling exhausted <0>managing your emotions?</0>"
 #~ msgstr ""
 
-#: src/components/Header/web3/WalletModal/index.tsx
 #: src/components/Menu/index.tsx
 msgid "Privacy Policy"
 msgstr ""
@@ -8296,8 +8295,8 @@ msgid "Powered by"
 msgstr ""
 
 #: src/components/Header/web3/WalletModal/index.tsx
-msgid "Accept"
-msgstr ""
+#~ msgid "Accept"
+#~ msgstr ""
 
 #: src/pages/About/AboutKyberSwap/index.tsx
 msgid "ABOUT ONC"
@@ -9545,8 +9544,8 @@ msgstr ""
 #~ msgstr ""
 
 #: src/components/Header/web3/WalletModal/index.tsx
-msgid "OasisSwap‘s Terms of Use"
-msgstr ""
+#~ msgid "OasisSwap‘s Terms of Use"
+#~ msgstr ""
 
 #: src/pages/KyberDAO/StakeKNC/StakeKNCComponent.tsx
 msgid "In this default delegation method, your delegate is responsible for voting on your behalf and distributing your KNC rewards to you, though only you can withdraw/unstake your own KNC"
@@ -11303,6 +11302,10 @@ msgstr ""
 #: src/pages/RemoveLiquidity/ZapOut.tsx
 #: src/pages/RemoveLiquidity/ZapOut.tsx
 msgid "Insufficient Liquidity in the Liquidity Pool to Swap"
+msgstr ""
+
+#: src/components/Header/web3/WalletModal/index.tsx
+msgid "By connecting a wallet, you acknowledge that you have read, understood and agree to the interface’s"
 msgstr ""
 
 #: src/components/NavigationTabs/index.tsx

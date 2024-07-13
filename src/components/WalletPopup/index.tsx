@@ -1,23 +1,21 @@
-import { useCallback, useEffect, useState } from 'react'
-import { isMobile } from 'react-device-detect'
-import { createPortal } from 'react-dom'
-import { Rnd } from 'react-rnd'
-import { Flex } from 'rebass'
-import { createGlobalStyle } from 'styled-components'
-
-import Modal from 'components/Modal'
-import { Z_INDEXS } from 'constants/styles'
-import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
-
-import WalletView, { HANDLE_CLASS_NAME } from './WalletView'
+import { useCallback, useEffect, useState } from "react"
+import { isMobile } from "react-device-detect"
+import { createPortal } from "react-dom"
+import { Rnd } from "react-rnd"
+import { Flex } from "rebass"
+import { createGlobalStyle } from "styled-components"
+import Modal from "components/Modal"
+import { Z_INDEXS } from "constants/styles"
+import useMixpanel, { MIXPANEL_TYPE } from "hooks/useMixpanel"
+import WalletView, { HANDLE_CLASS_NAME } from "./WalletView"
 
 const GlobalStyle = createGlobalStyle<{ $pinned: boolean }>`
   #app > .react-draggable {
     inset: unset;
     top: unset;
     left: unset;
-    right: ${({ $pinned }) => ($pinned ? '10px' : '0px')};
-    bottom: ${({ $pinned }) => ($pinned ? '10px' : '0px')};
+    right: ${({ $pinned }) => ($pinned ? "10px" : "0px")};
+    bottom: ${({ $pinned }) => ($pinned ? "10px" : "0px")};
   }
 `
 
@@ -33,7 +31,7 @@ type Props = {
 }
 const WalletPopup: React.FC<Props> = ({ isModalOpen, onDismissModal, isPinned, setPinned, onOpenModal }) => {
   const { mixpanelHandler } = useMixpanel()
-  const rootNode = document.getElementById('app')
+  const rootNode = document.getElementById("app")
 
   const [showBalance, setShowBalance] = useState(true)
   const toggleShowBalance = useCallback(() => {
@@ -64,8 +62,8 @@ const WalletPopup: React.FC<Props> = ({ isModalOpen, onDismissModal, isPinned, s
     const resizeHandler = () => {
       if (isPinned) setKey(Date.now())
     }
-    window.addEventListener('resize', resizeHandler)
-    return () => window.removeEventListener('resize', resizeHandler)
+    window.addEventListener("resize", resizeHandler)
+    return () => window.removeEventListener("resize", resizeHandler)
   }, [isPinned])
 
   if (!rootNode) {
@@ -89,9 +87,9 @@ const WalletPopup: React.FC<Props> = ({ isModalOpen, onDismissModal, isPinned, s
           sx={{
             width: defaultWidth,
             height: defaultHeight,
-            position: 'absolute',
+            position: "absolute",
             bottom: 0,
-            right: 0,
+            right: 0
           }}
         >
           <WalletView
@@ -122,7 +120,7 @@ const WalletPopup: React.FC<Props> = ({ isModalOpen, onDismissModal, isPinned, s
               x: left,
               y: top,
               width: defaultWidth,
-              height: defaultHeight,
+              height: defaultHeight
             }}
             minWidth="350px"
             minHeight="420px"
@@ -130,10 +128,10 @@ const WalletPopup: React.FC<Props> = ({ isModalOpen, onDismissModal, isPinned, s
             maxHeight="960px"
             dragHandleClassName={HANDLE_CLASS_NAME}
             style={{
-              position: 'fixed',
+              position: "fixed",
               zIndex: isPinned ? Z_INDEXS.WALLET_POPUP : Z_INDEXS.MODAL + 1,
-              cursor: 'auto',
-              transition: 'top 150ms, left 150ms',
+              cursor: "auto",
+              transition: "top 150ms, left 150ms"
             }}
             enableResizing={isPinned}
             disableDragging={!isPinned}
@@ -147,7 +145,7 @@ const WalletPopup: React.FC<Props> = ({ isModalOpen, onDismissModal, isPinned, s
               onUnpin={handleUnpinPopup}
             />
           </Rnd>,
-          rootNode,
+          rootNode
         )}
     </>
   )

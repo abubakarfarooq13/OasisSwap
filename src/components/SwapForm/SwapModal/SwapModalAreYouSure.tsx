@@ -1,13 +1,12 @@
-import { Currency, CurrencyAmount } from '@kyberswap/ks-sdk-core'
-import { Trans } from '@lingui/macro'
-import React, { Dispatch, SetStateAction, useState } from 'react'
-import { X } from 'react-feather'
-import { Flex, Text } from 'rebass'
-import styled from 'styled-components'
-
-import { ButtonErrorStyle, ButtonOutlined } from 'components/Button'
-import Modal from 'components/Modal'
-import useTheme from 'hooks/useTheme'
+import { Currency, CurrencyAmount } from "@kyberswap/ks-sdk-core"
+import { Trans } from "@lingui/macro"
+import React, { Dispatch, SetStateAction, useState } from "react"
+import { X } from "react-feather"
+import { Flex, Text } from "rebass"
+import styled from "styled-components"
+import { ButtonErrorStyle, ButtonOutlined } from "components/Button"
+import Modal from "components/Modal"
+import useTheme from "hooks/useTheme"
 
 const ModalContentWrapper = styled.div`
   display: flex;
@@ -45,7 +44,7 @@ export default function SwapModalAreYouSure({
   setHasAcceptedNewAmount,
   parsedAmountOut,
   parsedAmountOutFromBuild,
-  formattedOutputChangePercent,
+  formattedOutputChangePercent
 }: {
   show: boolean
   setShow: Dispatch<SetStateAction<boolean>>
@@ -54,12 +53,12 @@ export default function SwapModalAreYouSure({
   parsedAmountOutFromBuild: CurrencyAmount<Currency> | undefined
   formattedOutputChangePercent: string
 }) {
-  const [confirmText, setConfirmText] = useState('')
+  const [confirmText, setConfirmText] = useState("")
 
   const handleConfirm = () => {
-    if (confirmText.trim().toLowerCase() === 'confirm') {
+    if (confirmText.trim().toLowerCase() === "confirm") {
       setHasAcceptedNewAmount(true)
-      setConfirmText('')
+      setConfirmText("")
       setShow(false)
     }
   }
@@ -70,7 +69,7 @@ export default function SwapModalAreYouSure({
     <Modal
       isOpen={show}
       onDismiss={() => {
-        setConfirmText('')
+        setConfirmText("")
         setShow(false)
       }}
       maxHeight={100}
@@ -86,8 +85,8 @@ export default function SwapModalAreYouSure({
 
         <Text fontSize={14} marginTop="28px">
           <Trans>
-            Due to market conditions, your output has been updated from {parsedAmountOut?.toSignificant(10)}{' '}
-            {parsedAmountOut?.currency?.symbol} to {parsedAmountOutFromBuild?.toSignificant(10)}{' '}
+            Due to market conditions, your output has been updated from {parsedAmountOut?.toSignificant(10)}{" "}
+            {parsedAmountOut?.currency?.symbol} to {parsedAmountOutFromBuild?.toSignificant(10)}{" "}
             {parsedAmountOut?.currency?.symbol} ({formattedOutputChangePercent}%).
           </Trans>
         </Text>
@@ -103,28 +102,28 @@ export default function SwapModalAreYouSure({
           value={confirmText}
           onChange={e => setConfirmText(e.target.value)}
           onKeyUp={e => {
-            if (e.key === 'Enter') {
+            if (e.key === "Enter") {
               handleConfirm()
             }
           }}
         />
-        <Flex sx={{ gap: '16px' }} marginTop="28px" justifyContent={'center'}>
+        <Flex sx={{ gap: "16px" }} marginTop="28px" justifyContent={"center"}>
           <ButtonOutlined
             style={{
               flex: 1,
-              fontSize: '14px',
-              padding: '10px',
+              fontSize: "14px",
+              padding: "10px"
             }}
             onClick={() => {
-              setConfirmText('')
+              setConfirmText("")
               setShow(false)
             }}
           >
             <Trans>No, go back</Trans>
           </ButtonOutlined>
           <ButtonErrorStyle
-            disabled={confirmText.trim().toLowerCase() !== 'confirm'}
-            style={{ fontSize: '14px', flex: 1, padding: '10px' }}
+            disabled={confirmText.trim().toLowerCase() !== "confirm"}
+            style={{ fontSize: "14px", flex: 1, padding: "10px" }}
             onClick={handleConfirm}
           >
             <Trans>Confirm</Trans>

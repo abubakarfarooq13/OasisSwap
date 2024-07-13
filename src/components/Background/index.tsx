@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
 const BackgroundMain = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ const BackgroundMainTwo = styled.div`
 `
 const PalmOne = styled.div`
   position: relative;
-  width: 100px;
+  width: 110px;
   height: 140px;
   bottom: 0;
   opacity: 70%;
@@ -65,7 +65,7 @@ const PalmTwo = styled.div`
 `
 const PalmThree = styled.div`
   position: relative;
-  width: 100px;
+  width: 110px;
   height: 145px;
   bottom: 0;
   opacity: 70%;

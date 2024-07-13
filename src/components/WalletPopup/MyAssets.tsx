@@ -1,24 +1,23 @@
-import { Currency, CurrencyAmount, Token, TokenAmount } from '@kyberswap/ks-sdk-core'
-import { Trans, t } from '@lingui/macro'
-import { stringify } from 'querystring'
-import { useState } from 'react'
-import { AlertTriangle, Info } from 'react-feather'
-import { useNavigate } from 'react-router-dom'
-import AutoSizer from 'react-virtualized-auto-sizer'
-import { Text } from 'rebass'
-import styled from 'styled-components'
-
-import Column from 'components/Column'
-import Loader from 'components/Loader'
-import Row from 'components/Row'
-import { CurrencyRow } from 'components/SearchModal/CurrencyList'
-import CurrencySearchModal from 'components/SearchModal/CurrencySearchModal'
-import { useActiveWeb3React } from 'hooks'
-import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
-import useParsedQueryString from 'hooks/useParsedQueryString'
-import useTheme from 'hooks/useTheme'
-import { useNativeBalance } from 'state/wallet/hooks'
-import { currencyId } from 'utils/currencyId'
+import { Currency, CurrencyAmount, Token, TokenAmount } from "@kyberswap/ks-sdk-core"
+import { Trans, t } from "@lingui/macro"
+import { stringify } from "querystring"
+import { useState } from "react"
+import { AlertTriangle, Info } from "react-feather"
+import { useNavigate } from "react-router-dom"
+import AutoSizer from "react-virtualized-auto-sizer"
+import { Text } from "rebass"
+import styled from "styled-components"
+import Column from "components/Column"
+import Loader from "components/Loader"
+import Row from "components/Row"
+import { CurrencyRow } from "components/SearchModal/CurrencyList"
+import CurrencySearchModal from "components/SearchModal/CurrencySearchModal"
+import { useActiveWeb3React } from "hooks"
+import useMixpanel, { MIXPANEL_TYPE } from "hooks/useMixpanel"
+import useParsedQueryString from "hooks/useParsedQueryString"
+import useTheme from "hooks/useTheme"
+import { useNativeBalance } from "state/wallet/hooks"
+import { currencyId } from "utils/currencyId"
 
 const tokenItemStyle = { paddingLeft: 0, paddingRight: 8 }
 const Wrapper = styled.div`
@@ -41,7 +40,7 @@ export default function MyAssets({
   usdBalances,
   currencyBalances,
   hasNetworkIssue,
-  hideBalance,
+  hideBalance
 }: {
   tokens: Currency[]
   loadingTokens: boolean
@@ -66,7 +65,7 @@ export default function MyAssets({
   if (hasNetworkIssue)
     return (
       <Wrapper>
-        <Column style={{ gap: '12px', alignItems: 'center', marginTop: '16px' }}>
+        <Column style={{ gap: "12px", alignItems: "center", marginTop: "16px" }}>
           <AlertTriangle color={theme.warning} />
           <Text color={theme.warning}>Network is slow. Please try again later</Text>
         </Column>
@@ -115,18 +114,18 @@ export default function MyAssets({
             <Column
               gap="6px"
               style={{
-                alignItems: 'center',
-                borderTop: tokens.length ? `1px solid ${theme.border}` : 'none',
-                padding: '12px 0',
+                alignItems: "center",
+                borderTop: tokens.length ? `1px solid ${theme.border}` : "none",
+                padding: "12px 0",
                 marginTop: tokens.length ? 8 : 0,
-                fontSize: 14,
+                fontSize: 14
               }}
             >
               <Info color={theme.subText} />
               <Text color={theme.subText}>
                 <Trans>Don&apos;t see your tokens</Trans>
               </Text>
-              <Text color={theme.primary} style={{ cursor: 'pointer' }} onClick={showModal}>
+              <Text color={theme.primary} style={{ cursor: "pointer" }} onClick={showModal}>
                 <Trans>Import Tokens</Trans>
               </Text>
             </Column>
@@ -140,7 +139,7 @@ export default function MyAssets({
             <Trans>
               Find a token by searching for name, symbol or address.
               <br />
-              You can select and import any token on KyberSwap.
+              You can select and import any token on OasisSwap.
             </Trans>
           </Text>
         }

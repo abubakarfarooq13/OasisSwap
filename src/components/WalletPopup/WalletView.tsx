@@ -1,36 +1,35 @@
-import { Trans, t } from '@lingui/macro'
-import { getConnection } from 'connection'
-import { rgba } from 'polished'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { ChevronLeft, FileText, LogOut, StopCircle, X } from 'react-feather'
-import { useNavigate } from 'react-router-dom'
-import { Flex, Text } from 'rebass'
-import styled from 'styled-components'
+import { Trans, t } from "@lingui/macro"
+import { getConnection } from "connection"
+import { rgba } from "polished"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import { ChevronLeft, LogOut, X } from "react-feather"
+import { useNavigate } from "react-router-dom"
+import { Flex, Text } from "rebass"
+import styled from "styled-components"
+import { ReactComponent as TransactionsIcon } from "assets/svg/transactions.svg"
+import { ReactComponent as WalletIcon } from "assets/svg/wallet.svg"
+import CopyHelper from "components/Copy"
+import SendIcon from "components/Icons/SendIcon"
+import Row from "components/Row"
+import { MouseoverTooltip } from "components/Tooltip"
+import AccountInfo from "components/WalletPopup/AccountInfo"
+import MyAssets from "components/WalletPopup/MyAssets"
+import PinButton from "components/WalletPopup/PinButton"
+import SendToken from "components/WalletPopup/SendToken"
+import { APP_PATHS } from "constants/index"
+import { useActiveWeb3React, useWeb3React } from "hooks"
+import useMixpanel, { MIXPANEL_TYPE } from "hooks/useMixpanel"
+import useTheme from "hooks/useTheme"
+import useDisconnectWallet from "hooks/web3/useDisconnectWallet"
+import { useTokensHasBalance } from "state/wallet/hooks"
+import { ExternalLinkIcon } from "theme"
+import { getEtherscanLink, shortenAddress } from "utils"
+import ReceiveToken from "./ReceiveToken"
+import RewardCenter from "./RewardCenter"
+import ListTransaction from "./Transactions"
+import { View as getView } from "./type"
 
-import { ReactComponent as DragHandleIcon } from 'assets/svg/wallet_drag_handle.svg'
-import CopyHelper from 'components/Copy'
-import SendIcon from 'components/Icons/SendIcon'
-import Row from 'components/Row'
-import { MouseoverTooltip } from 'components/Tooltip'
-import AccountInfo from 'components/WalletPopup/AccountInfo'
-import MyAssets from 'components/WalletPopup/MyAssets'
-import PinButton from 'components/WalletPopup/PinButton'
-import SendToken from 'components/WalletPopup/SendToken'
-import { APP_PATHS } from 'constants/index'
-import { useActiveWeb3React, useWeb3React } from 'hooks'
-import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
-import useTheme from 'hooks/useTheme'
-import useDisconnectWallet from 'hooks/web3/useDisconnectWallet'
-import { useTokensHasBalance } from 'state/wallet/hooks'
-import { ExternalLinkIcon } from 'theme'
-import { getEtherscanLink, shortenAddress } from 'utils'
-
-import ReceiveToken from './ReceiveToken'
-import RewardCenter from './RewardCenter'
-import ListTransaction from './Transactions'
-import { View as getView } from './type'
-
-export const HANDLE_CLASS_NAME = 'walletPopupDragHandle'
+export const HANDLE_CLASS_NAME = "walletPopupDragHandle"
 
 const IconWrapper = styled.div`
   display: flex;
@@ -51,26 +50,25 @@ const LogOutIcon = styled(LogOut)`
 
 type WrapperProps = { $pinned: boolean; $blur: boolean }
 const Wrapper = styled.div.attrs<WrapperProps>(props => ({
-  'data-pinned': props.$pinned,
-  'data-blur': props.$blur,
+  "data-pinned": props.$pinned,
+  "data-blur": props.$blur
 }))<WrapperProps>`
   width: 100%;
   height: 100%;
-  padding-top: 0px;
-
+  padding-top: 6px;
+  background: ${({ theme }) => theme.bg9} !important;
   display: flex;
 
   border-radius: 20px 0px 0px 0px;
-  background-color: ${({ theme }) => theme.tabActive};
   box-shadow: 0px 0px 12px 8px rgb(0 0 0 / 4%);
 
   overflow: hidden;
 
-  &[data-pinned='true'] {
+  &[data-pinned="true"] {
     border-radius: 20px;
   }
 
-  &[data-blur='true'] {
+  &[data-blur="true"] {
     background-color: ${({ theme }) => rgba(theme.tabActive, 0.92)};
     backdrop-filter: blur(4px);
   }
@@ -122,7 +120,7 @@ export default function WalletView({
   blurBackground = false,
   onUnpin,
   showBalance,
-  toggleShowBalance,
+  toggleShowBalance
 }: Props) {
   const View = getView()
   const [view, setView] = useState<string>(storedView || View.ASSETS)
@@ -131,7 +129,7 @@ export default function WalletView({
   const navigate = useNavigate()
   const nodeRef = useRef<HTMLDivElement>(null)
   const [isMinimal, setMinimal] = useState(false)
-  const { chainId, account = '', walletKey } = useActiveWeb3React()
+  const { chainId, account = "", walletKey } = useActiveWeb3React()
   const { connector } = useWeb3React()
   const connection = getConnection(connector)
   const disconnectWallet = useDisconnectWallet()
@@ -141,7 +139,7 @@ export default function WalletView({
     currencies,
     currencyBalances,
     totalBalanceInUsd,
-    usdBalances,
+    usdBalances
   } = useTokensHasBalance(true)
 
   const [hasNetworkIssue, setHasNetworkIssue] = useState(false)
@@ -151,9 +149,9 @@ export default function WalletView({
   }, [loadingTokens])
 
   const underTab = (
-    <Row gap="20px" style={{ borderBottom: `1px solid ${theme.border}` }}>
+    <Row gap="20px" style={{ borderBottom: `1px solid ${theme.border}`, padding: "0.5rem 0rem" }}>
       <TabItem active={view === View.ASSETS} onClick={() => setView(View.ASSETS)}>
-        <StopCircle size={16} /> <Trans>Assets</Trans>
+        <WalletIcon /> <Trans>Assets</Trans>
       </TabItem>
       <TabItem
         active={view === View.TRANSACTIONS}
@@ -162,7 +160,7 @@ export default function WalletView({
           setView(View.TRANSACTIONS)
         }}
       >
-        <FileText size={16} /> <Trans>Transactions</Trans>
+        <TransactionsIcon /> <Trans>Transactions</Trans>
       </TabItem>
     </Row>
   )
@@ -171,22 +169,22 @@ export default function WalletView({
     const handleClickBuy = () => {
       navigate(`${APP_PATHS.BUY_CRYPTO}?step=3`)
       onDismiss()
-      mixpanelHandler(MIXPANEL_TYPE.WUI_BUTTON_CLICK, { button_name: 'Buy' })
+      mixpanelHandler(MIXPANEL_TYPE.WUI_BUTTON_CLICK, { button_name: "Buy" })
     }
     const handleClickReceive = () => {
       setView(View.RECEIVE_TOKEN)
-      mixpanelHandler(MIXPANEL_TYPE.WUI_BUTTON_CLICK, { button_name: 'Receive' })
+      mixpanelHandler(MIXPANEL_TYPE.WUI_BUTTON_CLICK, { button_name: "Receive" })
     }
     const handleClickSend = () => {
       setView(View.SEND_TOKEN)
-      mixpanelHandler(MIXPANEL_TYPE.WUI_BUTTON_CLICK, { button_name: 'Send' })
+      mixpanelHandler(MIXPANEL_TYPE.WUI_BUTTON_CLICK, { button_name: "Send" })
     }
 
     return (
       <AccountInfo
         toggleShowBalance={toggleShowBalance}
         showBalance={showBalance}
-        totalBalanceInUsd={hasNetworkIssue ? '--' : totalBalanceInUsd}
+        totalBalanceInUsd={hasNetworkIssue ? "--" : totalBalanceInUsd}
         onClickBuy={handleClickBuy}
         onClickReceive={handleClickReceive}
         onClickSend={handleClickSend}
@@ -250,14 +248,14 @@ export default function WalletView({
       setMinimal(clientWidth <= 360 || clientHeight <= 480)
     }
 
-    if (typeof ResizeObserver === 'function') {
+    if (typeof ResizeObserver === "function") {
       const resizeObserver = new ResizeObserver(resizeHandler)
       resizeObserver.observe(node)
 
       return () => resizeObserver.disconnect()
     } else {
-      window.addEventListener('resize', resizeHandler)
-      return () => window.removeEventListener('resize', resizeHandler)
+      window.addEventListener("resize", resizeHandler)
+      return () => window.removeEventListener("resize", resizeHandler)
     }
   }, [nodeRef])
 
@@ -265,54 +263,54 @@ export default function WalletView({
     storedView = view
   }, [view])
 
-  const classNameForHandle = isPinned ? HANDLE_CLASS_NAME : ''
-  const cursorForHandle = isPinned ? 'move' : undefined
+  const classNameForHandle = isPinned ? HANDLE_CLASS_NAME : ""
+  const cursorForHandle = isPinned ? "move" : undefined
 
   return (
     <Wrapper ref={nodeRef} $pinned={isPinned} $blur={blurBackground}>
       <Flex
         className={classNameForHandle}
         sx={{
-          height: '100%',
-          flex: '0 0 20px',
-          cursor: cursorForHandle,
+          height: "100%",
+          flex: "0 0 20px",
+          cursor: cursorForHandle
         }}
       />
 
       <Flex
         sx={{
-          flexDirection: 'column',
-          width: '100%',
-          height: '100%',
+          flexDirection: "column",
+          width: "100%",
+          height: "100%"
         }}
       >
         <Flex
           className={classNameForHandle}
           sx={{
-            flexDirection: 'column',
-            width: '100%',
+            flexDirection: "column",
+            width: "100%",
             cursor: cursorForHandle,
-            marginBottom: '8px',
+            marginBottom: "8px"
           }}
         >
           {isPinned && (
             <Flex
               sx={{
-                height: '12px',
-                justifyContent: 'center',
-                alignItems: 'center',
-                paddingTop: '8px',
+                height: "12px",
+                justifyContent: "center",
+                alignItems: "center",
+                paddingTop: "8px"
               }}
             >
-              <DragHandleIcon />
+              <WalletIcon />
             </Flex>
           )}
 
           <Flex
             sx={{
-              flex: '0 0 48px',
-              alignItems: 'center',
-              justifyContent: 'space-between',
+              flex: "0 0 48px",
+              alignItems: "center",
+              justifyContent: "space-between"
             }}
           >
             {isShowBack ? (
@@ -320,13 +318,13 @@ export default function WalletView({
                 <ChevronLeft cursor="pointer" size={28} onClick={() => setView(View.ASSETS)} color={theme.subText} />
                 <Flex alignItems="center">
                   {isShowArrow && (
-                    <SendIcon style={{ marginRight: 7, transform: isSendTab ? 'unset' : 'rotate(180deg)' }} />
-                  )}{' '}
+                    <SendIcon style={{ marginRight: 7, transform: isSendTab ? "unset" : "rotate(180deg)" }} />
+                  )}{" "}
                   {view}
                 </Flex>
               </>
             ) : (
-              <Flex alignItems={'center'} style={{ gap: 8 }} color={theme.subText}>
+              <Flex alignItems={"center"} style={{ gap: 8 }} color={theme.subText}>
                 {walletKey && (
                   <IconWrapper>
                     <img height={18} src={connection.getProviderInfo().icon} alt="" />
@@ -339,7 +337,7 @@ export default function WalletView({
                   <CopyHelper toCopy={account} />
                 </MouseoverTooltip>
                 <MouseoverTooltip text={t`Open scan explorer`} width="fit-content" placement="top">
-                  <ExternalLinkIcon href={getEtherscanLink(chainId, account, 'address')} color={theme.subText} />
+                  <ExternalLinkIcon href={getEtherscanLink(chainId, account, "address")} color={theme.subText} />
                 </MouseoverTooltip>
                 <MouseoverTooltip text={t`Disconnect wallet`} width="fit-content" placement="top">
                   <LogOutIcon size={16} onClick={disconnectWallet} />
@@ -348,7 +346,12 @@ export default function WalletView({
             )}
             <Flex style={{ gap: 20 }} alignItems="center">
               {onPin && onUnpin && <PinButton isActive={isPinned} onClick={isPinned ? onUnpin : onPin} />}
-              <X onClick={onDismiss} color={theme.subText} cursor="pointer" />
+              <X
+                onClick={onDismiss}
+                color={theme.subText}
+                cursor="pointer"
+                style={{ border: `2px solid ${theme.subText}`, borderRadius: "7px", padding: "2px" }}
+              />
             </Flex>
           </Flex>
         </Flex>
@@ -358,10 +361,10 @@ export default function WalletView({
         <Flex
           className={classNameForHandle}
           sx={{
-            height: '20px',
-            flex: '0 0 20px',
-            width: '100%',
-            cursor: cursorForHandle,
+            height: "20px",
+            flex: "0 0 20px",
+            width: "100%",
+            cursor: cursorForHandle
           }}
         />
       </Flex>
@@ -369,9 +372,9 @@ export default function WalletView({
       <Flex
         className={classNameForHandle}
         sx={{
-          height: '100%',
-          flex: '0 0 20px',
-          cursor: cursorForHandle,
+          height: "100%",
+          flex: "0 0 20px",
+          cursor: cursorForHandle
         }}
       />
     </Wrapper>

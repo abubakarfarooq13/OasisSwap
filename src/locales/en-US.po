@@ -3601,8 +3601,8 @@ msgid "My liquidity"
 msgstr "My liquidity"
 
 #: src/components/Header/web3/WalletModal/index.tsx
-msgid "and"
-msgstr "and"
+#~ msgid "and"
+#~ msgstr "and"
 
 #: src/components/Popups/ListUpdatePopup.tsx
 #~ msgid "An update is available for the token list \"{0}\" ({1} to {2})."
@@ -3758,8 +3758,8 @@ msgid "You can select the appropriate fee tier for your pool. For each trade tha
 msgstr "You can select the appropriate fee tier for your pool. For each trade that uses this liquidity pool, liquidity providers will earn this trading fee."
 
 #: src/components/Header/web3/WalletModal/index.tsx
-msgid "Last updated: {0}"
-msgstr "Last updated: {0}"
+#~ msgid "Last updated: {0}"
+#~ msgstr "Last updated: {0}"
 
 #: src/pages/KyberDAO/KNCUtility/EligibleTxModal.tsx
 #: src/pages/KyberDAO/StakeKNC/YourTransactionsModal.tsx
@@ -4339,7 +4339,6 @@ msgstr "Your import token"
 #~ msgid "Feeling exhausted <0>managing your emotions?</0>"
 #~ msgstr "Feeling exhausted <0>managing your emotions?</0>"
 
-#: src/components/Header/web3/WalletModal/index.tsx
 #: src/components/Menu/index.tsx
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
@@ -8291,8 +8290,8 @@ msgid "Powered by"
 msgstr "Powered by"
 
 #: src/components/Header/web3/WalletModal/index.tsx
-msgid "Accept"
-msgstr "Accept"
+#~ msgid "Accept"
+#~ msgstr "Accept"
 
 #: src/pages/About/AboutKyberSwap/index.tsx
 msgid "ABOUT ONC"
@@ -9535,8 +9534,8 @@ msgstr "Liquidity Sources"
 #~ msgstr "<0>On the lookout for tokens?</0> <1/>Start with the Rankings section. You will see top tokens ranked by Bullish, Bearish, Top CEX Inflow, Top CEX Outflow, Top Traded, Trending Soon and Currently Trending."
 
 #: src/components/Header/web3/WalletModal/index.tsx
-msgid "OasisSwap‘s Terms of Use"
-msgstr "OasisSwap‘s Terms of Use"
+#~ msgid "OasisSwap‘s Terms of Use"
+#~ msgstr "OasisSwap‘s Terms of Use"
 
 #: src/pages/KyberDAO/StakeKNC/StakeKNCComponent.tsx
 msgid "In this default delegation method, your delegate is responsible for voting on your behalf and distributing your KNC rewards to you, though only you can withdraw/unstake your own KNC"
@@ -11282,6 +11281,10 @@ msgstr "Failed to switch to {name} RPC Endpoint"
 #: src/pages/RemoveLiquidity/ZapOut.tsx
 msgid "Insufficient Liquidity in the Liquidity Pool to Swap"
 msgstr "Insufficient Liquidity in the Liquidity Pool to Swap"
+
+#: src/components/Header/web3/WalletModal/index.tsx
+msgid "By connecting a wallet, you acknowledge that you have read, understood and agree to the interface’s"
+msgstr "By connecting a wallet, you acknowledge that you have read, understood and agree to the interface’s"
 
 #: src/components/NavigationTabs/index.tsx
 #~ msgid "Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive"

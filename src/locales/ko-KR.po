@@ -3608,8 +3608,8 @@ msgid "My liquidity"
 msgstr "나의 유동성"
 
 #: src/components/Header/web3/WalletModal/index.tsx
-msgid "and"
-msgstr "그리고"
+#~ msgid "and"
+#~ msgstr "그리고"
 
 #: src/components/Popups/ListUpdatePopup.tsx
 #~ msgid "An update is available for the token list \"{0}\" ({1} to {2})."
@@ -3765,8 +3765,8 @@ msgid "You can select the appropriate fee tier for your pool. For each trade tha
 msgstr ""
 
 #: src/components/Header/web3/WalletModal/index.tsx
-msgid "Last updated: {0}"
-msgstr ""
+#~ msgid "Last updated: {0}"
+#~ msgstr ""
 
 #: src/pages/KyberDAO/KNCUtility/EligibleTxModal.tsx
 #: src/pages/KyberDAO/StakeKNC/YourTransactionsModal.tsx
@@ -4350,7 +4350,6 @@ msgstr ""
 #~ msgid "Feeling exhausted <0>managing your emotions?</0>"
 #~ msgstr ""
 
-#: src/components/Header/web3/WalletModal/index.tsx
 #: src/components/Menu/index.tsx
 msgid "Privacy Policy"
 msgstr "개인 정보 정책"
@@ -8311,8 +8310,8 @@ msgid "Powered by"
 msgstr "Powered by"
 
 #: src/components/Header/web3/WalletModal/index.tsx
-msgid "Accept"
-msgstr "승인"
+#~ msgid "Accept"
+#~ msgstr "승인"
 
 #: src/pages/About/AboutKyberSwap/index.tsx
 msgid "ABOUT ONC"
@@ -9560,8 +9559,8 @@ msgstr ""
 #~ msgstr ""
 
 #: src/components/Header/web3/WalletModal/index.tsx
-msgid "OasisSwap‘s Terms of Use"
-msgstr ""
+#~ msgid "OasisSwap‘s Terms of Use"
+#~ msgstr ""
 
 #: src/pages/KyberDAO/StakeKNC/StakeKNCComponent.tsx
 msgid "In this default delegation method, your delegate is responsible for voting on your behalf and distributing your KNC rewards to you, though only you can withdraw/unstake your own KNC"
@@ -11305,6 +11304,10 @@ msgstr ""
 #: src/pages/RemoveLiquidity/ZapOut.tsx
 msgid "Insufficient Liquidity in the Liquidity Pool to Swap"
 msgstr "교환할 유동성 풀의 유동성 부족"
+
+#: src/components/Header/web3/WalletModal/index.tsx
+msgid "By connecting a wallet, you acknowledge that you have read, understood and agree to the interface’s"
+msgstr ""
 
 #: src/components/NavigationTabs/index.tsx
 #~ msgid "Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive"

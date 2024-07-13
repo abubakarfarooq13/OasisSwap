@@ -1,35 +1,33 @@
-import { Currency, CurrencyAmount, Price } from '@kyberswap/ks-sdk-core'
-import { Trans } from '@lingui/macro'
-import { transparentize } from 'polished'
-import { useMemo, useState } from 'react'
-import { Check, Info } from 'react-feather'
-import { Flex, Text } from 'rebass'
-import { calculatePriceImpact } from 'services/route/utils'
-import styled from 'styled-components'
-
-import { ButtonPrimary } from 'components/Button'
-import { AutoColumn } from 'components/Column'
-import Loader from 'components/Loader'
-import { RowBetween } from 'components/Row'
-import SlippageWarningNote from 'components/SlippageWarningNote'
-import PriceImpactNote from 'components/SwapForm/PriceImpactNote'
-import { useSwapFormContext } from 'components/SwapForm/SwapFormContext'
-import { Level } from 'components/SwapForm/SwapModal/SwapDetails/UpdatedBadge'
-import SwapModalAreYouSure from 'components/SwapForm/SwapModal/SwapModalAreYouSure'
-import { BuildRouteResult } from 'components/SwapForm/hooks/useBuildRoute'
-import { MouseoverTooltip } from 'components/Tooltip'
-import WarningNote from 'components/WarningNote'
-import { Dots } from 'components/swapv2/styleds'
-import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
-import useTheme from 'hooks/useTheme'
-import { useDegenModeManager } from 'state/user/hooks'
-import { CloseIcon } from 'theme/components'
-import { minimumAmountAfterSlippage, toCurrencyAmount } from 'utils/currencyAmount'
-import { checkShouldDisableByPriceImpact } from 'utils/priceImpact'
-import { checkPriceImpact } from 'utils/prices'
-
-import SwapBrief from './SwapBrief'
-import SwapDetails, { Props as SwapDetailsProps } from './SwapDetails'
+import { Currency, CurrencyAmount, Price } from "@kyberswap/ks-sdk-core"
+import { Trans } from "@lingui/macro"
+import { transparentize } from "polished"
+import { useMemo, useState } from "react"
+import { Check, Info } from "react-feather"
+import { Flex, Text } from "rebass"
+import { calculatePriceImpact } from "services/route/utils"
+import styled from "styled-components"
+import { ButtonPrimary } from "components/Button"
+import { AutoColumn } from "components/Column"
+import Loader from "components/Loader"
+import { RowBetween } from "components/Row"
+import SlippageWarningNote from "components/SlippageWarningNote"
+import PriceImpactNote from "components/SwapForm/PriceImpactNote"
+import { useSwapFormContext } from "components/SwapForm/SwapFormContext"
+import { Level } from "components/SwapForm/SwapModal/SwapDetails/UpdatedBadge"
+import SwapModalAreYouSure from "components/SwapForm/SwapModal/SwapModalAreYouSure"
+import { BuildRouteResult } from "components/SwapForm/hooks/useBuildRoute"
+import { MouseoverTooltip } from "components/Tooltip"
+import WarningNote from "components/WarningNote"
+import { Dots } from "components/swapv2/styleds"
+import useMixpanel, { MIXPANEL_TYPE } from "hooks/useMixpanel"
+import useTheme from "hooks/useTheme"
+import { useDegenModeManager } from "state/user/hooks"
+import { CloseIcon } from "theme/components"
+import { minimumAmountAfterSlippage, toCurrencyAmount } from "utils/currencyAmount"
+import { checkShouldDisableByPriceImpact } from "utils/priceImpact"
+import { checkPriceImpact } from "utils/prices"
+import SwapBrief from "./SwapBrief"
+import SwapDetails, { Props as SwapDetailsProps } from "./SwapDetails"
 
 const SHOW_ACCEPT_NEW_AMOUNT_THRESHOLD = -1
 const AMOUNT_OUT_FROM_BUILD_ERROR_THRESHOLD = -5
@@ -44,7 +42,7 @@ const Wrapper = styled.div`
   border-radius: 20px;
 `
 
-const PriceUpdateWarning = styled.div<{ isAccepted: boolean; $level: 'warning' | 'error' }>`
+const PriceUpdateWarning = styled.div<{ isAccepted: boolean; $level: "warning" | "error" }>`
   margin-top: 1rem;
   border-radius: 16px;
   padding: 8px 12px;
@@ -55,7 +53,7 @@ const PriceUpdateWarning = styled.div<{ isAccepted: boolean; $level: 'warning' |
   background: ${({ $level, theme, isAccepted }) =>
     isAccepted
       ? transparentize(0.8, theme.subText)
-      : $level === 'warning'
+      : $level === "warning"
       ? transparentize(0.7, theme.warning)
       : transparentize(0.7, theme.red)};
   color: ${({ theme, isAccepted }) => (isAccepted ? theme.subText : theme.text)};
@@ -74,7 +72,7 @@ export default function ConfirmSwapModalContent({
   isBuildingRoute,
   errorWhileBuildRoute,
   onDismiss,
-  onSwap,
+  onSwap
 }: Props) {
   const theme = useTheme()
   const { routeSummary, slippage, isStablePairSwap, isCorrelatedPair, isAdvancedMode } = useSwapFormContext()
@@ -86,7 +84,7 @@ export default function ConfirmSwapModalContent({
 
   const errorText = useMemo(() => {
     if (!errorWhileBuildRoute) return
-    if (errorWhileBuildRoute.toLowerCase().includes('permit')) {
+    if (errorWhileBuildRoute.toLowerCase().includes("permit")) {
       return (
         <Text>
           <Trans>
@@ -96,14 +94,14 @@ export default function ConfirmSwapModalContent({
       )
     }
     if (
-      errorWhileBuildRoute.includes('enough') ||
-      errorWhileBuildRoute.includes('min') ||
-      errorWhileBuildRoute.includes('smaller')
+      errorWhileBuildRoute.includes("enough") ||
+      errorWhileBuildRoute.includes("min") ||
+      errorWhileBuildRoute.includes("smaller")
     ) {
       return (
         <Text>
           <Trans>
-            There was an issue while confirming your price and minimum amount received. You may consider adjusting your{' '}
+            There was an issue while confirming your price and minimum amount received. You may consider adjusting your{" "}
             <b>Max Slippage</b> and then trying to swap again.
           </Trans>
         </Text>
@@ -125,9 +123,9 @@ export default function ConfirmSwapModalContent({
   const outputChangePercent = Number(buildResult?.data?.outputChange?.percent) || 0
   const formattedOutputChangePercent =
     -0.001 < outputChangePercent && outputChangePercent < 0
-      ? '> -0.001'
+      ? "> -0.001"
       : 0 < outputChangePercent && outputChangePercent < 0.001
-      ? '< 0.001'
+      ? "< 0.001"
       : outputChangePercent.toFixed(3)
 
   const getSwapDetailsProps = (): SwapDetailsProps => {
@@ -140,7 +138,7 @@ export default function ConfirmSwapModalContent({
         executionPrice: undefined,
         priceImpact: undefined,
 
-        buildData: undefined,
+        buildData: undefined
       }
     }
 
@@ -151,7 +149,7 @@ export default function ConfirmSwapModalContent({
       parsedAmountIn.currency,
       parsedAmountOut.currency,
       parsedAmountIn.quotient,
-      parsedAmountOut.quotient,
+      parsedAmountOut.quotient
     )
     // Min amount out is calculated from get route api amount out.
     const minimumAmountOut = minimumAmountAfterSlippage(routeSummary.parsedAmountOut, slippage)
@@ -164,7 +162,7 @@ export default function ConfirmSwapModalContent({
       minimumAmountOut,
       priceImpact: priceImpactFromBuild,
 
-      buildData: buildResult.data,
+      buildData: buildResult.data
     }
   }
 
@@ -193,11 +191,11 @@ export default function ConfirmSwapModalContent({
 
     let level: Level
     if (0 < outputChangePercent) {
-      level = 'better'
+      level = "better"
     } else if (AMOUNT_OUT_FROM_BUILD_ERROR_THRESHOLD < outputChangePercent && outputChangePercent < 0) {
-      level = 'worse'
+      level = "worse"
     } else if (outputChangePercent <= -5) {
-      level = 'worst'
+      level = "worst"
     }
 
     return (
@@ -263,7 +261,7 @@ export default function ConfirmSwapModalContent({
               <Trans>Please review the details of your swap:</Trans>
             </Text>
             {isBuildingRoute && (
-              <Flex width="fit-content" height="100%" alignItems="center" sx={{ gap: '4px' }}>
+              <Flex width="fit-content" height="100%" alignItems="center" sx={{ gap: "4px" }}>
                 <Loader size="14px" stroke={theme.primary} />
                 <Text as="span" fontSize={12} color={theme.subText}>
                   <Dots>
@@ -276,7 +274,7 @@ export default function ConfirmSwapModalContent({
 
           {outputChangePercent < 0 && (
             <PriceUpdateWarning
-              $level={outputChangePercent <= AMOUNT_OUT_FROM_BUILD_ERROR_THRESHOLD ? 'error' : 'warning'}
+              $level={outputChangePercent <= AMOUNT_OUT_FROM_BUILD_ERROR_THRESHOLD ? "error" : "warning"}
               isAccepted={hasAcceptedNewAmount}
             >
               {hasAcceptedNewAmount && <Check size={20} color={theme.text} />}
@@ -285,11 +283,11 @@ export default function ConfirmSwapModalContent({
                   <Trans>New Amount Accepted</Trans>
                 ) : (
                   <Trans>
-                    Due to market conditions, your output has been updated from{' '}
-                    {parsedAmountOut?.toSignificant(10) || ''} {parsedAmountOut?.currency?.symbol} to{' '}
-                    {parsedAmountOutFromBuild?.toSignificant(10) || ''} {parsedAmountOut?.currency?.symbol} (
-                    {formattedOutputChangePercent}%){' '}
-                    {isShowAcceptNewAmount ? '. Please accept the new amount before swapping' : ''}
+                    Due to market conditions, your output has been updated from{" "}
+                    {parsedAmountOut?.toSignificant(10) || ""} {parsedAmountOut?.currency?.symbol} to{" "}
+                    {parsedAmountOutFromBuild?.toSignificant(10) || ""} {parsedAmountOut?.currency?.symbol} (
+                    {formattedOutputChangePercent}%){" "}
+                    {isShowAcceptNewAmount ? ". Please accept the new amount before swapping" : ""}
                   </Trans>
                 )}
               </Text>
@@ -301,7 +299,7 @@ export default function ConfirmSwapModalContent({
 
         <SwapDetails {...getSwapDetailsProps()} />
 
-        <Flex sx={{ flexDirection: 'column', gap: '16px' }}>
+        <Flex sx={{ flexDirection: "column", gap: "16px" }}>
           <SlippageWarningNote
             rawSlippage={slippage}
             isStablePairSwap={isStablePairSwap}
@@ -319,7 +317,7 @@ export default function ConfirmSwapModalContent({
               </Text>
             </ButtonPrimary>
           ) : (
-            <Flex sx={{ gap: '8px', width: '100%' }}>
+            <Flex sx={{ gap: "8px", width: "100%" }}>
               {isShowAcceptNewAmount && (
                 <ButtonPrimary
                   style={
@@ -331,7 +329,7 @@ export default function ConfirmSwapModalContent({
                             priceImpactResult.isInvalid ||
                             outputChangePercent <= AMOUNT_OUT_FROM_BUILD_ERROR_THRESHOLD
                               ? theme.red
-                              : theme.warning,
+                              : theme.warning
                         }
                   }
                   onClick={handleClickAcceptNewAmount}
@@ -347,9 +345,9 @@ export default function ConfirmSwapModalContent({
                 id="confirm-swap-or-send"
                 style={{
                   ...(disableSwap ? undefined : warningStyle),
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '4px',
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px"
                 }}
               >
                 {shouldDisableConfirmButton ? (
