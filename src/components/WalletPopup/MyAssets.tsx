@@ -107,7 +107,7 @@ export default function MyAssets({
                   hideBalance={hideBalance}
                   showFavoriteIcon={false}
                   usdBalance={usdBalance}
-                  hoverColor="transparent"
+                  // hoverColor="transparent"
                 />
               )
             })}

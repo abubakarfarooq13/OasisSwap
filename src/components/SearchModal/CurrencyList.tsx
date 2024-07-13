@@ -1,30 +1,29 @@
-import { ChainId, Currency, CurrencyAmount, Token } from '@kyberswap/ks-sdk-core'
-import { rgba } from 'polished'
-import React, { CSSProperties, ReactNode, memo, useCallback } from 'react'
-import { Info, Star, Trash } from 'react-feather'
-import AutoSizer from 'react-virtualized-auto-sizer'
-import { FixedSizeList } from 'react-window'
-import InfiniteLoader from 'react-window-infinite-loader'
-import { Flex, Text } from 'rebass'
-import styled from 'styled-components'
-
-import Column from 'components/Column'
-import CurrencyLogo from 'components/CurrencyLogo'
-import Loader from 'components/Loader'
-import { RowBetween, RowFixed } from 'components/Row'
-import { useActiveWeb3React } from 'hooks'
-import useTheme from 'hooks/useTheme'
-import { WrappedTokenInfo } from 'state/lists/wrappedTokenInfo'
-import { useUserAddedTokens, useUserFavoriteTokens } from 'state/user/hooks'
-import { useCurrencyBalances } from 'state/wallet/hooks'
-import { formattedNum } from 'utils'
-import { useCurrencyConvertedToNative } from 'utils/dmm'
-import { isTokenNative } from 'utils/tokenInfo'
-
-import ImportRow from './ImportRow'
+import { ChainId, Currency, CurrencyAmount, Token } from "@kyberswap/ks-sdk-core"
+import { rgba } from "polished"
+import React, { CSSProperties, ReactNode, memo, useCallback } from "react"
+import { Info, Star, Trash } from "react-feather"
+import AutoSizer from "react-virtualized-auto-sizer"
+import { FixedSizeList } from "react-window"
+import InfiniteLoader from "react-window-infinite-loader"
+import { Flex, Text } from "rebass"
+import styled from "styled-components"
+import Column from "components/Column"
+import CurrencyLogo from "components/CurrencyLogo"
+import Loader from "components/Loader"
+import { RowBetween, RowFixed } from "components/Row"
+import { useActiveWeb3React } from "hooks"
+import useTheme from "hooks/useTheme"
+import { WrappedTokenInfo } from "state/lists/wrappedTokenInfo"
+import { useUserAddedTokens, useUserFavoriteTokens } from "state/user/hooks"
+import { useCurrencyBalances } from "state/wallet/hooks"
+import { formattedNum } from "utils"
+import { useCurrencyConvertedToNative } from "utils/dmm"
+import { isTokenNative } from "utils/tokenInfo"
+import ImportRow from "./ImportRow"
 
 const StyledBalanceText = styled(Text)`
-  font-size: 16px;
+  font-size: 23px;
+  color: ${({ theme }) => theme.subText};
   ${({ theme }) => theme.mediaWidth.upToMedium`
      font-size : 14px;
   `}
@@ -39,7 +38,7 @@ const FavoriteButton = styled(Star)`
     color: ${({ theme }) => theme.primary};
   }
 
-  &[data-active='true'] {
+  &[data-active="true"] {
     color: ${({ theme }) => theme.primary};
     fill: currentColor;
   }
@@ -64,17 +63,20 @@ const DeleteButton = styled(Trash)`
 
 const CurrencyRowWrapper = styled(RowBetween)<{ hoverColor?: string }>`
   padding: 4px 20px;
-  height: 56px;
+  height: 90px;
   display: flex;
   gap: 16px;
+  border-radius: 12px;
+  background: ${({ theme }) => theme.buttonBlack};
+  border: 1px solid ${({ theme }) => theme.buttonBlack};
   cursor: pointer;
-  &[data-selected='true'] {
+  &[data-selected="true"] {
     background: ${({ theme }) => rgba(theme.bg6, 0.15)};
   }
 
   @media (hover: hover) {
     :hover {
-      background: ${({ theme, hoverColor }) => hoverColor || theme.buttonBlack};
+      border: 1px solid ${({ theme }) => theme.primary};
     }
   }
 `
@@ -85,13 +87,13 @@ function Balance({ balance }: { balance: CurrencyAmount<Currency> }) {
 
 const DescText = styled.div`
   margin-left: 0;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
   color: ${({ theme }) => theme.subText};
 `
 export const getDisplayTokenInfo = (currency: Currency) => {
   return {
-    symbol: isTokenNative(currency, currency.chainId) ? currency.symbol : currency?.wrapped?.symbol || currency.symbol,
+    symbol: isTokenNative(currency, currency.chainId) ? currency.symbol : currency?.wrapped?.symbol || currency.symbol
   }
 }
 export function CurrencyRow({
@@ -112,7 +114,7 @@ export function CurrencyRow({
   hideBalance,
   showLoading,
   isFavorite,
-  setTokenToShowInfo,
+  setTokenToShowInfo
 }: {
   showImported?: boolean
   showFavoriteIcon?: boolean
@@ -142,7 +144,7 @@ export function CurrencyRow({
   }
 
   const balanceComponent = hideBalance ? (
-    '******'
+    "******"
   ) : currencyBalance ? (
     <Balance balance={currencyBalance} />
   ) : showLoading ? (
@@ -159,18 +161,18 @@ export function CurrencyRow({
       data-selected={isSelected || otherSelected}
       role="button"
     >
-      <Flex alignItems="center" style={{ gap: 8 }}>
-        <CurrencyLogo currency={currency} size={'24px'} />
-        <Column gap="2px">
-          <Text title={currency.name} fontWeight={500} data-testid="token-symbol">
+      <Flex alignItems="center" style={{ gap: 8, padding: "18px" }}>
+        <CurrencyLogo currency={currency} size={"28px"} />
+        <Column gap="6px">
+          <Text title={currency.name} fontWeight={500} data-testid="token-symbol" fontSize={20}>
             {customName || symbol}
           </Text>
           <DescText>{showImported ? balanceComponent : nativeCurrency?.name}</DescText>
         </Column>
       </Flex>
 
-      <Column style={{ alignItems: 'flex-end', gap: 2 }}>
-        <RowFixed style={{ justifySelf: 'flex-end', gap: 15 }}>
+      <Column style={{ alignItems: "flex-end", gap: 10, padding: "15px" }}>
+        <RowFixed style={{ justifySelf: "flex-end", gap: 15 }}>
           {showImported ? (
             <DeleteButton onClick={onClickRemove} data-testid="button-remove-import-token" />
           ) : customBalance !== undefined ? (
@@ -198,8 +200,8 @@ export function CurrencyRow({
           )}
         </RowFixed>
         {usdBalance !== undefined && !hideBalance && (
-          <Text fontSize={'12px'} color={theme.subText}>
-            {formattedNum(usdBalance + '', true)}
+          <Text fontSize={"12px"} color={theme.subText}>
+            {formattedNum(usdBalance + "", true)}
           </Text>
         )}
       </Column>
@@ -229,7 +231,7 @@ function CurrencyList({
   showFavoriteIcon,
   itemStyle = {},
   customChainId,
-  setTokenToShowInfo,
+  setTokenToShowInfo
 }: {
   showFavoriteIcon?: boolean
   showImported?: boolean
@@ -274,7 +276,7 @@ function CurrencyList({
 
         const isFavorite = (() => {
           if (currency.isToken && favoriteTokens) {
-            const addr = (currency as Token).address ?? ''
+            const addr = (currency as Token).address ?? ""
             return !!favoriteTokens?.includes(addr) || !!favoriteTokens?.includes(addr.toLowerCase())
           }
           return false
@@ -314,8 +316,8 @@ function CurrencyList({
       tokenImports,
       account,
       favoriteTokens,
-      setTokenToShowInfo,
-    ],
+      setTokenToShowInfo
+    ]
   )
   const loadMoreItems = useCallback(() => loadMoreRows?.(), [loadMoreRows])
   const itemCount = hasMore ? currencies.length + 1 : currencies.length // If there are more items to be loaded then add an extra row to hold a loading indicator.
@@ -338,7 +340,7 @@ function CurrencyList({
                 {({ index, style }: { index: number; style: CSSProperties }) => {
                   if (!isItemLoaded(index)) {
                     return (
-                      <Flex justifyContent={'center'} fontSize={13} marginBottom={10} style={style}>
+                      <Flex justifyContent={"center"} fontSize={13} marginBottom={10} style={style}>
                         <Text>loading...</Text>
                       </Flex>
                     )
