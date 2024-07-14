@@ -1,43 +1,41 @@
-import { ChainId, Currency, Token, WETH } from '@kyberswap/ks-sdk-core'
-import { Trans, t } from '@lingui/macro'
-import axios from 'axios'
-import { rgba } from 'polished'
-import { stringify } from 'querystring'
-import { ChangeEvent, KeyboardEvent, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Trash } from 'react-feather'
-import { usePrevious } from 'react-use'
-import { Flex, Text } from 'rebass'
-import ksSettingApi from 'services/ksSetting'
-import styled from 'styled-components'
-
-import Column from 'components/Column'
-import InfoHelper from 'components/InfoHelper'
-import { RowBetween } from 'components/Row'
-import { KS_SETTING_API } from 'constants/env'
-import { Z_INDEXS } from 'constants/styles'
-import { NativeCurrencies } from 'constants/tokens'
-import { useActiveWeb3React } from 'hooks'
-import { fetchListTokenByAddresses, formatAndCacheToken, useAllTokens, useFetchERC20TokenFromRPC } from 'hooks/Tokens'
-import useDebounce from 'hooks/useDebounce'
-import { useOnClickOutside } from 'hooks/useOnClickOutside'
-import useTheme from 'hooks/useTheme'
-import useToggle from 'hooks/useToggle'
-import store from 'state'
-import { WrappedTokenInfo } from 'state/lists/wrappedTokenInfo'
-import { useRemoveUserAddedToken, useUserAddedTokens, useUserFavoriteTokens } from 'state/user/hooks'
-import { ButtonText, CloseIcon, TYPE } from 'theme'
-import { filterTruthy, isAddress } from 'utils'
-import { filterTokens } from 'utils/filtering'
-import { isTokenNative } from 'utils/tokenInfo'
-
-import CommonBases from './CommonBases'
-import CurrencyList from './CurrencyList'
-import { useTokenComparator } from './sorting'
-import { PaddedColumn, SearchIcon, SearchInput, SearchWrapper, Separator } from './styleds'
+import { ChainId, Currency, Token, WETH } from "@kyberswap/ks-sdk-core"
+import { Trans, t } from "@lingui/macro"
+import axios from "axios"
+import { rgba } from "polished"
+import { stringify } from "querystring"
+import { ChangeEvent, KeyboardEvent, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { Trash } from "react-feather"
+import { usePrevious } from "react-use"
+import { Flex, Text } from "rebass"
+import ksSettingApi from "services/ksSetting"
+import styled from "styled-components"
+import Column from "components/Column"
+import InfoHelper from "components/InfoHelper"
+import { RowBetween } from "components/Row"
+import { KS_SETTING_API } from "constants/env"
+import { Z_INDEXS } from "constants/styles"
+import { NativeCurrencies } from "constants/tokens"
+import { useActiveWeb3React } from "hooks"
+import { fetchListTokenByAddresses, formatAndCacheToken, useAllTokens, useFetchERC20TokenFromRPC } from "hooks/Tokens"
+import useDebounce from "hooks/useDebounce"
+import { useOnClickOutside } from "hooks/useOnClickOutside"
+import useTheme from "hooks/useTheme"
+import useToggle from "hooks/useToggle"
+import store from "state"
+import { WrappedTokenInfo } from "state/lists/wrappedTokenInfo"
+import { useRemoveUserAddedToken, useUserAddedTokens, useUserFavoriteTokens } from "state/user/hooks"
+import { ButtonText, CloseIcon, TYPE } from "theme"
+import { filterTruthy, isAddress } from "utils"
+import { filterTokens } from "utils/filtering"
+import { isTokenNative } from "utils/tokenInfo"
+import CommonBases from "./CommonBases"
+import CurrencyList from "./CurrencyList"
+import { useTokenComparator } from "./sorting"
+import { PaddedColumn, SearchIcon, SearchInput, SearchWrapper, Separator } from "./styleds"
 
 enum Tab {
   All,
-  Imported,
+  Imported
 }
 
 export const ContentWrapper = styled(Column)`
@@ -54,7 +52,7 @@ export const ContentWrapper = styled(Column)`
 const TabButton = styled(ButtonText)`
   height: 32px;
   color: ${({ theme }) => theme.text};
-  &[data-active='true'] {
+  &[data-active="true"] {
     color: ${({ theme }) => theme.primary};
   }
 
@@ -94,20 +92,20 @@ const fetchTokens = async (
   search: string | undefined,
   page: number,
   chainId: ChainId,
-  signal: AbortSignal,
+  signal: AbortSignal
 ): Promise<WrappedTokenInfo[]> => {
   try {
     if (search && chainId && isAddress(chainId, search)) {
       const { data: token } = await store.dispatch(
-        ksSettingApi.endpoints.getTokenByAddress.initiate({ address: search, chainId }),
+        ksSettingApi.endpoints.getTokenByAddress.initiate({ address: search, chainId })
       )
       return token ? [token as WrappedTokenInfo] : []
     }
     const params: { query: string; isWhitelisted?: boolean; pageSize: number; page: number; chainIds: string } = {
-      query: search ?? '',
+      query: search ?? "",
       chainIds: chainId.toString(),
       page,
-      pageSize: PAGE_SIZE,
+      pageSize: PAGE_SIZE
     }
     if (!search) {
       params.isWhitelisted = true
@@ -125,7 +123,7 @@ const fetchTokens = async (
 export const NoResult = ({ msg }: { msg?: ReactNode }) => {
   const theme = useTheme()
   return (
-    <Column style={{ padding: '20px', height: '100%' }} data-testid="no-token-result">
+    <Column style={{ padding: "20px", height: "100%" }} data-testid="no-token-result">
       <TYPE.main color={theme.text3} textAlign="center" mb="20px">
         {msg || <Trans>No results found.</Trans>}
       </TYPE.main>
@@ -145,14 +143,14 @@ export function CurrencySearch({
   filterWrap = false,
   title,
   tooltip,
-  setTokenToShowInfo,
+  setTokenToShowInfo
 }: CurrencySearchProps) {
   const { chainId: web3ChainId } = useActiveWeb3React()
   const chainId = customChainId || web3ChainId
   const theme = useTheme()
   const [activeTab, setActiveTab] = useState<Tab>(Tab.All)
 
-  const [searchQuery, setSearchQuery] = useState<string>('')
+  const [searchQuery, setSearchQuery] = useState<string>("")
   const debouncedQuery = useDebounce(searchQuery, 200)
   const isQueryValidEVMAddress = !!isAddress(chainId, debouncedQuery)
 
@@ -186,7 +184,7 @@ export function CurrencySearch({
       }
       return true
     },
-    [chainId, otherSelectedCurrency, filterWrap],
+    [chainId, otherSelectedCurrency, filterWrap]
   )
 
   const filteredCommonTokens = useMemo(() => {
@@ -206,7 +204,7 @@ export function CurrencySearch({
       onCurrencySelect(isTokenNative(currency, currency.chainId) ? NativeCurrencies[currency.chainId] : currency)
       onDismiss()
     },
-    [onDismiss, onCurrencySelect],
+    [onDismiss, onCurrencySelect]
   )
 
   // manage focus on modal show
@@ -215,7 +213,7 @@ export function CurrencySearch({
   // clear the input on open
   useEffect(() => {
     if (isOpen) {
-      setSearchQuery('')
+      setSearchQuery("")
       inputRef.current?.focus()
     }
   }, [isOpen])
@@ -229,12 +227,12 @@ export function CurrencySearch({
       setSearchQuery(checksumInput || input)
       if (listTokenRef?.current) listTokenRef.current.scrollTop = 0
     },
-    [chainId],
+    [chainId]
   )
 
   const handleEnter = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
-      if (e.key !== 'Enter') return
+      if (e.key !== "Enter") return
       const s = searchQuery.toLowerCase().trim()
       const native = NativeCurrencies[chainId]
       if (s === native.symbol?.toLowerCase() || s === native.name?.toLowerCase()) {
@@ -246,7 +244,7 @@ export function CurrencySearch({
         handleCurrencySelect(filteredSortedTokens[0])
       }
     },
-    [filteredSortedTokens, handleCurrencySelect, searchQuery, chainId],
+    [filteredSortedTokens, handleCurrencySelect, searchQuery, chainId]
   )
 
   const handleClickFavorite = useCallback(
@@ -257,10 +255,10 @@ export function CurrencySearch({
 
       toggleFavoriteToken({
         chainId,
-        address,
+        address
       })
     },
-    [chainId, toggleFavoriteToken],
+    [chainId, toggleFavoriteToken]
   )
 
   // menu ui
@@ -296,12 +294,12 @@ export function CurrencySearch({
         result = result.concat(
           tokens.sort((x, y) => {
             return addressesToFetch.indexOf(x.wrapped.address) - addressesToFetch.indexOf(y.wrapped.address)
-          }),
+          })
         )
       }
       setCommonTokens(result)
     } catch (error) {
-      console.log('err', error)
+      console.log("err", error)
     }
     setLoadingCommon(false)
   }, [chainId, favoriteTokens, defaultTokens])
@@ -328,10 +326,10 @@ export function CurrencySearch({
               new WrappedTokenInfo({
                 chainId: rawToken.chainId,
                 address: rawToken.address,
-                name: rawToken.name || 'Unknown Token',
+                name: rawToken.name || "Unknown Token",
                 decimals: rawToken.decimals,
-                symbol: rawToken.symbol || 'UNKNOWN',
-              }),
+                symbol: rawToken.symbol || "UNKNOWN"
+              })
             )
           }
         }
@@ -343,7 +341,7 @@ export function CurrencySearch({
       setFetchedTokens(current => (nextPage === 1 ? [] : current).concat(tokens))
       setHasMoreToken(tokens.length === PAGE_SIZE && !!debouncedQuery)
     },
-    [isImportedTab, chainId, debouncedQuery, defaultTokens, fetchERC20TokenFromRPC, isQueryValidEVMAddress, pageCount],
+    [isImportedTab, chainId, debouncedQuery, defaultTokens, fetchERC20TokenFromRPC, isQueryValidEVMAddress, pageCount]
   )
 
   const [hasMoreToken, setHasMoreToken] = useState(false)
@@ -370,10 +368,10 @@ export function CurrencySearch({
       if (favoriteTokens?.some(el => el.toLowerCase() === token.address.toLowerCase()))
         toggleFavoriteToken({
           chainId,
-          address: token.address,
+          address: token.address
         })
     },
-    [chainId, toggleFavoriteToken, removeToken, favoriteTokens],
+    [chainId, toggleFavoriteToken, removeToken, favoriteTokens]
   )
 
   const removeAllImportToken = () => {
@@ -442,7 +440,7 @@ export function CurrencySearch({
           />
         )}
         {loadingCommon && (
-          <Flex justifyContent={'center'}>
+          <Flex justifyContent={"center"}>
             <Text fontSize={12} color={theme.subText}>
               Loading ...
             </Text>
@@ -451,7 +449,7 @@ export function CurrencySearch({
         <RowBetween>
           <Flex
             sx={{
-              columnGap: '24px',
+              columnGap: "24px"
             }}
           >
             <TabButton data-active={activeTab === Tab.All} onClick={() => onChangeTab(Tab.All)} data-testid="tab-all">
@@ -475,7 +473,7 @@ export function CurrencySearch({
         <Flex
           justifyContent="space-between"
           alignItems="center"
-          style={{ color: theme.subText, fontSize: 12, padding: '15px 20px 10px 20px' }}
+          style={{ color: theme.subText, fontSize: 12, padding: "15px 20px 10px 20px" }}
         >
           <div>
             <Trans>{visibleCurrencies.length} Custom Tokens</Trans>
@@ -486,7 +484,6 @@ export function CurrencySearch({
           </ButtonClear>
         </Flex>
       )}
-
       {visibleCurrencies?.length > 0 ? (
         <CurrencyList
           listTokenRef={listTokenRef}

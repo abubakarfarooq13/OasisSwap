@@ -22,7 +22,7 @@ import { isTokenNative } from "utils/tokenInfo"
 import ImportRow from "./ImportRow"
 
 const StyledBalanceText = styled(Text)`
-  font-size: 23px;
+  font-size: 18px;
   color: ${({ theme }) => theme.subText};
   ${({ theme }) => theme.mediaWidth.upToMedium`
      font-size : 14px;
@@ -351,7 +351,13 @@ function CurrencyList({
                       currency={currencies[index]}
                       key={currencies[index]?.wrapped.address || index}
                       currencyBalance={currencyBalances[index]}
-                      style={style}
+                      style={{
+                        background: "transparent",
+                        height: "60px",
+                        border: `1px solid #111B13`,
+                        borderRadius: "0px",
+                        padding: "0px"
+                      }}
                     />
                   )
                 }}
