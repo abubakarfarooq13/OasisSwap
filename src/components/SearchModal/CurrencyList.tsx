@@ -229,7 +229,13 @@ function CurrencyList({
   hasMore,
   listTokenRef,
   showFavoriteIcon,
-  itemStyle = {},
+  itemStyle = {
+    background: "transparent",
+    height: "60px",
+    border: `1px solid #111B13`,
+    borderRadius: "0px",
+    padding: "0px"
+  },
   customChainId,
   setTokenToShowInfo
 }: {
@@ -351,13 +357,7 @@ function CurrencyList({
                       currency={currencies[index]}
                       key={currencies[index]?.wrapped.address || index}
                       currencyBalance={currencyBalances[index]}
-                      style={{
-                        background: "transparent",
-                        height: "60px",
-                        border: `1px solid #111B13`,
-                        borderRadius: "0px",
-                        padding: "0px"
-                      }}
+                      style={style}
                     />
                   )
                 }}
