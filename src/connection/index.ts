@@ -247,7 +247,7 @@ const bloctoConnection: Connection = {
   connector: blocto,
   hooks: bloctoHooks,
   type: ConnectionType.WALLET_CONNECT_V2,
-  shouldDisplay: () => true,
+  shouldDisplay: () => false,
 }
 
 export const connections = [
