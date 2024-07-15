@@ -14,7 +14,7 @@ export function maxAmountSpend(currencyAmount?: CurrencyAmount<Currency>): Curre
   if (currencyAmount.currency.isNative) {
     const minForGas = JSBI.BigInt(NETWORKS_INFO[currencyAmount.currency.chainId].nativeToken.minForGas)
     const subtractedGas = JSBI.subtract(currencyAmount.quotient, minForGas)
-    const maxSpend = JSBI.greaterThan(subtractedGas, ZERO) ? subtractedGas : JSBI.BigInt(1)
+    const maxSpend = JSBI.greaterThan(subtractedGas, ZERO) ? subtractedGas : ZERO
 
     return CurrencyAmount.fromRawAmount(currencyAmount.currency, maxSpend)
   }
