@@ -3,7 +3,7 @@ import { Currency, CurrencyAmount, Fraction, Price } from '@kyberswap/ks-sdk-cor
 import { parseUnits } from 'ethers/lib/utils'
 
 import { getRouteTokenAddressParam } from 'components/SwapForm/hooks/useGetRoute'
-import { BIPS_BASE, RESERVE_USD_DECIMALS } from 'constants/index'
+import { BIPS_BASE, META_AGGREGATOR_LOCAL, RESERVE_USD_DECIMALS } from 'constants/index'
 import { ChargeFeeBy, DetailedRouteSummary } from 'types/route'
 import { formattedNum } from 'utils'
 import { toCurrencyAmount } from 'utils/currencyAmount'
@@ -54,7 +54,7 @@ export const parseGetRouteResponse = (
 } => {
   const defaultValue = {
     routeSummary: undefined,
-    routerAddress: rawData.routerAddress,
+    routerAddress: META_AGGREGATOR_LOCAL, //rawData.routerAddress,
     fromMeta: rawData.fromMeta,
   }
 
@@ -85,12 +85,12 @@ export const parseGetRouteResponse = (
     fee: calculateFee(parsedAmountIn, parsedAmountOut, rawRouteSummary),
     priceImpact: calculatePriceImpact(Number(rawRouteSummary.amountInUsd), Number(rawRouteSummary.amountOutUsd)),
     executionPrice,
-    routerAddress: rawData.routerAddress,
+    routerAddress: META_AGGREGATOR_LOCAL //rawData.routerAddress,
   }
 
   return {
     routeSummary,
-    routerAddress: rawData.routerAddress,
+    routerAddress: META_AGGREGATOR_LOCAL ,//rawData.routerAddress,
     fromMeta: rawData.fromMeta,
   }
 }
