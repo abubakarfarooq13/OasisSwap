@@ -1,16 +1,14 @@
-import { Currency, Token } from '@kyberswap/ks-sdk-core'
-import { rgba } from 'polished'
-import { useState } from 'react'
-import { isMobile } from 'react-device-detect'
-import { Edit2, XCircle } from 'react-feather'
-import styled from 'styled-components'
-
-import { AutoColumn } from 'components/Column'
-import CurrencyLogo from 'components/CurrencyLogo'
-import { AutoRow } from 'components/Row'
-import useTheme from 'hooks/useTheme'
-
-import { getDisplayTokenInfo } from './CurrencyList'
+import { Currency, Token } from "@kyberswap/ks-sdk-core"
+import { rgba } from "polished"
+import { useState } from "react"
+import { isMobile } from "react-device-detect"
+import { Edit2, XCircle } from "react-feather"
+import styled from "styled-components"
+import { AutoColumn } from "components/Column"
+import CurrencyLogo from "components/CurrencyLogo"
+import { AutoRow } from "components/Row"
+import useTheme from "hooks/useTheme"
+import { getDisplayTokenInfo } from "./CurrencyList"
 
 const HEIGHT_THRESHOLD = 400
 const BaseWrapper = styled.div`
@@ -27,7 +25,7 @@ const BaseWrapper = styled.div`
     padding: 4px 5px;
     gap: 5px;
   }
-  &[data-selected='true'] {
+  &[data-selected="true"] {
     background-color: ${({ theme }) => rgba(theme.primary, 0.15)};
   }
   @media (hover: hover) {
@@ -54,14 +52,14 @@ const CloseBtn = styled(XCircle)<{ $forceShow: boolean }>`
   right: -5px;
   top: -5px;
   color: ${({ theme }) => theme.subText};
-  display: ${({ $forceShow }) => ($forceShow ? 'block' : 'none')};
+  display: ${({ $forceShow }) => ($forceShow ? "block" : "none")};
 `
 
 export default function CommonBases({
   onSelect,
   selectedCurrency,
   tokens = [],
-  handleToggleFavorite,
+  handleToggleFavorite
 }: {
   selectedCurrency?: Currency | null
   tokens: Currency[]
@@ -72,10 +70,11 @@ export default function CommonBases({
   const [isEditMode, setEditMode] = useState(false)
   const isHeightSmall = window.outerHeight < HEIGHT_THRESHOLD
   if (!tokens.length) return null
+  const filteredTokens = tokens.filter(token => token.symbol !== "KNC")
   return (
     <AutoColumn gap="md">
       <AutoRow gap="4px">
-        {(tokens as Token[]).map((token: Token) => {
+        {(filteredTokens as Token[]).map((token: Token) => {
           const selected = selectedCurrency instanceof Token && selectedCurrency.address === token.address
           const { symbol } = getDisplayTokenInfo(token)
           return (
@@ -85,7 +84,7 @@ export default function CommonBases({
               data-selected={selected}
               key={(token.address || token?.wrapped?.address) + token.symbol}
             >
-              <CurrencyLogo currency={token} size={isHeightSmall ? '15px' : '20px'} />
+              <CurrencyLogo currency={token} size={isHeightSmall ? "15px" : "20px"} />
               <TokenName>{symbol}</TokenName>
               <CloseBtn
                 $forceShow={isEditMode}
