@@ -1,22 +1,21 @@
-import { Trans, t } from '@lingui/macro'
-import { useMemo, useRef } from 'react'
-import { isMobile } from 'react-device-detect'
-import { Download } from 'react-feather'
-import { QRCode, IProps as QRCodeProps } from 'react-qrcode-logo'
-import { Flex, Text } from 'rebass'
-import styled from 'styled-components'
-
-import KncLogo from 'assets/images/kyber_logo_for_qr.png'
-import { AddressInput } from 'components/AddressInputPanel'
-import Column from 'components/Column'
-import CopyHelper from 'components/Copy'
-import { MouseoverTooltip } from 'components/Tooltip'
-import { useActiveWeb3React } from 'hooks'
-import useTheme from 'hooks/useTheme'
-import { shortenAddress } from 'utils'
+import { Trans, t } from "@lingui/macro"
+import { useMemo, useRef } from "react"
+import { isMobile } from "react-device-detect"
+import { Download } from "react-feather"
+import { QRCode, IProps as QRCodeProps } from "react-qrcode-logo"
+import { Flex, Text } from "rebass"
+import styled from "styled-components"
+import Oasis from "assets/images/oasis_logo_for_qr.png"
+import { AddressInput } from "components/AddressInputPanel"
+import Column from "components/Column"
+import CopyHelper from "components/Copy"
+import { MouseoverTooltip } from "components/Tooltip"
+import { useActiveWeb3React } from "hooks"
+import useTheme from "hooks/useTheme"
+import { shortenAddress } from "utils"
 
 const QR_SIZE = 200
-const QR_ID = 'react-qrcode-logo'
+const QR_ID = "react-qrcode-logo"
 
 const Label = styled.label<{ color?: string }>`
   font-weight: 500;
@@ -45,7 +44,7 @@ const Wrapper = styled.div`
 `
 
 export default function ReceiveToken() {
-  const { account = '', chainId } = useActiveWeb3React()
+  const { account = "", chainId } = useActiveWeb3React()
   const copyButtonRef = useRef<HTMLDivElement>(null)
 
   const qrCodeProps: QRCodeProps | undefined = useMemo(() => {
@@ -54,16 +53,16 @@ export default function ReceiveToken() {
     }
 
     return {
-      logoImage: KncLogo,
+      logoImage: Oasis,
       logoWidth: 32,
       logoHeight: 32,
       size: QR_SIZE,
       // `ethereum` is intentional. This QR is used to open the Send feature on the wallet (e.g. Metamask)
       // Chain is not switched by this prefix
       value: `ethereum:${account}`,
-      eyeColor: { outer: '#000000', inner: '#000000' },
+      eyeColor: { outer: "#000000", inner: "#000000" },
       quietZone: 14,
-      removeQrCodeBehindLogo: true,
+      removeQrCodeBehindLogo: true
     }
   }, [account])
 
@@ -75,10 +74,10 @@ export default function ReceiveToken() {
     try {
       const canvas = document.getElementById(QR_ID) as HTMLCanvasElement
       if (!canvas) return
-      const link = document.createElement('a')
-      link.download = 'your_qrcode-logo.png'
+      const link = document.createElement("a")
+      link.download = "your_qrcode-logo.png"
 
-      link.href = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream')
+      link.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream")
       link.click()
     } catch (error) {
       console.error(error)
@@ -91,21 +90,21 @@ export default function ReceiveToken() {
   let error = true
   try {
     error = false
-    qrElement = qrCodeProps ? <QRCode {...qrCodeProps} /> : <Flex sx={{ width: '228px', height: '228px' }} />
+    qrElement = qrCodeProps ? <QRCode {...qrCodeProps} /> : <Flex sx={{ width: "228px", height: "228px" }} />
   } catch (e) {
     qrElement = (
       <Flex
         sx={{
           // match size of QR
-          width: '228px',
-          height: '228px',
-          borderRadius: '16px',
-          justifyContent: 'center',
-          alignItems: 'center',
+          width: "228px",
+          height: "228px",
+          borderRadius: "16px",
+          justifyContent: "center",
+          alignItems: "center",
           border: `2px solid ${theme.border}`,
-          textAlign: 'center',
+          textAlign: "center",
           color: theme.subText,
-          fontSize: '14px',
+          fontSize: "14px"
         }}
       >
         <Trans>
@@ -119,12 +118,12 @@ export default function ReceiveToken() {
 
   return (
     <Wrapper>
-      <Flex flexDirection={'column'} style={{ gap: 32, flex: 1, justifyContent: 'center' }}>
+      <Flex flexDirection={"column"} style={{ gap: 32, flex: 1, justifyContent: "center" }}>
         <Column
           style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: 12,
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 12
           }}
         >
           {qrElement}
@@ -134,8 +133,8 @@ export default function ReceiveToken() {
               onClick={downloadQR}
               color={theme.primary}
               fontSize="14px"
-              alignItems={'center'}
-              style={{ gap: 5, cursor: 'pointer' }}
+              alignItems={"center"}
+              style={{ gap: 5, cursor: "pointer" }}
             >
               <Text>
                 <Trans>Download Image</Trans>
@@ -155,13 +154,13 @@ export default function ReceiveToken() {
               onClick={onCopy}
               role="button"
               sx={{
-                flexDirection: 'column',
-                width: '100%',
-                cursor: 'pointer',
+                flexDirection: "column",
+                width: "100%",
+                cursor: "pointer"
               }}
             >
               <AddressInput
-                style={{ color: theme.subText, cursor: 'pointer' }}
+                style={{ color: theme.subText, cursor: "pointer" }}
                 disabled
                 value={shortenAddress(chainId, account, 17, false)}
                 icon={<CopyHelper ref={copyButtonRef} toCopy={account} style={{ color: theme.subText }} />}
