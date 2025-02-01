@@ -488,7 +488,9 @@ export function CurrencySearch({
         <CurrencyList
           listTokenRef={listTokenRef}
           removeImportedToken={removeImportedToken}
-          currencies={visibleCurrencies}
+          currencies={visibleCurrencies.filter(
+            token => token.symbol !== "KNC" && token.symbol !== "KNCL" && token.symbol !== "xKNCa"
+          )}
           showImported={isImportedTab}
           handleClickFavorite={handleClickFavorite}
           onCurrencySelect={handleCurrencySelect}
