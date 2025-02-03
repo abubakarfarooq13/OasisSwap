@@ -1,33 +1,33 @@
-import { Trans } from '@lingui/macro'
-import { lighten } from 'polished'
-import { Link, useLocation } from 'react-router-dom'
-import { useMedia } from 'react-use'
-import { Flex } from 'rebass'
-import styled from 'styled-components'
-
-import Announcement from 'components/Announcement'
-import SelectNetwork from 'components/Header/web3/SelectNetwork'
-import SelectWallet from 'components/Header/web3/SelectWallet'
-import Menu from 'components/Menu'
-import Row, { RowFixed } from 'components/Row'
-import { 
+// import { Trans } from "@lingui/macro"
+import { lighten } from "polished"
+import { Link, useLocation } from "react-router-dom"
+import { useMedia } from "react-use"
+import { Flex } from "rebass"
+import styled from "styled-components"
+import Announcement from "components/Announcement"
+import SelectNetwork from "components/Header/web3/SelectNetwork"
+import SelectWallet from "components/Header/web3/SelectWallet"
+import Menu from "components/Menu"
+import Row, { RowFixed } from "components/Row"
+import {
   // AGGREGATOR_ANALYTICS_URL,
-   APP_PATHS } from 'constants/index'
-import { Z_INDEXS } from 'constants/styles'
-import { useActiveWeb3React } from 'hooks'
-import useTheme from 'hooks/useTheme'
-import { useHolidayMode } from 'state/user/hooks'
-import { MEDIA_WIDTHS } from 'theme'
-
-import AboutNavGroup from './groups/AboutNavGroup'
+  APP_PATHS
+} from "constants/index"
+import { Z_INDEXS } from "constants/styles"
+import { useActiveWeb3React } from "hooks"
+import useTheme from "hooks/useTheme"
+import { useHolidayMode } from "state/user/hooks"
+import { MEDIA_WIDTHS } from "theme"
+// import AboutNavGroup from "./groups/AboutNavGroup"
 // import KyberDAONavGroup from './groups/KyberDaoGroup'
-import SwapNavGroup from './groups/SwapNavGroup'
-import { StyledNavExternalLink } from './styleds'
+import SwapNavGroup from "./groups/SwapNavGroup"
+
+// import { StyledNavExternalLink } from "./styleds"
 
 const HeaderFrame = styled.div<{ hide?: boolean }>`
   height: ${({ hide }) => (hide ? 0 : undefined)};
-  padding: ${({ hide }) => (hide ? 0 : '1rem')};
-  overflow: ${({ hide }) => (hide ? 'hidden' : undefined)};
+  padding: ${({ hide }) => (hide ? 0 : "1rem")};
+  overflow: ${({ hide }) => (hide ? "hidden" : undefined)};
   display: grid;
   grid-template-columns: 1fr 120px;
   align-items: center;
@@ -40,15 +40,15 @@ const HeaderFrame = styled.div<{ hide?: boolean }>`
   z-index: ${Z_INDEXS.HEADER};
   ${({ theme, hide }) => theme.mediaWidth.upToMedium`
     grid-template-columns: 1fr;
-    padding: ${hide ? 0 : '1rem'};
+    padding: ${hide ? 0 : "1rem"};
     width: calc(100%);
     position: relative;
     
   `};
 
   ${({ theme, hide }) => theme.mediaWidth.upToExtraSmall`
-    padding: ${hide ? 0 : '0.5 1rem'};
-    height: ${hide ? 0 : '60px'};
+    padding: ${hide ? 0 : "0.5 1rem"};
+    height: ${hide ? 0 : "60px"};
   `}
 `
 
@@ -129,11 +129,11 @@ const HeaderLinks = styled(Row)`
 
 const IconImage = styled.img<{ isChristmas?: boolean }>`
   width: 140px;
-  margin-top: ${({ isChristmas }) => (isChristmas ? '-18px' : '1px')};
+  margin-top: ${({ isChristmas }) => (isChristmas ? "-18px" : "1px")};
 
   ${({ theme, isChristmas }) => theme.mediaWidth.upToSmall`
     width: 114px;
-    margin-top: ${isChristmas ? '-10px' : '1px'};
+    margin-top: ${isChristmas ? "-10px" : "1px"};
   `};
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
@@ -182,7 +182,7 @@ export default function Header() {
   const menu = (
     <HeaderElementWrap>
       <Announcement />
-      <div style={{ height: '30px', borderLeft: `2px solid ${theme.bg7}` }} />
+      <div style={{ height: "30px", borderLeft: `2px solid ${theme.bg7}` }} />
       <Menu />
     </HeaderElementWrap>
   )
@@ -192,17 +192,17 @@ export default function Header() {
       <HeaderRow>
         {isPartnerSwap ? (
           <LogoIcon>
-            <IconImage src={'/logo.png'} alt="logo" />
+            <IconImage src={"/logo.png"} alt="logo" />
           </LogoIcon>
         ) : (
           <Title to={`${APP_PATHS.SWAP}/${networkInfo.route}`}>
             {holidayMode ? (
               <LogoIcon>
-                <IconImage isChristmas src={'/christmas-logo-dark.svg'} alt="logo" />
+                <IconImage isChristmas src={"/christmas-logo-dark.svg"} alt="logo" />
               </LogoIcon>
             ) : (
               <LogoIcon>
-                <IconImage src={'/logo.png'} alt="logo" />
+                <IconImage src={"/logo.png"} alt="logo" />
               </LogoIcon>
             )}
           </Title>
@@ -211,10 +211,10 @@ export default function Header() {
           <HeaderLinks>
             <SwapNavGroup />
             {/* <KyberDAONavGroup /> */}
-            <StyledNavExternalLink target="_blank" href={"#"}>
+            {/* <StyledNavExternalLink target="_blank" href={"#"}>
               <Trans>Analytics</Trans>
             </StyledNavExternalLink>
-            <AboutNavGroup />
+            <AboutNavGroup /> */}
           </HeaderLinks>
         )}
       </HeaderRow>
@@ -224,11 +224,11 @@ export default function Header() {
           <Flex justifyContent="space-between" width="100%">
             {upToLarge && (
               <LogoIcon>
-                <IconImage src={'/logo-dark.svg'} alt="logo" />
+                <IconImage src={"/logo-dark.svg"} alt="logo" />
               </LogoIcon>
             )}
 
-            <Flex sx={{ gap: '1rem' }} height="42px">
+            <Flex sx={{ gap: "1rem" }} height="42px">
               <SelectNetwork />
               <SelectWallet />
             </Flex>
@@ -241,11 +241,11 @@ export default function Header() {
           </HeaderElement>
         ) : (
           <>
-            <HeaderElement style={{ justifyContent: 'flex-start' }}>
+            <HeaderElement style={{ justifyContent: "flex-start" }}>
               <SelectNetwork />
               <SelectWallet />
             </HeaderElement>
-            <HeaderElement style={{ justifyContent: 'flex-end' }}>{menu}</HeaderElement>
+            <HeaderElement style={{ justifyContent: "flex-end" }}>{menu}</HeaderElement>
           </>
         )}
       </HeaderControls>
